@@ -9,11 +9,11 @@
 	<!-- Global stylesheets -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
 	<link href="../../../../global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/bootstrap_limitless.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/layout.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/components.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/colors.min.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/bootstrap_limitless.min.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/layout.min.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/components.min.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/colors.min.css" rel="stylesheet" type="text/css">
 	<!-- /global stylesheets -->
 
 	<!-- Core JS files -->
@@ -42,7 +42,7 @@
 	<div class="navbar navbar-expand-md navbar-dark">
 		<div class="navbar-brand">
 			<a href="index.html" class="d-inline-block">
-				<img src="../../../../global_assets/images/logo_light.png" alt="">
+				<img src="../global_assets/images/logo_light.png" alt="">
 			</a>
 		</div>
 
@@ -223,7 +223,7 @@
 					<div class="card-body">
 						<div class="media">
 							<div class="mr-3">
-								<a href="#"><img src="./global_assets/images/placeholders/placeholder.jpg" width="38" height="38" class="rounded-circle" alt=""></a>
+								<a href="#"><img src="../global_assets/images/placeholders/placeholder.jpg" width="38" height="38" class="rounded-circle" alt=""></a>
 							</div>
 
 							<div class="media-body">
@@ -263,7 +263,7 @@
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
 								<li class="nav-item"><a href="users_list.html" class="nav-link active">Daftar Pengguna</a></li>
-								<li class="nav-item"><a href="index.html" class="nav-link">Divisi</a></li>
+								<li class="nav-item"><a href="users_division.html" class="nav-link">Divisi</a></li>
 								<li class="nav-item"><a href="index.html" class="nav-link">Peran dan Akses</a></li>
 								
 							</ul>
@@ -324,8 +324,8 @@
 			<div class="page-header page-header-light">
 				<div class="page-header-content header-elements-md-inline">
 					<div class="page-title d-flex">
-						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Pengguna</h4>
-						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+						<h4><a href="users_list.html" style="color: black;"><i class="icon-arrow-left52 mr-2"></i></a> <span class="font-weight-semibold">Detail Pengguna</h4>
+						
 					</div>
 				</div>
 
@@ -354,149 +354,56 @@
 					<div class="col-md-12">
                         <div class="row">
                             <div class="card w-100">
-                                <div class="row py-3 px-5 mb-0">
-                                    <div class="col-md-10 d-flex ">
-                                        <div class="col-md-4">
-                                            <form action="#">
-                                                <div class="form-group row">
-                                                    <label class=" col-form-label">Filter: &nbsp;</label>
-                                                    <div>
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Wilayah, Sekolah" style="border-right: none;">
-                                                            <span class="input-group-append">
-                                                                <span class="input-group-text" style="border-left: none; background: none;">
-                                                                    <a href="#" style="color: black;"><i class="icon-search4"></i></a>
-                                                                </span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
+                                <div class="col-md-12 py-4 px-3">
+                                    <div class="row mb-3">
+                                        <div class="col-md-3">
+                                            <p class="mb-0">Nama</p>
+                                            <h5><b>Aura</b></h5>
                                         </div>
-                                        <div class="col-md-4">
-                                            <form action="#">
-                                                <div class="form-group row">
-                                                    <label class=" col-form-label">Filter: &nbsp;</label>
-                                                    <div>
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Divisi, Peran" style="border-right: none;">
-                                                            <span class="input-group-append">
-                                                                <span class="input-group-text" style="border-left: none; background: none;">
-                                                                    <a href="#" style="color: black;"><i class="icon-search4"></i></a>
-                                                                </span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <form action="#">
-                                                <div class="form-group row">
-                                                    <label class=" col-form-label">Status &nbsp;</label>
-                                                    <div>
-                                                        
-                                                            <select name="status" class="form-control select">
-                                                                <option value="0">Tidak Aktif</option>
-                                                                <option value="1">Aktif</option>
-                                                            </select>
-                                                        
-                                                    </div>
-                                                </div>
-                                            </form>
+                                        <div class="col-md-3">
+                                            <p class="mb-0">Peran</p>
+                                            <h5><b>Admin</b></h5>
                                         </div>
                                     </div>
-                                    <div class="col-md-2">
-                                        <div class="row justify-content-end">
-                                            <a href="#" class="btn btn-lg btn-primary"><i class="icon-plus3"></i> Tambahkan</a>
+                                    <div class="row mb-3">
+                                        <div class="col-md-3">
+                                            <p class="mb-0">Email</p>
+                                            <h5><b>auramay@gmail.com</b></h5>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p class="mb-0">Wilayah</p>
+                                            <h5><b>Jawa</b></h5>
                                         </div>
                                     </div>
-    
-                                </div>
-                                <div class="col-12">
-                                    <table class="table table-border-solid">
-                                        <thead>
-                                            <tr>
-                                                <th>Nama</th>
-                                                <th>Email</th>
-                                                <th>No. Hp</th>
-                                                <th>Peran</th>
-                                                <th>Status</th>
-                                                <th>Tindakan</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Aura</td>
-                                                <td>auramay@gmail.com</td>
-                                                <td>081334967111</td>
-                                                <td>Admin</td>
-                                                <td><span class="badge badge-danger ">Tertunda</span></td>
-                                                <td>
-                                                    <a href="#" class="btn btn-md btn-primary">Edit</a>
-                                                    <a href="#" class="btn btn-md btn-light">Detail</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Beth</td>
-                                                <td>auramay@gmail.com</td>
-                                                <td>081334967111</td>
-                                                <td>Keuangan</td>
-                                                <td><span class="badge badge-success ">Aktif</span></td>
-                                                <td>
-                                                    <a href="#" class="btn btn-md btn-primary">Edit</a>
-                                                    <a href="#" class="btn btn-md btn-light">Detail</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Delma</td>
-                                                <td>auramay@gmail.com</td>
-                                                <td>081334967111</td>
-                                                <td>Manager</td>
-                                                <td><span class="badge badge-primary">Tidak Aktif</span></td>
-                                                <td>
-                                                    <a href="#" class="btn btn-md btn-primary">Edit</a>
-                                                    <a href="#" class="btn btn-md btn-light">Detail</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lizze</td>
-                                                <td>auramay@gmail.com</td>
-                                                <td>081334967111</td>
-                                                <td>Admin</td>
-                                                <td><span class="badge badge-danger ">Tertunda</span></td>
-                                                <td>
-                                                    <a href="#" class="btn btn-md btn-primary">Edit</a>
-                                                    <a href="#" class="btn btn-md btn-light">Detail</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Marth</td>
-                                                <td>auramay@gmail.com</td>
-                                                <td>081334967111</td>
-                                                <td>Admin</td>
-                                                <td><span class="badge badge-danger ">Tertunda</span></td>
-                                                <td>
-                                                    <a href="#" class="btn btn-md btn-primary">Edit</a>
-                                                    <a href="#" class="btn btn-md btn-light">Detail</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Aura</td>
-                                                <td>auramay@gmail.com</td>
-                                                <td>081334967111</td>
-                                                <td>Admin</td>
-                                                <td><span class="badge badge-danger ">Tertunda</span></td>
-                                                <td>
-                                                    <a href="#" class="btn btn-md btn-primary">Edit</a>
-                                                    <a href="#" class="btn btn-md btn-light">Detail</a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                
-                                
+                                    <div class="row mb-3">
+                                        <div class="col-md-3">
+                                            <p class="mb-0">No. Hp</p>
+                                            <h5><b>auramay@gmail.com</b></h5>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p class="mb-0">Divisi</p>
+                                            <h5><b>Akademi</b></h5>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-3">
+                                            <p class="mb-0">Tanggal Bergabung</p>
+                                            <h5><b>19 Oktober 2019</b></h5>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p class="mb-0">Status</p>
+                                            <h5><b>Aktif</b></h5>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-5">
+                                        <div class="col-md-3">
+                                            <a href="#">Ubah Kata Sandi</a>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-end mr-1">
+                                        <a href="#" class="btn btn-primary btn-lg">Ubah Data</a>
+                                        
+                                    </div>
                             </div>
                         </div>
 						<!-- Traffic sources -->
@@ -509,26 +416,25 @@
 			</div>
 			<!-- /content area -->
 
-
-			<!-- Footer -->
-			<div class="navbar navbar-expand-lg navbar-light">
-				<div class="text-center d-lg-none w-100">
-					<button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
-						<i class="icon-unfold mr-2"></i>
-						Footer
-					</button>
-				</div>
-
-				<div class="navbar-collapse collapse" id="navbar-footer">
-					<span class="navbar-text">
-						<p class="mb-0">&copy; 2020 Sekolah Dian Harapan</p>
-					</span>
-				</div>
-			</div>
-			<!-- /footer -->
-
 		</div>
 		<!-- /main content -->
+
+		<!-- Footer -->
+		<div class="navbar navbar-expand-lg navbar-light">
+			<div class="text-center d-lg-none w-100">
+				<button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+					<i class="icon-unfold mr-2"></i>
+					Footer
+				</button>
+			</div>
+
+			<div class="navbar-collapse collapse" id="navbar-footer">
+				<span class="navbar-text">
+					<p class="mb-0">&copy; 2020 Sekolah Dian Harapan</p>
+				</span>
+			</div>
+		</div>
+		<!-- /footer -->
 
 	</div>
 	<!-- /page content -->
