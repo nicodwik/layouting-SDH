@@ -30,7 +30,7 @@
 	<script src="../../../../global_assets/js/plugins/ui/moment/moment.min.js"></script>
 	<script src="../../../../global_assets/js/plugins/pickers/daterangepicker.js"></script>
 
-	<script src="assets/js/app.js"></script>
+	<script src="../assets/js/app.js"></script>
 	<script src="../../../../global_assets/js/demo_pages/dashboard.js"></script>
 	<!-- /theme JS files -->
 
@@ -263,8 +263,8 @@
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
 								<li class="nav-item"><a href="users_list.html" class="nav-link">Daftar Pengguna</a></li>
-								<li class="nav-item"><a href="users_division.html" class="nav-link">Divisi</a></li>
-								<li class="nav-item"><a href="users_role_and_access.html" class="nav-link active">Peran dan Akses</a></li>
+								<li class="nav-item"><a href="users_division.html" class="nav-link active">Divisi</a></li>
+								<li class="nav-item"><a href="users_role_and_access.html" class="nav-link">Peran dan Akses</a></li>
 								
 							</ul>
 						</li>
@@ -324,8 +324,8 @@
 			<div class="page-header page-header-light">
 				<div class="page-header-content header-elements-md-inline">
 					<div class="page-title d-flex">
-						<h4><a href="users_list.html" style="color: black;"><i class="icon-arrow-left52 mr-2"></i></a> <span class="font-weight-semibold">Pengguna</h4>
-						
+						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Pengguna</h4>
+						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 					</div>
 				</div>
 
@@ -333,8 +333,8 @@
 					<div class="d-flex">
 						<div class="breadcrumb">
                             <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
-                            <a href="#" class="breadcrumb-item">Pengguna</a>
-							<span class="breadcrumb-item active">Peran dan Akses</span>
+                            <span class="breadcrumb-item">Pengguna</span>
+							<span class="breadcrumb-item active">Divisi</span>
 						</div>
 
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
@@ -346,74 +346,152 @@
 
 			<!-- Content area -->
 			<div class="content">
-                
-                <div class="row justify-content-between">
-                    
-                </div>
 				<!-- Main charts -->
 				
 					<div class="col-md-12">
                         <div class="row">
                             <div class="card w-100">
-                                
-                                    <form action="#" method="post">
-										<div class="col-md-6 py-4 px-4">
-											<div class="row mb-3">
-												<label for=""><b>Nama</b></label>
-												<input type="text" class="form-control" style="size: 100%;">
-											</div>
-											<div class="row mb-3">                                      
-												<label for=""><b>Deskripsi</b></label>
-												<textarea name="description" id="" cols="30" rows="10" class="form-control w-100"></textarea>
-											</div>
-											<div class="row mb-3">                                      
-												<label for=""><b>Akses</b></label>
-												
-											</div>
-										</div>
-										<div class="row m-3">
-											<div class="col-md-12 d-flex justify-content-end">
-												<button class="btn btn-primary btn-lg px-4">Simpan</button>
-											</div>
-										</div>
-                                    </form>
-                                
+                                <div class="row py-3 px-5 mb-0 d-flex justify-content-between">
+                                    <div class="col-md-10 d-flex ">
+                                        <div class="col-md-4">
+                                            <form action="#">
+                                                <div class="form-group row">
+                                                    <label class=" col-form-label">Filter: &nbsp;</label>
+                                                    <div>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Wilayah, Sekolah" style="border-right: none;">
+                                                            <span class="input-group-append">
+                                                                <span class="input-group-text" style="border-left: none; background: none;">
+                                                                    <a href="#" style="color: black;"><i class="icon-search4"></i></a>
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="row justify-content-end">
+                                            <a href="#" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#addUser"><i class="icon-plus3"></i> Tambahkan</a>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                <div class="col-12">
+                                    <div id="app">
+                                        <table class="table table-border-solid">
+                                            <thead>
+                                                <tr>
+                                                    <th>Wliayah</th>
+                                                    <th>Sekolah</th>
+                                                    <th>Alamat</th>
+                                                    <th>TIndakan</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr v-for='location in locations'>
+                                                    <td>{{location.region}}</td>
+                                                    <td>{{location.school}}</td>
+                                                    <td>{{location.address}}</td>
+                                                    <td>
+                                                        <a href="users_detail.html" class="btn btn-md btn-light">Detail</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-						<!-- Traffic sources -->
-						
-						<!-- /traffic sources -->
-
-					</div>
-				
-
+						<!-- Modal -->
+						<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+							  <div class="modal-content">
+								<div class="modal-header">
+								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Divisi</b></h5>
+								</div>
+								<div class="modal-body">
+									<form action="#" class="form-group">
+										<div class="row mb-3">
+											<label for=""><b>Nama Divisi</b></label>
+											<input class="form-control" type="text" placeholder="Non Akademi">
+										</div>
+										<div class="row mb-3">
+											<label for=""><b>Deskripsi</b></label>
+											<textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
+										</div>
+									</form>
+								</div>
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-link text-danger" data-dismiss="modal">Batalkan</button>
+								  <button type="button" class="btn btn-primary">Tambahkan</button>
+								</div>
+							  </div>
+							</div>
+						  </div>
+                    </div>
+                    
 			</div>
             <!-- /content area -->
             
             <!-- Footer -->
-		<div class="navbar navbar-expand-lg navbar-light">
-			<div class="text-center d-lg-none w-100">
-				<button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
-					<i class="icon-unfold mr-2"></i>
-					Footer
-				</button>
-			</div>
-
-			<div class="navbar-collapse collapse" id="navbar-footer">
-				<span class="navbar-text">
-					<p class="mb-0">&copy; 2020 Sekolah Dian Harapan</p>
-				</span>
-			</div>
+            <div class="navbar navbar-expand-lg navbar-light">
+                <div class="text-center d-lg-none w-100">
+                    <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+                        <i class="icon-unfold mr-2"></i>
+                        Footer
+                    </button>
+                </div>
+    
+                <div class="navbar-collapse collapse" id="navbar-footer">
+                    <span class="navbar-text">
+                        <p class="mb-0">&copy; 2020 Sekolah Dian Harapan</p>
+                    </span>
+                </div>
+            </div>
+            <!-- /footer -->
+            
 		</div>
-		<!-- /footer -->
+        <!-- /main content -->
 
-		</div>
-		<!-- /main content -->
-
-		
 
 	</div>
 	<!-- /page content -->
-
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                locations: [
+                    {
+                        region: 'Jawa',
+                        school: 'SDH Tangerang',
+                        address: 'Jl. Kebayoran Baru No. 50'
+                    },
+                    {
+                        region: 'Sumatra',
+                        school: 'SDH Jambi',
+                        address: 'Jl. Kebayoran Baru No. 50'
+                    },
+                    {
+                        region: 'Sumatra',
+                        school: 'SDH Palembang',
+                        address: 'Jl. Kebayoran Baru No. 50'
+                    },
+                    {
+                        region: 'Jawa',
+                        school: 'SDH Kupang',
+                        address: 'Jl. Kebayoran Baru No. 50'
+                    },
+                    {
+                        region: 'Sumatra',
+                        school: 'SDH Jambi',
+                        address: 'Jl. Kebayoran Baru No. 50'
+                    }
+                ]
+            }
+        })
+    </script>
 </body>
 </html>
