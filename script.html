@@ -11,7 +11,6 @@
 	<link href="../../../../global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/bootstrap_limitless.min.css" rel="stylesheet" type="text/css">
-	<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 	<link href="../assets/css/layout.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/components.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/colors.min.css" rel="stylesheet" type="text/css">
@@ -285,8 +284,8 @@
 							<a href="#" class="nav-link"><i class="icon-file-text2"></i> <span>Kontrak</span></a>
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-								<li class="nav-item"><a href="./contracts_list.html" class="nav-link active">Daftar Kontrak</a></li>
-								<li class="nav-item"><a href="./vendors_list.html" class="nav-link">Daftar Vendor</a></li>
+								<li class="nav-item"><a href="./contracts_list.html" class="nav-link">Daftar Kontrak</a></li>
+								<li class="nav-item"><a href="./vendors_list.html" class="nav-link active">Daftar Vendor</a></li>
 								
 							</ul>
 						</li>
@@ -391,85 +390,81 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="row justify-content-end">
-                                            <a href="#" class="btn btn-lg btn-primary mr-3" data-toggle="modal" data-target="#addContract"><i class="icon-plus3"></i> Tambahkan</a>
+                                            <a href="#" class="btn btn-lg btn-primary mr-3" data-toggle="modal" data-target="#addVendor"><i class="icon-plus3"></i> Tambahkan</a>
                                         </div>
                                     </div>
     
                                 </div>
                                 <div class="col-12">
                                     <div id="app">
-                                        <table class="table table-border-solid">
-                                            <thead>
-                                                <tr>
-                                                    <th>No. Kontrak</th>
-                                                    <th>Vendor</th>
-                                                    <th>Tanggal Mulai</th>
-                                                    <th>Tanggal Berakhir</th>
-                                                    <th>Lokasi</th>
-                                                    <th>Anggaran</th>
-                                                    <th>Pekerjaan</th>
-                                                    <th>Tindakan</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr v-for='contract in contracts'>
-                                                    <td>{{contract.number}}</td>
-                                                    <td>{{contract.vendor}}</td>
-                                                    <td>{{contract.startDate}}</td>
-                                                    <td>{{contract.endDate}}</td>
-                                                    <td>{{contract.location}}</td>
-                                                    <td>{{contract.budget}}</td>
-                                                    <td>{{contract.totalJob}}</td>
-                                                    <td>
-                                                        <a href="users_detail.html" class="btn btn-md btn-light">Detail</a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                                            </li>
+                                            <li class="nav-item">
+                                              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                                            </li>
+                                            <li class="nav-item">
+                                              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                                            </li>
+                                          </ul>
+                                          <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="home" role="tabpanel" >Home</div>
+                                            <div class="tab-pane fade" id="profile" role="tabpanel" >Profile</div>
+                                            <div class="tab-pane fade" id="contact" role="tabpanel" >Contact</div>
+                                          </div>
+                                        <div class="form-group">
+                                            <label for="">set max budget 1</label>
+                                            <input type="number" v-model='budget1' class="form-control">
+                                            <input type="text" v-model='budgetCut1' class="form-control">
+                                            <p>{{budget1 > 1 ? `1 s/d ${budget1 - 1}` : ''}}</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">set max budget 2</label>
+                                            <input type="number" v-model='budget2' class="form-control">
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
 						<!-- Modal -->
-						<div class="modal fade" id="addContract" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal fade" id="addVendor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 							<div class="modal-dialog" role="document">
 							  <div class="modal-content">
 								<div class="modal-header">
-								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Kontrak</b></h5>
+								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Vendor</b></h5>
 								</div>
 								<div class="modal-body">
 									<form action="#" class="form-group">
 										<div class="row mb-3">
-											<label for=""><b>No. Kontrak</b></label>
-											<input class="form-control" type="text" placeholder="123456789">
-										</div>
-										<div class="row mb-3">
 											<label for=""><b>Vendor</b></label>
-											<input class="form-control" type="text" placeholder="PT. Sejahtera Utama">
+											<input class="form-control" type="text" placeholder="PT. Angkasa">
 										</div>
 										<div class="row mb-3">
-											<label for=""><b>Tanggal Mulai</b></label>
-											<input id="datepicker">
+											<label for=""><b>Nama Kontak</b></label>
+											<input type="text" class="form-control" placeholder="Arif">
 										</div>
 										<div class="row mb-3">
-											<label for=""><b>Tanggal Berakhir</b></label>
-											<input id="datepicker2">
-										</div>
+											<label for=""><b>No. Hp</b></label>
+											<input type="text" class="form-control" placeholder="08123456789">
+                                        </div>
 										<div class="row mb-3">
-											<label for=""><b>Lokasi</b></label>
-											<input class="form-control" type="text" placeholder="SDH Kemang">
-										</div>
+											<label for=""><b>Email</b></label>
+											<input type="text" class="form-control" placeholder="arfiramlan@gmail.com">
+                                        </div>
 										<div class="row mb-3">
-											<label for=""><b>Pilih Pekerjaan</b></label>
-											<select name="role" id="" class="form-control">
-												<option value="admin">Admin</option>
-												<option value="pegawai">Pegawai</option>
-											</select>
-										</div>
-										
+											<label for=""><b>Alamat</b></label>
+											<input type="text" class="form-control" placeholder="Jln. Menuju Kebenaran">
+                                        </div>
+										<div class="row mb-3">
+											<label for=""><b>Keterangan</b></label>
+											<input type="text" class="form-control" placeholder="Harga murah">
+                                        </div>
+
 									</form>
 								</div>
-								<div class="modal-footer mt-3">
+								<div class="modal-footer">
 								  <button type="button" class="btn btn-link text-danger" data-dismiss="modal">Batalkan</button>
 								  <button type="submit" class="btn btn-primary">Tambahkan</button>
 								</div>
@@ -504,80 +499,17 @@
 
 	</div>
 	<!-- /page content -->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <script src="https://unpkg.com/vue"></script>
 	<script>
 		new Vue({
 			el: '#app',
 			data: {
-				contracts: [
-					{
-						number: 12345678,
-						vendor: 'PT. Angkasa',
-						startDate: '20 Januari 2019',
-						endDate: '29 Februari 2019',
-						location: 'SDH Jawa',
-						budget: 'Rp. 1.500.000',
-						totalJob: 10
-					},
-					{
-						number: 12345678,
-						vendor: 'PT. Cahaya Baru',
-						startDate: '20 Januari 2019',
-						endDate: '29 Februari 2019',
-						location: 'SDH Kupang',
-						budget: 'Rp. 1.500.000',
-						totalJob: 8
-					},
-					{
-						number: 12345678,
-						vendor: 'PT. Gemilang',
-						startDate: '20 Januari 2019',
-						endDate: '29 Februari 2019',
-						location: 'SDH Tangerang',
-						budget: 'Rp. 1.500.000',
-						totalJob: 5
-					},
-					{
-						number: 12345678,
-						vendor: 'PT. Angkasa',
-						startDate: '20 Januari 2019',
-						endDate: '29 Februari 2019',
-						location: 'SDH Kupang',
-						budget: 'Rp. 1.500.000',
-						totalJob: 10
-					},
-					{
-						number: 12345678,
-						vendor: 'PT. Gemilang',
-						startDate: '20 Januari 2019',
-						endDate: '29 Februari 2019',
-						location: 'SDH Jawa',
-						budget: 'Rp. 1.500.000',
-						totalJob: 3
-					},
-					{
-						number: 12345678,
-						vendor: 'PT. Angkasa',
-						startDate: '20 Januari 2019',
-						endDate: '29 Februari 2019',
-						location: 'SDH Tangerang',
-						budget: 'Rp. 1.500.000',
-						totalJob: 1
-					},
-				]
+				budget1: null,
+                budget2: '',
+                // budgetCut1: parseInt(budget1) - 1
 			}
 		})
 	</script>
-	<script>
-		$('#datepicker').datepicker({
-			uiLibrary: 'bootstrap4'
-		})
-		$('#datepicker2').datepicker({
-			uiLibrary: 'bootstrap4'
-		})
-	</script>
-
+     
 </body>
 </html>

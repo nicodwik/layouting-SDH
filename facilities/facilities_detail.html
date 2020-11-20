@@ -11,11 +11,18 @@
 	<link href="../../../../global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/bootstrap_limitless.min.css" rel="stylesheet" type="text/css">
-	<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.19.0/bootstrap-vue.min.css"/>
 	<link href="../assets/css/layout.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/components.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/colors.min.css" rel="stylesheet" type="text/css">
 	<!-- /global stylesheets -->
+	
+	<style>
+		.budgetInfo td {
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+	</style>
 
 	<!-- Core JS files -->
 	<script src="../../../../global_assets/js/main/jquery.min.js"></script>
@@ -260,7 +267,7 @@
 							</a>
 						</li>
 						<li class="nav-item nav-item-submenu">
-							<a href="#" class="nav-link"><i class="icon-users"></i> <span>Pengguna</span></a>
+							<a href="#" class="nav-link"><i class="icon-users"></i> <span>Detail Barang</span></a>
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
 								<li class="nav-item"><a href="users_list.html" class="nav-link">Daftar Pengguna</a></li>
@@ -272,21 +279,21 @@
 						<li class="nav-item">
 							<a href="../locations/locations_list.html" class="nav-link"><i class="icon-location4"></i> <span>Lokasi</span></a>
 						</li>
-						<li class="nav-item nav-item-submenu ">
-							<a href="#" class="nav-link"><i class="icon-city"></i> <span>Fasilitas</span></a>
+						<li class="nav-item nav-item-submenu nav-item-expanded nav-item-open">
+							<a href="#" class="nav-link active"><i class="icon-city"></i> <span>Fasilitas</span></a>
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-								<li class="nav-item"><a href="./facilities_list.html" class="nav-link">Daftar Barang</a></li>
+								<li class="nav-item"><a href="./facilities_list.html" class="nav-link active">Daftar Barang</a></li>
 								<li class="nav-item"><a href="./facilities_profile_setting.html" class="nav-link">Pengaturan Profil</a></li>
 								
 							</ul>
 						</li>
-						<li class="nav-item nav-item-submenu nav-item-expanded nav-item-open">
+						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link"><i class="icon-file-text2"></i> <span>Kontrak</span></a>
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-								<li class="nav-item"><a href="./contracts_list.html" class="nav-link active">Daftar Kontrak</a></li>
-								<li class="nav-item"><a href="./vendors_list.html" class="nav-link">Daftar Vendor</a></li>
+								<li class="nav-item"><a href="../seed/layout_nav_horizontal.html" class="nav-link">Daftar Kontrak</a></li>
+								<li class="nav-item"><a href="../seed/sidebar_none.html" class="nav-link">Daftar Vendor</a></li>
 								
 							</ul>
 						</li>
@@ -325,7 +332,7 @@
 			<div class="page-header page-header-light">
 				<div class="page-header-content header-elements-md-inline">
 					<div class="page-title d-flex">
-						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Pengguna</h4>
+						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Detail Barang</h4>
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 					</div>
 				</div>
@@ -334,7 +341,7 @@
 					<div class="d-flex">
 						<div class="breadcrumb">
                             <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Dashboard</a>
-                            <span class="breadcrumb-item">Daftar Kontrak</span>
+                            <span class="breadcrumb-item">Daftar Barang</span>
 						</div>
 
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
@@ -350,128 +357,241 @@
 				
 					<div class="col-md-12">
                         <div class="row">
-                            <div class="card w-100">
-                                <div class="row py-3 px-5 mb-0 d-flex justify-content-between">
-                                    <div class="col-md-8 d-flex ">
-                                        <div class="col-md-6">
-                                            <form action="#">
-                                                <div class="form-group row">
-                                                    <label class=" col-form-label">Filter: &nbsp;</label>
-                                                    <div>
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Wilayah, Sekolah" style="border-right: none;">
-                                                            <span class="input-group-append">
-                                                                <span class="input-group-text" style="border-left: none; background: none;">
-                                                                    <a href="#" style="color: black;"><i class="icon-search4"></i></a>
-                                                                </span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <form action="#">
-                                                <div class="form-group row">
-                                                    <label class=" col-form-label">Filter: &nbsp;</label>
-                                                    <div>
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Kondisi" style="border-right: none;">
-                                                            <span class="input-group-append">
-                                                                <span class="input-group-text" style="border-left: none; background: none;">
-                                                                    <a href="#" style="color: black;"><i class="icon-search4"></i></a>
-                                                                </span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="row justify-content-end">
-                                            <a href="#" class="btn btn-lg btn-primary mr-3" data-toggle="modal" data-target="#addContract"><i class="icon-plus3"></i> Tambahkan</a>
-                                        </div>
-                                    </div>
-    
-                                </div>
+                            
+                                
                                 <div class="col-12">
                                     <div id="app">
-                                        <table class="table table-border-solid">
-                                            <thead>
-                                                <tr>
-                                                    <th>No. Kontrak</th>
-                                                    <th>Vendor</th>
-                                                    <th>Tanggal Mulai</th>
-                                                    <th>Tanggal Berakhir</th>
-                                                    <th>Lokasi</th>
-                                                    <th>Anggaran</th>
-                                                    <th>Pekerjaan</th>
-                                                    <th>Tindakan</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr v-for='contract in contracts'>
-                                                    <td>{{contract.number}}</td>
-                                                    <td>{{contract.vendor}}</td>
-                                                    <td>{{contract.startDate}}</td>
-                                                    <td>{{contract.endDate}}</td>
-                                                    <td>{{contract.location}}</td>
-                                                    <td>{{contract.budget}}</td>
-                                                    <td>{{contract.totalJob}}</td>
-                                                    <td>
-                                                        <a href="users_detail.html" class="btn btn-md btn-light">Detail</a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+										
+										<b-card visible no-body class="mb-3 border-bottom">
+										<b-button block v-b-toggle.accordion-1 variant='light' class="text-left py-2"><strong>Info Barang</strong></b-button>
+											<b-collapse id="accordion-1" visible>
+											<b-card-body>
+												<div class="row py-4 px-3 justify-content-between">
+													<div class="col-md-4">
+													<div class="row mb-3">
+														<div class="col-6">
+															<p class="mb-0">Nama Barang</p>
+															<h5><b>AC</b></h5>
+														</div>
+														<div class="col-6">
+															<p class="mb-0">Tipe</p>
+															<h5><b>Split</b></h5>
+														</div>
+													</div>
+													<div class="row mb-3">
+														<div class="col-6">
+															<p class="mb-0">Kode Barang</p>
+															<h5><b>AP31678</b></h5>
+														</div>
+														<div class="col-6">
+															<p class="mb-0">Merek</p>
+															<h5><b>Daihatsu</b></h5>
+														</div>
+													</div>
+													<div class="row mb-3">
+														<div class="col-6">
+															<p class="mb-0">Jenis Barang</p>
+															<h5><b>AC Bagus</b></h5>
+														</div>
+														<div class="col-6">
+															<p class="mb-0">Harga Beli</p>
+															<h5><b>Rp 5.000.000</b></h5>
+														</div>
+													</div>
+													<div class="row mb-3">
+														<div class="col-6">
+															<p class="mb-0">Lokasi</p>
+															<h5><b>SDH Jawa</b></h5>
+														</div>
+														<div class="col-6">
+															<p class="mb-0">Tahun Beli</p>
+															<h5><b>2015</b></h5>
+														</div>
+													</div>
+													<div class="row mb-3">
+														<div class="col-6">
+															<p class="mb-0">Wilayah</p>
+															<h5><b>Jawa</b></h5>
+														</div>
+														<div class="col-6">
+															<p class="mb-0">Tahun Input</p>
+															<h5><b>2018</b></h5>
+														</div>
+													</div>
+													<div class="row mb-3">
+														<div class="col-6">
+															<p class="mb-0">Lantai</p>
+															<h5><b>Bawah</b></h5>
+														</div>
+														<div class="col-6">
+															<p class="mb-0">Profil Pemeliharaan</p>
+															<h5><b>AC Split</b></h5>
+														</div>
+													</div>
+													</div>
+													<div class="col-md-6">
+														<div class="card px-4 py-4">
+														<table class="table table-borderless">
+															<tbody class='budgetInfo'>
+																<tr>
+																	<td class="w-25"><b>Anggaran</b></td>
+																</tr>
+																<tr>
+																	<td>Pemeliharaan</td>
+																	<td>Rp 50.000.000</td>
+																</tr>
+																<tr>
+																	<td>Perbaikan</td>
+																	<td>Rp 20.000.000</td>
+																</tr>
+																<tr>
+																	<td>TOTAL</td>
+																	<td>Rp 70.000.000</td>
+																</tr>
+																<tr>
+																	<td><b>Biaya</b></td>
+																</tr>
+																<tr>
+																	<td>Pemeliharaan</td>
+																	<td>Rp 50.000.000</td>
+																</tr>
+																<tr>
+																	<td>Perbaikan</td>
+																	<td>Rp 20.000.000</td>
+																</tr>
+																<tr>
+																	<td>TOTAL</td>
+																	<td>Rp 70.000.000</td>
+																</tr>
+															</tbody>
+														</table>
+														</div>
+													</div>
+												</div>
+											</b-card-body>
+											</b-collapse>
+										</b-card>
+
+										<b-card visible no-body class="mb-3 border-bottom">
+											<b-button block v-b-toggle.accordion-2 variant='light' class="text-left py-2"><strong>Riwayat Laporan</strong></b-button>
+												<b-collapse id="accordion-2" visible>
+												<table class="table table-border-solid">
+													<thead>
+														<tr class="text-center">
+															<th><b>Pelapor</b></th>
+															<th><b>Tanggal Laporan</b></th>
+															<th><b>Deskripsi</b></th>
+															<th><b>Foto</b></th>
+															<th><b>Tingkat Darurat</b></th>
+															<th><b>Tindakan</b></th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr class="text-center" v-for='report in reports'>
+															<td>{{report.reporter}}</td>
+															<td>{{report.reportDate}}</td>
+															<td>{{report.description}}</td>
+															<td>{{report.photo}}</td>
+															<td>{{report.level}}</td>
+															<td>
+																<a href="#" class="btn btn-primary btn-md">Edit</a>
+																<a href="#" class="btn btn-light btn-md">Detail</a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</b-collapse>
+										</b-card>
+
+										<b-card visible no-body class="mb-3 border-bottom">
+											<b-button block v-b-toggle.accordion-3 variant='light' class="text-left py-2"><strong>Riwayat Pengerjaan</strong></b-button>
+												<b-collapse id="accordion-3" visible>
+												<table class="table table-border-solid">
+													<thead>
+														<tr class="text-center">
+															<th><b>Kode WO</b></th>
+															<th><b>Vendor</b></th>
+															<th><b>Tanggal Mulai</b></th>
+															<th><b>Tanggal Berakhir</b></th>
+															<th><b>Status</b></th>
+															<th><b>Anggaran</b></th>
+															<th><b>TIndakan</b></th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr class="text-center" v-for='job in jobs'>
+															<td>{{job.WOCode}}</td>
+															<td>{{job.vendor}}</td>
+															<td>{{job.startDate}}</td>
+															<td>{{job.endDate}}</td>
+															<td>{{job.status}}</td>
+															<td>{{job.budget}}</td>
+															<td>
+																<a href="#" class="btn btn-primary btn-md">Edit</a>
+																<a href="#" class="btn btn-light btn-md">Detail</a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</b-collapse>
+										</b-card>
+
+										<b-card visible no-body class="mb-3 border-bottom">
+											<b-button block v-b-toggle.accordion-4 variant='light' class="text-left py-2"><strong>Jadwal Pemeliharaan</strong></b-button>
+												<b-collapse id="accordion-4" visible>
+												<table class="table table-border-solid">
+													<thead>
+														<tr class="text-center">
+															<th><b>Vendor</b></th>
+															<th><b>Tanggal Mulai</b></th>
+															<th><b>Tanggal Berakhir</b></th>
+															<th><b>Status</b></th>
+															<th><b>Anggaran</b></th>
+															<th><b>TIndakan</b></th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr class="text-center" v-for='schedule in schedules'>
+															<td>{{schedule.vendor}}</td>
+															<td>{{schedule.startDate}}</td>
+															<td>{{schedule.endDate}}</td>
+															<td>{{schedule.status}}</td>
+															<td>{{schedule.budget}}</td>
+															<td>
+																<a href="#" class="btn btn-primary btn-md">Edit</a>
+																<a href="#" class="btn btn-light btn-md">Detail</a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</b-collapse>
+										</b-card>
+									</div>
                                 </div>
-                            </div>
+                            
                         </div>
 						<!-- Modal -->
-						<div class="modal fade" id="addContract" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 							<div class="modal-dialog" role="document">
 							  <div class="modal-content">
 								<div class="modal-header">
-								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Kontrak</b></h5>
+								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Divisi</b></h5>
 								</div>
 								<div class="modal-body">
 									<form action="#" class="form-group">
 										<div class="row mb-3">
-											<label for=""><b>No. Kontrak</b></label>
-											<input class="form-control" type="text" placeholder="123456789">
+											<label for=""><b>Nama Divisi</b></label>
+											<input class="form-control" type="text" placeholder="Non Akademi">
 										</div>
 										<div class="row mb-3">
-											<label for=""><b>Vendor</b></label>
-											<input class="form-control" type="text" placeholder="PT. Sejahtera Utama">
+											<label for=""><b>Deskripsi</b></label>
+											<textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
 										</div>
-										<div class="row mb-3">
-											<label for=""><b>Tanggal Mulai</b></label>
-											<input id="datepicker">
-										</div>
-										<div class="row mb-3">
-											<label for=""><b>Tanggal Berakhir</b></label>
-											<input id="datepicker2">
-										</div>
-										<div class="row mb-3">
-											<label for=""><b>Lokasi</b></label>
-											<input class="form-control" type="text" placeholder="SDH Kemang">
-										</div>
-										<div class="row mb-3">
-											<label for=""><b>Pilih Pekerjaan</b></label>
-											<select name="role" id="" class="form-control">
-												<option value="admin">Admin</option>
-												<option value="pegawai">Pegawai</option>
-											</select>
-										</div>
-										
 									</form>
 								</div>
-								<div class="modal-footer mt-3">
+								<div class="modal-footer">
 								  <button type="button" class="btn btn-link text-danger" data-dismiss="modal">Batalkan</button>
-								  <button type="submit" class="btn btn-primary">Tambahkan</button>
+								  <button type="button" class="btn btn-primary">Tambahkan</button>
 								</div>
 							  </div>
 							</div>
@@ -504,80 +624,70 @@
 
 	</div>
 	<!-- /page content -->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <script src="https://unpkg.com/vue"></script>
-	<script>
-		new Vue({
-			el: '#app',
-			data: {
-				contracts: [
+	<script src="https://unpkg.com/vue"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.19.0/bootstrap-vue.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                reports: [
 					{
-						number: 12345678,
-						vendor: 'PT. Angkasa',
-						startDate: '20 Januari 2019',
-						endDate: '29 Februari 2019',
-						location: 'SDH Jawa',
-						budget: 'Rp. 1.500.000',
-						totalJob: 10
+						reporter: 'Abdi',
+						reportDate: '20 Agustus 2019',
+						description: 'AC Rusak',
+						photo: 2,
+						level: 'Sedang',
 					},
 					{
-						number: 12345678,
+						reporter: 'John',
+						reportDate: '20 Agustus 2019',
+						description: 'AC Bocor',
+						photo: 1,
+						level: 'Tinggi',
+					},
+				],
+				jobs: [
+					{
+						WOCode: 123456789,
+						vendor: 'PT. ANgkasa Raya',
+						startDate: '20 Juli 2019',
+						endDate: '20 Agustus 2019',
+						status: 'Selesai',
+						budget: 'Rp. 5.000.000'
+					},
+					{
+						WOCode: 123456789,
+						vendor: 'PT. ANgkasa Raya',
+						startDate: '20 Juli 2019',
+						endDate: '20 Agustus 2019',
+						status: 'Dijadwalkan',
+						budget: 'Rp. 5.000.000'
+					}
+				],
+				schedules: [
+					{
+						vendor: 'PT. ANgkasa Raya',
+						startDate: '20 Juli 2019',
+						endDate: '20 Agustus 2019',
+						status: 'Dijadwalkan',
+						budget: 'Belum Ada'
+					},
+					{
 						vendor: 'PT. Cahaya Baru',
-						startDate: '20 Januari 2019',
-						endDate: '29 Februari 2019',
-						location: 'SDH Kupang',
-						budget: 'Rp. 1.500.000',
-						totalJob: 8
-					},
-					{
-						number: 12345678,
-						vendor: 'PT. Gemilang',
-						startDate: '20 Januari 2019',
-						endDate: '29 Februari 2019',
-						location: 'SDH Tangerang',
-						budget: 'Rp. 1.500.000',
-						totalJob: 5
-					},
-					{
-						number: 12345678,
-						vendor: 'PT. Angkasa',
-						startDate: '20 Januari 2019',
-						endDate: '29 Februari 2019',
-						location: 'SDH Kupang',
-						budget: 'Rp. 1.500.000',
-						totalJob: 10
-					},
-					{
-						number: 12345678,
-						vendor: 'PT. Gemilang',
-						startDate: '20 Januari 2019',
-						endDate: '29 Februari 2019',
-						location: 'SDH Jawa',
-						budget: 'Rp. 1.500.000',
-						totalJob: 3
-					},
-					{
-						number: 12345678,
-						vendor: 'PT. Angkasa',
-						startDate: '20 Januari 2019',
-						endDate: '29 Februari 2019',
-						location: 'SDH Tangerang',
-						budget: 'Rp. 1.500.000',
-						totalJob: 1
-					},
+						startDate: '20 Juli 2019',
+						endDate: '20 Agustus 2019',
+						status: 'Dijadwalkan',
+						budget: 'Rp. 5.000.000'
+					}
 				]
-			}
+            }
+        })
+    </script>
+	<script type="module">
+		import {Sidebar} from '../components/sidebar.js'
+		new Vue({
+			el: '#sidebar'
 		})
 	</script>
-	<script>
-		$('#datepicker').datepicker({
-			uiLibrary: 'bootstrap4'
-		})
-		$('#datepicker2').datepicker({
-			uiLibrary: 'bootstrap4'
-		})
-	</script>
-
 </body>
 </html>
