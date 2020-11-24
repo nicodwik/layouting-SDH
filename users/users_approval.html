@@ -258,34 +258,35 @@
 								</span>
 							</a>
 						</li>
-						<li class="nav-item nav-item-submenu">
-							<a href="#" class="nav-link"><i class="icon-users"></i> <span>Pengguna</span></a>
+						<li class="nav-item nav-item-submenu nav-item-expanded nav-item-open">
+							<a href="#" class="nav-link active"><i class="icon-users"></i> <span>Pengguna</span></a>
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
 								<li class="nav-item"><a href="users_list.html" class="nav-link">Daftar Pengguna</a></li>
 								<li class="nav-item"><a href="users_division.html" class="nav-link">Divisi</a></li>
 								<li class="nav-item"><a href="users_role_and_access.html" class="nav-link">Peran dan Akses</a></li>
+								<li class="nav-item"><a href="users_approval.html" class="nav-link active">Pengaturan Approval</a></li>
 								
 							</ul>
 						</li>
 						<li class="nav-item">
 							<a href="../locations/locations_list.html" class="nav-link"><i class="icon-location4"></i> <span>Lokasi</span></a>
 						</li>
-						<li class="nav-item nav-item-submenu ">
+						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link"><i class="icon-city"></i> <span>Fasilitas</span></a>
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-								<li class="nav-item"><a href="./facilities_list.html" class="nav-link">Daftar Barang</a></li>
-								<li class="nav-item"><a href="./facilities_profile_setting.html" class="nav-link">Pengaturan Profil</a></li>
+								<li class="nav-item"><a href="../seed/layout_nav_horizontal.html" class="nav-link">Daftar Barang</a></li>
+								<li class="nav-item"><a href="../seed/sidebar_none.html" class="nav-link">Pengaturan Profil</a></li>
 								
 							</ul>
 						</li>
-						<li class="nav-item nav-item-submenu nav-item-expanded nav-item-open">
+						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link"><i class="icon-file-text2"></i> <span>Kontrak</span></a>
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-								<li class="nav-item"><a href="./contracts_list.html" class="nav-link">Daftar Kontrak</a></li>
-								<li class="nav-item"><a href="./vendors_list.html" class="nav-link active">Daftar Vendor</a></li>
+								<li class="nav-item"><a href="../seed/layout_nav_horizontal.html" class="nav-link">Daftar Kontrak</a></li>
+								<li class="nav-item"><a href="../seed/sidebar_none.html" class="nav-link">Daftar Vendor</a></li>
 								
 							</ul>
 						</li>
@@ -332,8 +333,9 @@
 				<div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
 					<div class="d-flex">
 						<div class="breadcrumb">
-                            <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Dashboard</a>
-                            <span class="breadcrumb-item">Daftar Kontrak</span>
+                            <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
+                            <span class="breadcrumb-item">Pengguna</span>
+							<span class="breadcrumb-item active">Pengaturan Approval</span>
 						</div>
 
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
@@ -351,14 +353,14 @@
                         <div class="row">
                             <div class="card w-100">
                                 <div class="row py-3 px-5 mb-0 d-flex justify-content-between">
-                                    <div class="col-md-8 d-flex ">
-                                        <div class="col-md-6">
+                                    <div class="col-md-10 d-flex ">
+                                        <div class="col-md-4">
                                             <form action="#">
                                                 <div class="form-group row">
-                                                    <label class=" col-form-label">Filter: &nbsp;</label>
+                                                    
                                                     <div>
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Wilayah, Sekolah" style="border-right: none;">
+                                                            <input type="text" class="form-control" placeholder="Pencarian" style="border-right: none;">
                                                             <span class="input-group-append">
                                                                 <span class="input-group-text" style="border-left: none; background: none;">
                                                                     <a href="#" style="color: black;"><i class="icon-search4"></i></a>
@@ -369,104 +371,67 @@
                                                 </div>
                                             </form>
                                         </div>
-                                        <div class="col-md-6">
-                                            <form action="#">
-                                                <div class="form-group row">
-                                                    <label class=" col-form-label">Filter: &nbsp;</label>
-                                                    <div>
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Kondisi" style="border-right: none;">
-                                                            <span class="input-group-append">
-                                                                <span class="input-group-text" style="border-left: none; background: none;">
-                                                                    <a href="#" style="color: black;"><i class="icon-search4"></i></a>
-                                                                </span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <div class="row justify-content-end">
-                                            <a href="#" class="btn btn-lg btn-primary mr-3" data-toggle="modal" data-target="#addVendor"><i class="icon-plus3"></i> Tambahkan</a>
+                                            <a href="#" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#addUser"><i class="icon-plus3"></i> Tambahkan</a>
                                         </div>
                                     </div>
     
                                 </div>
-                                <div class="col-12">
+                                <div class="col-12 px-0">
                                     <div id="app">
-                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                            <li class="nav-item">
-                                              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-                                            </li>
-                                            <li class="nav-item">
-                                              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-                                            </li>
-                                            <li class="nav-item">
-                                              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
-                                            </li>
-                                          </ul>
-                                          <div class="tab-content" id="myTabContent">
-                                            <div class="tab-pane fade show active" id="home" role="tabpanel" >Home</div>
-                                            <div class="tab-pane fade" id="profile" role="tabpanel" >Profile</div>
-                                            <div class="tab-pane fade" id="contact" role="tabpanel" >Contact</div>
-                                          </div>
-                                        <div class="form-group">
-                                            <label for="">set max budget 1</label>
-                                            <input type="number" v-model='budget1' class="form-control">
-                                            <input type="text" v-model='budgetCut1' class="form-control">
-                                            <p>{{budget1 > 1 ? `1 s/d ${budget1 - 1}` : ''}}</p>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">set max budget 2</label>
-                                            <input type="number" v-model='budget2' class="form-control">
-                                        </div>
-                                        
+                                        <table class="table table-border-solid">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nama Set</th>
+                                                    <th>Deskripsi</th>
+                                                    <th>Dana Minimum</th>
+                                                    <th>Dana Maksimum</th>
+                                                    <th>Tindakan</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                
+                                                <tr v-for='approval in approvals'>
+                                                    <td>{{approval.name}}</td>
+                                                    <td>{{approval.description}}</td>
+                                                    <td>{{approval.minimum}}</td>
+                                                    <td>{{approval.maximum}}</td>
+                                                    <td>
+                                                        <a href="#" class="btn btn-md btn-primary">Edit</a>
+                                                        <a href="#" class="btn btn-md btn-light">Detail</a>
+                                                    </td>
+                                                </tr>
+    
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
 						<!-- Modal -->
-						<div class="modal fade" id="addVendor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 							<div class="modal-dialog" role="document">
 							  <div class="modal-content">
 								<div class="modal-header">
-								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Vendor</b></h5>
+								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Divisi</b></h5>
 								</div>
 								<div class="modal-body">
 									<form action="#" class="form-group">
 										<div class="row mb-3">
-											<label for=""><b>Vendor</b></label>
-											<input class="form-control" type="text" placeholder="PT. Angkasa">
+											<label for=""><b>Nama Divisi</b></label>
+											<input class="form-control" type="text" placeholder="Non Akademi">
 										</div>
 										<div class="row mb-3">
-											<label for=""><b>Nama Kontak</b></label>
-											<input type="text" class="form-control" placeholder="Arif">
+											<label for=""><b>Deskripsi</b></label>
+											<textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
 										</div>
-										<div class="row mb-3">
-											<label for=""><b>No. Hp</b></label>
-											<input type="text" class="form-control" placeholder="08123456789">
-                                        </div>
-										<div class="row mb-3">
-											<label for=""><b>Email</b></label>
-											<input type="text" class="form-control" placeholder="arfiramlan@gmail.com">
-                                        </div>
-										<div class="row mb-3">
-											<label for=""><b>Alamat</b></label>
-											<input type="text" class="form-control" placeholder="Jln. Menuju Kebenaran">
-                                        </div>
-										<div class="row mb-3">
-											<label for=""><b>Keterangan</b></label>
-											<input type="text" class="form-control" placeholder="Harga murah">
-                                        </div>
-
 									</form>
 								</div>
 								<div class="modal-footer">
 								  <button type="button" class="btn btn-link text-danger" data-dismiss="modal">Batalkan</button>
-								  <button type="submit" class="btn btn-primary">Tambahkan</button>
+								  <button type="button" class="btn btn-primary">Tambahkan</button>
 								</div>
 							  </div>
 							</div>
@@ -499,17 +464,34 @@
 
 	</div>
 	<!-- /page content -->
-    <script src="https://unpkg.com/vue"></script>
-	<script>
+	<script src="https://unpkg.com/vue"></script>
+	<script type="module">
+		
 		new Vue({
 			el: '#app',
-			data: {
-				budget1: null,
-                budget2: '',
-                // budgetCut1: parseInt(budget1) - 1
-			}
+            data: {
+                approvals: [
+                    {
+                        name: 'Profil 1',
+                        description: 'untuk work order < Rp 1.000.000',
+                        minimum: 'Rp. 0',
+                        maximum: 'Rp 1.000.000'
+                    },
+                    {
+                        name: 'Profil 2',
+                        description: 'untuk work order > Rp 1.000.000 - < Rp 10.000.000',
+                        minimum: 'Rp. 1.000.000',
+                        maximum: 'Rp 10.000.000'
+                    },
+                    {
+                        name: 'Profil 3',
+                        description: 'untuk work order > Rp 10.000.000',
+                        minimum: 'Rp. 10.000.000',
+                        maximum: 'Rp 1.000.000.000'
+                    },
+                ]
+            }
 		})
 	</script>
-     
 </body>
 </html>

@@ -14,6 +14,7 @@
 	<link href="../assets/css/layout.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/components.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/colors.min.css" rel="stylesheet" type="text/css">
+	
 	<!-- /global stylesheets -->
 
 	<!-- Core JS files -->
@@ -352,38 +353,194 @@
                 </div>
 				<!-- Main charts -->
 				
-					<div class="col-md-12">
-                        <div class="row">
-                            <div class="card w-100">
-                                
-                                    <form action="#" method="post">
-										<div class="col-md-6 py-4 px-4">
-											<div class="row mb-3">
-												<label for=""><b>Nama</b></label>
-												<input type="text" class="form-control" style="size: 100%;">
-											</div>
-											<div class="row mb-3">                                      
-												<label for=""><b>Deskripsi</b></label>
-												<textarea name="description" id="" cols="30" rows="10" class="form-control w-100"></textarea>
-											</div>
-											<div class="row mb-3">                                      
-												<label for=""><b>Akses</b></label>
+					<div id="app">
+						<div class="col-md-12">
+							<div class="row">
+								<div class="card w-100">
+									
+										<form action="#" method="post">
+											<div class="col-md-6 py-4 px-4">
+												<div class="row mb-3">
+													<label for=""><b>Nama</b></label>
+													<input type="text" class="form-control" style="size: 100%;">
+												</div>
+												<div class="row mb-3">                                      
+													<label for=""><b>Deskripsi</b></label>
+													<textarea name="description" id="" cols="30" rows="10" class="form-control w-100"></textarea>
+												</div>
+												<div class="row mb-3">                                      
+													<label for=""><b>Akses</b></label>
+													
+												</div>
+
+												<b-card visible no-body class="mb-3 border-0">
+													<b-button block v-b-toggle.users-collapse variant='white' class="text-left py-2 border border-muted" style="height: 50px;">
+															<b>Pengguna</b>
+															<span class="float-right"><i :class='iconClass'></i></span>
+															<span class="ml-5">| &nbsp; opsi terpilih: <b>{{usersSelected.length > 0  ? usersSelected.toString() : 'kosong'}}</b></span>
+															<!-- <p class="text-right"> Opsi terpilih: <b>{{usersSelected.length ? usersSelected.toString() : 'kosong'}}</b></p> -->
+													</b-button>
+													<b-collapse id="users-collapse">
+														<div class="card-body">
+															<b-form-group>
+																<b-form-checkbox v-model='usersAllSelected' v-on:change='usersSelectAll' >
+																	Pilih Semua
+																</b-form-checkbox>
+																<b-form-checkbox v-for='user in users' v-model='usersSelected' :value='user' v-on:change='usersSelect'>
+																	{{user}}
+																</b-form-checkbox>
+															</b-form-group>
+														</div>
+														
+													</b-collapse>
+												</b-card>
+
+												<b-card visible no-body class="mb-3 border-0">
+													<b-button block v-b-toggle.facilities-collapse variant='white' class="text-left py-2 border border-muted" style="height: 50px;">
+															<b>Fasilitas</b>
+															<span class="float-right"><i :class='iconClass'></i></span>
+													</b-button>
+													<b-collapse id="facilities-collapse">
+														<div class="card-body">
+															<b-form-group>
+																<b-form-checkbox v-model='usersAllSelected' v-on:change='usersSelectAll' >
+																	Pilih Semua
+																</b-form-checkbox>
+																<b-form-checkbox v-for='user in users' v-model='usersSelected' :value='user' v-on:change='usersSelect'>
+																	{{user}}
+																</b-form-checkbox>
+															</b-form-group>
+														</div>
+														
+													</b-collapse>
+												</b-card>
+
+												<b-card visible no-body class="mb-3 border-0">
+													<b-button block v-b-toggle.contracts-collapse variant='white' class="text-left py-2 border border-muted" style="height: 50px;">
+															<b>Kontrak</b>
+															<span class="float-right"><i :class='iconClass'></i></span>
+													</b-button>
+													<b-collapse id="contracts-collapse">
+														<div class="card-body">
+															<b-form-group>
+																<b-form-checkbox v-model='usersAllSelected' v-on:change='usersSelectAll' >
+																	Pilih Semua
+																</b-form-checkbox>
+																<b-form-checkbox v-for='user in users' v-model='usersSelected' :value='user' v-on:change='usersSelect'>
+																	{{user}}
+																</b-form-checkbox>
+															</b-form-group>
+														</div>
+														
+													</b-collapse>
+												</b-card>
+												<b-card visible no-body class="mb-3 border-0">
+													<b-button block v-b-toggle.jobs-collapse variant='white' class="text-left py-2 border border-muted" style="height: 50px;">
+															<b>Pekerjaan</b>
+															<span class="float-right"><i :class='iconClass'></i></span>
+													</b-button>
+													<b-collapse id="jobs-collapse">
+														<div class="card-body">
+															<b-form-group>
+																<b-form-checkbox v-model='usersAllSelected' v-on:change='usersSelectAll' >
+																	Pilih Semua
+																</b-form-checkbox>
+																<b-form-checkbox v-for='user in users' v-model='usersSelected' :value='user' v-on:change='usersSelect'>
+																	{{user}}
+																</b-form-checkbox>
+															</b-form-group>
+														</div>
+														
+													</b-collapse>
+												</b-card>
+												<b-card visible no-body class="mb-3 border-0">
+													<b-button block v-b-toggle.reports-collapse variant='white' class="text-left py-2 border border-muted" style="height: 50px;">
+															<b>Laporan</b>
+															<span class="float-right"><i :class='iconClass'></i></span>
+													</b-button>
+													<b-collapse id="reports-collapse">
+														<div class="card-body">
+															<b-form-group>
+																<b-form-checkbox v-model='usersAllSelected' v-on:change='usersSelectAll' >
+																	Pilih Semua
+																</b-form-checkbox>
+																<b-form-checkbox v-for='user in users' v-model='usersSelected' :value='user' v-on:change='usersSelect'>
+																	{{user}}
+																</b-form-checkbox>
+															</b-form-group>
+														</div>
+														
+													</b-collapse>
+												</b-card>
+												<b-card visible no-body class="mb-3 border-0">
+													<b-button block v-b-toggle.analitycs-collapse variant='white' class="text-left py-2 border border-muted" style="height: 50px;">
+															<b>Analitik</b>
+															<span class="float-right"><i :class='iconClass'></i></span>
+													</b-button>
+													<b-collapse id="analitycs-collapse">
+														<div class="card-body">
+															<b-form-group>
+																<b-form-checkbox v-model='usersAllSelected' v-on:change='usersSelectAll' >
+																	Pilih Semua
+																</b-form-checkbox>
+																<b-form-checkbox v-for='user in users' v-model='usersSelected' :value='user' v-on:change='usersSelect'>
+																	{{user}}
+																</b-form-checkbox>
+															</b-form-group>
+														</div>
+														
+													</b-collapse>
+												</b-card>
+												
+
+												<!-- bootsrap -->
+												<!-- <div class="accordion" id="accordionExample">
+													<div class="card">
+														<div class="card-header" id="headingOne">
+														  
+															<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+																<div class="form-check form-check-inline">
+																	<input type="checkbox" class="form-check-input" id="selectAll" v-model='usersAllSelected' @click='usersSelectAll'>
+																	<label class="form-check-label" for='selectAll'>Pengguna</label>
+																</div>
+																<b-form-checkbox v-model='usersAllSelected' v-on:input='usersSelectAll' class="float-top">
+																	Collapsible Group Item #1
+					
+																</b-form-checkbox>
+															</button>
+														  
+														</div>
+													</div>
+													<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+														<div class="card-body">
+															<b-form-group>
+																<b-form-checkbox v-for='user in users' v-model='usersSelected' :value='user' @click='usersSelect'>
+																	{{user}}
+																</b-form-checkbox>
+																opsi terpilih: {{usersSelected}}
+															</b-form-group>
+															<div class="form-check" v-for='user in users'>
+																<input type="checkbox" class="form-check-input" :value='user' @click='usersSelect' :id='user'>
+																<label class="form-check-label" :for="user">{{user}}</label>
+															</div>
+														</div>
+													</div>
+												</div> -->
 												
 											</div>
-										</div>
-										<div class="row m-3">
-											<div class="col-md-12 d-flex justify-content-end">
-												<button class="btn btn-primary btn-lg px-4">Simpan</button>
+											<div class="row m-3">
+												<div class="col-md-12 d-flex justify-content-end">
+													<button type="submit" class="btn btn-primary btn-lg px-4">Simpan</button>
+												</div>
 											</div>
-										</div>
-                                    </form>
-                                
-                            </div>
-                        </div>
-						<!-- Traffic sources -->
-						
-						<!-- /traffic sources -->
-
+										</form>
+								</div>
+							</div>
+							<!-- Traffic sources -->
+							
+							<!-- /traffic sources -->
+	
+						</div>
 					</div>
 				
 
@@ -415,5 +572,61 @@
 	</div>
 	<!-- /page content -->
 
+	<script src="https://unpkg.com/vue"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.19.0/bootstrap-vue.min.js"></script>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				users: [' Tambah Pengguna', ' Lihat Pengguna'],
+				usersSelected: [],
+				usersAllSelected: false,
+				// collapse
+				usersCollapsed: false,
+				contractsCollapsed: false,
+				facilitiesCollapsed: false,
+				jobsCollapsed: false,
+				reportsCollapsed: false,
+				analitycsCollapsed: false
+			},
+			mounted() {
+				// let collapse = ['users-collapse', 'contracts-collapse', 'facilities-collapse', 'jobs-collapse', 'reports-collapse', 'analitycs-collapse']
+				
+				this.$root.$on('bv::collapse::state', (id, collapsed) => {
+					
+						if	(id === 'users-collapse'
+							// id === 'contracts-collapse' ||
+							// id === 'jobs-collapse' ||
+							// id === 'analitics-collapse' ||
+							// id === 'contracts-collapse'
+							) {
+							
+							this.usersCollapsed = collapsed
+						}
+						// console.log(collapse[item])
+					
+				})
+			},
+			computed: {
+				iconClass: function(){
+					return this.usersCollapsed ? 'icon-circle-up2' : 'icon-circle-down2'
+				}
+			},
+			methods: {
+				usersSelectAll: function() {
+					this.usersSelected = []
+					if(this.usersAllSelected) {
+						for(user in this.users) {
+							this.usersSelected.push(this.users[user])
+						}
+						console.log(this.usersSelected)
+					}
+				},
+				usersSelect() {
+					this.usersAllSelected = false
+				}
+			}
+		})
+	</script>
 </body>
 </html>
