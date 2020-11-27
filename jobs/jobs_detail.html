@@ -323,7 +323,7 @@
                             </li>
                             
                             <li class="nav-item">
-                                <a href="reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Laporan</span></a>
+                                <a href="../reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link"><i><img src="../assets/icons/icon-analitik.png"></i> <span>Analitik</span></a>
@@ -396,9 +396,11 @@
                                     
                                     <b-card visible no-body class="mb-0 w-100 border-bottom">
                                         <b-button v-b-toggle.jobs1 variant='white' class="text-left py-2 border-0 btn-block" style="height: 50px;">
-                                                <b>Mulai</b>
+                                            <span v-if='processCollapsed1' class="mr-2"><i class="icon-minus3"></i></span>    
+                                            <span v-else class="mr-2"><i class="icon-plus3"></i></span>    
+                                            <b>Mulai</b>
                                         </b-button>
-                                        <b-collapse id="jobs1" visible>
+                                        <b-collapse id="jobs1" visible v-model='processCollapsed1'>
                                             <div class="card-body py-2">
                                                 <p>18 Januari 2019</p>
                                             </div>
@@ -406,9 +408,11 @@
                                     </b-card>
                                     <b-card visible no-body class="mb-0 w-100 border-bottom">
                                         <b-button v-b-toggle.jobs2 variant='white' class="text-left py-2 border-0 btn-block" style="height: 50px;">
-                                                <b>Buka kunci kode QR</b>
+                                            <span v-if='processCollapsed2' class="mr-2"><i class="icon-minus3"></i></span>    
+                                            <span v-else class="mr-2"><i class="icon-plus3"></i></span>    
+                                            <b>Buka kunci kode QR</b>
                                         </b-button>
-                                        <b-collapse id="jobs2" visible>
+                                        <b-collapse id="jobs2" visible v-model='processCollapsed2'>
                                             <div class="card-body py-2">
                                                 <p>20 Januari 2019</p>
                                             </div>
@@ -416,9 +420,11 @@
                                     </b-card>
                                     <b-card visible no-body class="mb-0 w-100 border-bottom">
                                         <b-button v-b-toggle.jobs3 variant='white' class="text-left py-2 border-0 btn-block" style="height: 50px;">
-                                                <b>Foto</b>
+                                            <span v-if='processCollapsed3' class="mr-2"><i class="icon-minus3"></i></span>    
+                                            <span v-else class="mr-2"><i class="icon-plus3"></i></span>    
+                                            <b>Foto</b>
                                         </b-button>
-                                        <b-collapse id="jobs3" visible>
+                                        <b-collapse id="jobs3" visible v-model='processCollapsed3'>
                                             <div class="card-body py-2">
                                                 <p>Sebelum</p>
                                                 <div>
@@ -435,9 +441,11 @@
                                     </b-card>
                                     <b-card visible no-body class="mb-0 w-100 border-bottom">
                                         <b-button v-b-toggle.jobs4 variant='white' class="text-left py-2 border-0 btn-block" style="height: 50px;">
-                                                <b>Pemeliharaan AC</b>
+                                            <span v-if='processCollapsed4' class="mr-2"><i class="icon-minus3"></i></span>    
+                                            <span v-else class="mr-2"><i class="icon-plus3"></i></span>    
+                                            <b>Pemeliharaan AC</b>
                                         </b-button>
-                                        <b-collapse id="jobs4" visible>
+                                        <b-collapse id="jobs4" visible v-model='processCollapsed4'>
                                             <div class="card-body py-2">
                                                 <b-form-checkbox>Cek Body AC</b-form-checkbox>
                                                 <b-form-checkbox>Cek Body AC</b-form-checkbox>
@@ -482,6 +490,17 @@
 	
 	<script src="https://unpkg.com/vue"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.19.0/bootstrap-vue.min.js"></script>
-    <script src="../app.js"></script>
+    <!-- <script src="../app.js"></script> -->
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                processCollapsed1: true,
+                processCollapsed2: true,
+                processCollapsed3: true,
+                processCollapsed4: true,
+            }
+        })
+    </script>
 </body>
 </html>

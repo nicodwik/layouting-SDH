@@ -323,7 +323,7 @@
                             </li>
                             
                             <li class="nav-item">
-                                <a href="reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Laporan</span></a>
+                                <a href="reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link"><i><img src="../assets/icons/icon-analitik.png"></i> <span>Analitik</span></a>
@@ -403,9 +403,11 @@
                                         <div class="tab-pane fade show active w-100" id="maintenance" role="tabpanel" aria-labelledby="home-tab">
                                             <b-card visible no-body class="mb-0 border-0">
                                                 <b-button v-b-toggle.maintenance1 variant='white' class="text-left py-2 border-bottom" style="height: 50px;">
-                                                        <b>Proses 1</b>
+                                                    <span v-if='processCollapsed1' class="mr-2"><i class="icon-minus3"></i></span>    
+                                                    <span v-else class="mr-2"><i class="icon-plus3"></i></span>    
+                                                    <b>Proses 1</b>
                                                 </b-button>
-                                                <b-collapse id="maintenance1">
+                                                <b-collapse id="maintenance1" v-model='processCollapsed1'>
                                                     <div class="card-body">
                                                         <p><b>Cek Temperatur</b></p>
                                                         <br>
@@ -424,9 +426,11 @@
                                             </b-card>
                                             <b-card no-body class="mb-0 border-0">
                                                 <b-button v-b-toggle.maintenance2 variant='white' class="text-left py-2 border-bottom" style="height: 50px;">
-                                                        <b>Proses 2</b>
+                                                    <span v-if='processCollapsed2' class="mr-2"><i class="icon-minus3"></i></span>    
+                                                    <span v-else class="mr-2"><i class="icon-plus3"></i></span>    
+                                                    <b>Proses 2</b>
                                                 </b-button>
-                                                <b-collapse id="maintenance2">
+                                                <b-collapse id="maintenance2" v-model='processCollapsed2'>
                                                     <div class="card-body">
                                                         <p><b>Cek Temperatur</b></p>
                                                         <br>
@@ -445,9 +449,11 @@
                                             </b-card>
                                             <b-card no-body class="mb-0 border-0">
                                                 <b-button v-b-toggle.maintenance3 variant='white' class="text-left py-2 border-bottom" style="height: 50px;">
-                                                        <b>Proses 3</b>
+                                                    <span v-if='processCollapsed3' class="mr-2"><i class="icon-minus3"></i></span>    
+                                                    <span v-else class="mr-2"><i class="icon-plus3"></i></span>
+                                                    <b>Proses 3</b>
                                                 </b-button>
-                                                <b-collapse id="maintenance3">
+                                                <b-collapse id="maintenance3" v-model='processCollapsed3'>
                                                     <div class="card-body">
                                                         <p><b>Cek Temperatur</b></p>
                                                         <br>
@@ -569,6 +575,16 @@
 	
 	<script src="https://unpkg.com/vue"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.19.0/bootstrap-vue.min.js"></script>
-    <script src="../app.js"></script>
+    <!-- <script src="../app.js"></script> -->
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                processCollapsed1 : false,
+                processCollapsed2 : false,
+                processCollapsed3 : false
+            }
+        })
+    </script>
 </body>
 </html>

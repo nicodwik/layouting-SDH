@@ -161,7 +161,8 @@ new Vue({
     el: '#app',
     data: {
         selected: [],
-		allSelected: false,
+        allSelected: false,
+        select: '',
         schools: ['SDH Kemang', 'SDH Tangerang', 'SDH Kupang'],
         jobs: [
             {
