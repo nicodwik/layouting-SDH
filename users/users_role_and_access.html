@@ -14,6 +14,7 @@
 	<link href="../assets/css/layout.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/components.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/colors.min.css" rel="stylesheet" type="text/css">
+	<link href="https://cdn.jsdelivr.net/npm/vuesax/dist/vuesax.css" rel="stylesheet">
 	
 	<!-- /global stylesheets -->
 
@@ -31,7 +32,7 @@
 	<script src="../../../../global_assets/js/plugins/ui/moment/moment.min.js"></script>
 	<script src="../../../../global_assets/js/plugins/pickers/daterangepicker.js"></script>
 
-	<script src="assets/js/app.js"></script>
+	<script src="../assets/js/app.js"></script>
 	<script src="../../../../global_assets/js/demo_pages/dashboard.js"></script>
 	<!-- /theme JS files -->
 
@@ -373,15 +374,18 @@
 													<label for=""><b>Akses</b></label>
 													
 												</div>
-
+												
 												<b-card visible no-body class="mb-3 border-0">
 													<b-button block v-b-toggle.users-collapse variant='white' class="text-left py-2 border border-muted" style="height: 50px;">
 															<b>Pengguna</b>
-															<span class="float-right"><i :class='iconClass'></i></span>
+															<span class="float-right">
+																<i v-if='usersCollapsed' class="icon-circle-up2"></i>
+																<i v-else class="icon-circle-down2"></i>
+															</span>
 															<span class="ml-5">| &nbsp; opsi terpilih: <b>{{usersSelected.length > 0  ? usersSelected.toString() : 'kosong'}}</b></span>
 															<!-- <p class="text-right"> Opsi terpilih: <b>{{usersSelected.length ? usersSelected.toString() : 'kosong'}}</b></p> -->
 													</b-button>
-													<b-collapse id="users-collapse">
+													<b-collapse id="users-collapse" v-model='usersCollapsed'>
 														<div class="card-body">
 															<b-form-group>
 																<b-form-checkbox v-model='usersAllSelected' v-on:change='usersSelectAll' >
@@ -399,9 +403,12 @@
 												<b-card visible no-body class="mb-3 border-0">
 													<b-button block v-b-toggle.facilities-collapse variant='white' class="text-left py-2 border border-muted" style="height: 50px;">
 															<b>Fasilitas</b>
-															<span class="float-right"><i :class='iconClass'></i></span>
+															<span class="float-right">
+																<i v-if='facilitiesCollapsed' class="icon-circle-up2"></i>
+																<i v-else class="icon-circle-down2"></i>
+															</span>
 													</b-button>
-													<b-collapse id="facilities-collapse">
+													<b-collapse id="facilities-collapse" v-model='facilitiesCollapsed'>
 														<div class="card-body">
 															<b-form-group>
 																<b-form-checkbox v-model='usersAllSelected' v-on:change='usersSelectAll' >
@@ -419,9 +426,12 @@
 												<b-card visible no-body class="mb-3 border-0">
 													<b-button block v-b-toggle.contracts-collapse variant='white' class="text-left py-2 border border-muted" style="height: 50px;">
 															<b>Kontrak</b>
-															<span class="float-right"><i :class='iconClass'></i></span>
+															<span class="float-right">
+																<i v-if='contractsCollapsed' class="icon-circle-up2"></i>
+																<i v-else class="icon-circle-down2"></i>
+															</span>
 													</b-button>
-													<b-collapse id="contracts-collapse">
+													<b-collapse id="contracts-collapse" v-model='contractsCollapsed'>
 														<div class="card-body">
 															<b-form-group>
 																<b-form-checkbox v-model='usersAllSelected' v-on:change='usersSelectAll' >
@@ -438,9 +448,12 @@
 												<b-card visible no-body class="mb-3 border-0">
 													<b-button block v-b-toggle.jobs-collapse variant='white' class="text-left py-2 border border-muted" style="height: 50px;">
 															<b>Pekerjaan</b>
-															<span class="float-right"><i :class='iconClass'></i></span>
+															<span class="float-right">
+																<i v-if='jobsCollapsed' class="icon-circle-up2"></i>
+																<i v-else class="icon-circle-down2"></i>
+															</span>
 													</b-button>
-													<b-collapse id="jobs-collapse">
+													<b-collapse id="jobs-collapse" v-model='jobsCollapsed'>
 														<div class="card-body">
 															<b-form-group>
 																<b-form-checkbox v-model='usersAllSelected' v-on:change='usersSelectAll' >
@@ -457,9 +470,12 @@
 												<b-card visible no-body class="mb-3 border-0">
 													<b-button block v-b-toggle.reports-collapse variant='white' class="text-left py-2 border border-muted" style="height: 50px;">
 															<b>Laporan</b>
-															<span class="float-right"><i :class='iconClass'></i></span>
+															<span class="float-right">
+																<i v-if='reportsCollapsed' class="icon-circle-up2"></i>
+																<i v-else class="icon-circle-down2"></i>
+															</span>
 													</b-button>
-													<b-collapse id="reports-collapse">
+													<b-collapse id="reports-collapse" v-model='reportsCollapsed'>
 														<div class="card-body">
 															<b-form-group>
 																<b-form-checkbox v-model='usersAllSelected' v-on:change='usersSelectAll' >
@@ -476,9 +492,12 @@
 												<b-card visible no-body class="mb-3 border-0">
 													<b-button block v-b-toggle.analitycs-collapse variant='white' class="text-left py-2 border border-muted" style="height: 50px;">
 															<b>Analitik</b>
-															<span class="float-right"><i :class='iconClass'></i></span>
+															<span class="float-right">
+																<i v-if='analitycsCollapsed' class="icon-circle-up2"></i>
+																<i v-else class="icon-circle-down2"></i>
+															</span>
 													</b-button>
-													<b-collapse id="analitycs-collapse">
+													<b-collapse id="analitycs-collapse" v-model='analitycsCollapsed'>
 														<div class="card-body">
 															<b-form-group>
 																<b-form-checkbox v-model='usersAllSelected' v-on:change='usersSelectAll' >
@@ -575,6 +594,7 @@
 
 	<script src="https://unpkg.com/vue"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.19.0/bootstrap-vue.min.js"></script>
+	<script src="https://unpkg.com/vuesax"></script>
 	<script>
 		new Vue({
 			el: '#app',
@@ -589,29 +609,6 @@
 				jobsCollapsed: false,
 				reportsCollapsed: false,
 				analitycsCollapsed: false
-			},
-			mounted() {
-				// let collapse = ['users-collapse', 'contracts-collapse', 'facilities-collapse', 'jobs-collapse', 'reports-collapse', 'analitycs-collapse']
-				
-				this.$root.$on('bv::collapse::state', (id, collapsed) => {
-					
-						if	(id === 'users-collapse'
-							// id === 'contracts-collapse' ||
-							// id === 'jobs-collapse' ||
-							// id === 'analitics-collapse' ||
-							// id === 'contracts-collapse'
-							) {
-							
-							this.usersCollapsed = collapsed
-						}
-						// console.log(collapse[item])
-					
-				})
-			},
-			computed: {
-				iconClass: function(){
-					return this.usersCollapsed ? 'icon-circle-up2' : 'icon-circle-down2'
-				}
 			},
 			methods: {
 				usersSelectAll: function() {
