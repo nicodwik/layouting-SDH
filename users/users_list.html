@@ -30,7 +30,7 @@
 	<script src="../../../../global_assets/js/plugins/ui/moment/moment.min.js"></script>
 	<script src="../../../../global_assets/js/plugins/pickers/daterangepicker.js"></script>
 
-	<script src="assets/js/app.js"></script>
+	<script src="../assets/js/app.js"></script>
 	<script src="../../../../global_assets/js/demo_pages/dashboard.js"></script>
 	<!-- /theme JS files -->
 	<!-- Vue JS -->
@@ -39,503 +39,618 @@
 
 <body>
 
-	<!-- Main navbar -->
-	<div class="navbar navbar-expand-md navbar-dark">
-		<div class="navbar-brand">
-			<a href="index.html" class="d-inline-block">
-				<img src="../global_assets/images/logo_light.png" alt="">
-			</a>
-		</div>
-
-		<div class="d-md-none">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
-				<i class="icon-tree5"></i>
-			</button>
-			<button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
-				<i class="icon-paragraph-justify3"></i>
-			</button>
-		</div>
-
-		<div class="collapse navbar-collapse" id="navbar-mobile">
-			<ul class="navbar-nav">
-				<li class="nav-item">
-					<a href="#" class="navbar-nav-link sidebar-control sidebar-main-toggle d-none d-md-block">
-						<i class="icon-paragraph-justify3"></i>
-					</a>
-				</li>
-			</ul>
-
-			<span class="ml-md-3 mr-md-auto"></span>
-
-			<ul class="navbar-nav">
-				
-
-				<li class="nav-item dropdown">
-					<a href="#" class="navbar-nav-link dropdown-toggle caret-0" data-toggle="dropdown">
-						<i class="icon-bubbles4"></i>
-						<span class="d-md-none ml-2">Messages</span>
-						<span class="badge badge-pill bg-warning-400 ml-auto ml-md-0">2</span>
-					</a>
-					
-					<div class="dropdown-menu dropdown-menu-right dropdown-content wmin-md-350">
-						<div class="dropdown-content-header">
-							<span class="font-weight-semibold">Messages</span>
-							<a href="#" class="text-default"><i class="icon-compose"></i></a>
-						</div>
-
-						<div class="dropdown-content-body dropdown-scrollable">
-							<ul class="media-list">
-								<li class="media">
-									<div class="mr-3 position-relative">
-										<img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
-									</div>
-
-									<div class="media-body">
-										<div class="media-title">
-											<a href="#">
-												<span class="font-weight-semibold">James Alexander</span>
-												<span class="text-muted float-right font-size-sm">04:58</span>
-											</a>
-										</div>
-
-										<span class="text-muted">who knows, maybe that would be the best thing for me...</span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3 position-relative">
-										<img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
-									</div>
-
-									<div class="media-body">
-										<div class="media-title">
-											<a href="#">
-												<span class="font-weight-semibold">Margo Baker</span>
-												<span class="text-muted float-right font-size-sm">12:16</span>
-											</a>
-										</div>
-
-										<span class="text-muted">That was something he was unable to do because...</span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3">
-										<img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<div class="media-title">
-											<a href="#">
-												<span class="font-weight-semibold">Jeremy Victorino</span>
-												<span class="text-muted float-right font-size-sm">22:48</span>
-											</a>
-										</div>
-
-										<span class="text-muted">But that would be extremely strained and suspicious...</span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3">
-										<img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<div class="media-title">
-											<a href="#">
-												<span class="font-weight-semibold">Beatrix Diaz</span>
-												<span class="text-muted float-right font-size-sm">Tue</span>
-											</a>
-										</div>
-
-										<span class="text-muted">What a strenuous career it is that I've chosen...</span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3">
-										<img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<div class="media-title">
-											<a href="#">
-												<span class="font-weight-semibold">Richard Vango</span>
-												<span class="text-muted float-right font-size-sm">Mon</span>
-											</a>
-										</div>
-										
-										<span class="text-muted">Other travelling salesmen live a life of luxury...</span>
-									</div>
-								</li>
-							</ul>
-						</div>
-
-						<div class="dropdown-content-footer justify-content-center p-0">
-							<a href="#" class="bg-light text-grey w-100 py-2" data-popup="tooltip" title="Load more"><i class="icon-menu7 d-block top-0"></i></a>
-						</div>
-					</div>
-				</li>
-
-				<li class="nav-item dropdown dropdown-user">
-					<a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
-						<img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded-circle mr-2" height="34" alt="">
-						<span>Admin SDH cabang rungkut</span>
-					</a>
-
-					<div class="dropdown-menu dropdown-menu-right">
-						<a href="#" class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
-						<a href="#" class="dropdown-item"><i class="icon-coins"></i> My balance</a>
-						<a href="#" class="dropdown-item"><i class="icon-comment-discussion"></i> Messages <span class="badge badge-pill bg-blue ml-auto">58</span></a>
-						<div class="dropdown-divider"></div>
-						<a href="#" class="dropdown-item"><i class="icon-cog5"></i> Account settings</a>
-						<a href="#" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<!-- /main navbar -->
-
-
-	<!-- Page content -->
-	<div class="page-content">
-
-		<!-- Main sidebar -->
-		<div id="sidebar">
-			<Sidebar></Sidebar>
-		</div>
-		<!-- /main sidebar -->
-
-
-		<!-- Main content -->
-		<div class="content-wrapper">
-
-			<!-- Page header -->
-			<div class="page-header page-header-light">
-				<div class="page-header-content header-elements-md-inline">
-					<div class="page-title d-flex">
-						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Pengguna</h4>
-						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
-					</div>
-				</div>
-
-				<div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
-					<div class="d-flex">
-						<div class="breadcrumb">
-							<a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
-							<a href="index.html" class="breadcrumb-item">Pengguna</a>
-							<span class="breadcrumb-item active">Daftar Pengguna</span>
-						</div>
-
-						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
-					</div>
-				</div>
+	
+		<!-- Main navbar -->
+		<div class="navbar navbar-expand-md navbar-dark">
+			<div class="navbar-brand">
+				<a href="index.html" class="d-inline-block">
+					<img src="../assets/images/logo-sdh.png" alt="">
+				</a>
 			</div>
-			<!-- /page header -->
 
-
-			<!-- Content area -->
-			<div class="content">
-                
-                <div class="row justify-content-between">
-                    
-                </div>
-				<!-- Main charts -->
-				
-					<div class="col-md-12">
-                        <div class="row">
-                            <div class="card w-100">
-                                <div class="row py-3 px-5 mb-0">
-                                    <div class="col-md-10 d-flex ">
-                                        <div class="col-md-4">
-                                            <form action="#">
-                                                <div class="form-group row">
-                                                    <label class=" col-form-label">Filter: &nbsp;</label>
-                                                    <div>
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Wilayah, Sekolah" style="border-right: none;">
-                                                            <span class="input-group-append">
-                                                                <span class="input-group-text" style="border-left: none; background: none;">
-                                                                    <a href="#" style="color: black;"><i class="icon-search4"></i></a>
-                                                                </span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <form action="#">
-                                                <div class="form-group row">
-                                                    <label class=" col-form-label">Filter: &nbsp;</label>
-                                                    <div>
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Divisi, Peran" style="border-right: none;">
-                                                            <span class="input-group-append">
-                                                                <span class="input-group-text" style="border-left: none; background: none;">
-                                                                    <a href="#" style="color: black;"><i class="icon-search4"></i></a>
-                                                                </span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <form action="#">
-                                                <div class="form-group row">
-                                                    <label class=" col-form-label">Status &nbsp;</label>
-                                                    <div>
-                                                    
-                                                            <select name="status" class="form-control select">
-                                                                <option value="0">Tidak Aktif</option>
-                                                                <option value="1">Aktif</option>
-                                                            </select>
-                                                        
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="row justify-content-end">
-                                            <a href="#" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#addUser"><i class="icon-plus3"></i> Tambahkan</a>
-                                        </div>
-                                    </div>
-    
-								</div>
-								
-                                <div class="col-12">
-                                    <table class="table table-border-solid">
-                                        <thead>
-                                            <tr>
-                                                <th>Nama</th>
-                                                <th>Email</th>
-                                                <th>No. Hp</th>
-                                                <th>Peran</th>
-                                                <th>Status</th>
-                                                <th>Tindakan</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Aura</td>
-                                                <td>auramay@gmail.com</td>
-                                                <td>081334967111</td>
-                                                <td>Admin</td>
-                                                <td><span class="badge badge-danger px-2">Tertunda</span></td>
-                                                <td>
-                                                    <a href="#" class="btn btn-md btn-primary">Edit</a>
-                                                    <a href="users_detail.html" class="btn btn-md btn-light">Detail</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Beth</td>
-                                                <td>auramay@gmail.com</td>
-                                                <td>081334967111</td>
-                                                <td>Keuangan</td>
-                                                <td><span class="badge badge-success px-2">Aktif</span></td>
-                                                <td>
-                                                    <a href="#" class="btn btn-md btn-primary">Edit</a>
-                                                    <a href="users_detail.html" class="btn btn-md btn-light">Detail</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Delma</td>
-                                                <td>auramay@gmail.com</td>
-                                                <td>081334967111</td>
-                                                <td>Manager</td>
-                                                <td><span class="badge badge-primary px-2">Tidak Aktif</span></td>
-                                                <td>
-                                                    <a href="#" class="btn btn-md btn-primary">Edit</a>
-                                                    <a href="users_detail.html" class="btn btn-md btn-light">Detail</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lizze</td>
-                                                <td>auramay@gmail.com</td>
-                                                <td>081334967111</td>
-                                                <td>Admin</td>
-                                                <td><span class="badge badge-danger px-2">Tertunda</span></td>
-                                                <td>
-                                                    <a href="#" class="btn btn-md btn-primary">Edit</a>
-                                                    <a href="users_detail.html" class="btn btn-md btn-light">Detail</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Marth</td>
-                                                <td>auramay@gmail.com</td>
-                                                <td>081334967111</td>
-                                                <td>Admin</td>
-                                                <td><span class="badge badge-primary px-2">Tidak Aktif</span></td>
-                                                <td>
-                                                    <a href="#" class="btn btn-md btn-primary">Edit</a>
-                                                    <a href="users_detail.html" class="btn btn-md btn-light">Detail</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Aura</td>
-                                                <td>auramay@gmail.com</td>
-                                                <td>081334967111</td>
-                                                <td>Admin</td>
-                                                <td><span class="badge badge-danger px-2">Tertunda</span></td>
-                                                <td>
-                                                    <a href="#" class="btn btn-md btn-primary">Edit</a>
-                                                    <a href="users_detail.html" class="btn btn-md btn-light">Detail</a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-						<!-- Modal -->
-						<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog" role="document">
-							  <div class="modal-content">
-								<div class="modal-header">
-								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Pengguna</b></h5>
-								</div>
-								<div class="modal-body">
-									<form action="#" class="form-group">
-										<div class="row mb-3">
-											<label for=""><b>Nama Pengguna</b></label>
-											<input class="form-control" type="text" placeholder="John Mark">
-										</div>
-										<div class="row mb-3">
-											<label for=""><b>Sandi</b></label>
-											<input class="form-control" type="text" placeholder="johnmark05">
-										</div>
-										<div class="row mb-3">
-											<label for=""><b>Email</b></label>
-											<input class="form-control" type="text" placeholder="johnmark@gmail.com">
-										</div>
-										<div class="row mb-3">
-											<label for=""><b>No. Hp</b></label>
-											<input class="form-control" type="text" placeholder="0812-3456-7890">
-										</div>
-										<div class="row mb-3">
-											<label for=""><b>Alamat</b></label>
-											<input class="form-control" type="text" placeholder="Jl. Jeruk No.50, Surabaya Timur">
-										</div>
-										<div class="row mb-3">
-											<div class="col-md-6">
-												<label for=""><b>Peran</b></label>
-												<select name="role" class="form-control">
-													<option value="admin">Admin</option>
-													<option value="pegawai">Pegawai</option>
-												</select>
-											</div>
-											<div class="col-md-6">
-												<label for=""><b>Divisi</b></label>
-												<select name="division" class="form-control">
-													<option value="akademi">Akademi</option>
-													<option value="non-akademi">Non Akademi</option>
-												</select>
-											</div>
-										</div>
-										<div class="row mb-3">
-											<div class="col-md-6">
-												<label for=""><b>Wilayah</b></label>
-												<input class="form-control" type="text" value="Jawa">
-											</div>
-											<div class="col-md-6 d-flex align-items-end">
-												<a href="#">+ Tambah Wilayah</a>
-											</div>
-										</div>
-										<div class="row mb-3">
-											<div class="col-md-6">
-												<div class="d-flex flex-wrap">
-													<div id="app" class="form-group">
-														<div class="form-check form-check-inline">
-															<input class="form-check-input" type="checkbox" @click='selectAll' v-model='allSelected' id="select_all">
-															<label class="form-check-label" for="select_all">
-															  Pilih Semua
-															</label>
-														</div>
-														<div v-for="school in schools" class="form-check form-check-inline">
-															<input class="form-check-input input-target" type="checkbox" :id='school' :value='school' v-model='selected' @click='select'>
-															<label class="form-check-label label-target" :for='school'>
-																{{school}}
-															</label>
-															
-														</div>
-														<br>
-														<br>
-														sekolah terpilih: {{selected}}
-													</div>
-												</div>
-
-
-												<!-- <div class="d-flex flex-wrap">
-													<div class="form-group">
-														<div class="form-check form-check-inline">
-															<input class="form-check-input" type="checkbox" value="#" id="select_all">
-															<label class="form-check-label" for="select_all">
-															  Pilih Semua
-															</label>
-														</div>
-														<div class="form-check form-check-inline">
-															<input class="form-check-input" type="checkbox" value="" id="sdh_tangerang">
-															<label class="form-check-label" for="sdh_tangerang">
-																SDH Tangerang
-															</label>
-														</div>
-														<div class="form-check form-check-inline">
-															<input class="form-check-input" type="checkbox" value="" id="sdh_kemang">
-															<label class="form-check-label" for="sdh_kemang">
-																SDH Kemang
-															</label>
-														</div>
-														<div class="form-check form-check-inline">
-															<input class="form-check-input" type="checkbox" value="" id="sdh_kupang">
-															<label class="form-check-label" for="sdh_kupang">
-																SDH Kupang
-															</label>
-														</div>
-													</div>
-												</div>
-											</div> -->
-											
-										</div>
-									</form>
-								</div>
-								<div class="modal-footer">
-								  <button type="button" class="btn btn-link text-danger" data-dismiss="modal">Batalkan</button>
-								  <button type="button" class="btn btn-primary">Tambahkan</button>
-								</div>
-							  </div>
-							</div>
-						  </div>
-					</div>
-				
-
-			</div>
-			<!-- /content area -->
-
-			
-
-		</div>
-		<!-- /main content -->
-
-		<!-- Footer -->
-		<div class="navbar navbar-expand-lg navbar-light">
-			<div class="text-center d-lg-none w-100">
-				<button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
-					<i class="icon-unfold mr-2"></i>
-					Footer
+			<div class="d-md-none">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+					<i class="icon-tree5"></i>
+				</button>
+				<button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
+					<i class="icon-paragraph-justify3"></i>
 				</button>
 			</div>
 
-			<div class="navbar-collapse collapse" id="navbar-footer">
-				<span class="navbar-text">
-					<p class="mb-0">&copy; 2020 Sekolah Dian Harapan</p>
-				</span>
+			<div class="collapse navbar-collapse" id="navbar-mobile">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a href="#" class="navbar-nav-link sidebar-control sidebar-main-toggle d-none d-md-block">
+							<i class="icon-paragraph-justify3"></i>
+						</a>
+					</li>
+				</ul>
+
+				<span class="ml-md-3 mr-md-auto"></span>
+
+				<ul class="navbar-nav">
+					
+
+					<li class="nav-item dropdown">
+						<a href="#" class="navbar-nav-link dropdown-toggle caret-0" data-toggle="dropdown">
+							<i class="icon-bubbles4"></i>
+							<span class="d-md-none ml-2">Messages</span>
+							<span class="badge badge-pill bg-warning-400 ml-auto ml-md-0">2</span>
+						</a>
+						
+						<div class="dropdown-menu dropdown-menu-right dropdown-content wmin-md-350">
+							<div class="dropdown-content-header">
+								<span class="font-weight-semibold">Messages</span>
+								<a href="#" class="text-default"><i class="icon-compose"></i></a>
+							</div>
+
+							<div class="dropdown-content-body dropdown-scrollable">
+								<ul class="media-list">
+									<li class="media">
+										<div class="mr-3 position-relative">
+											<img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+										</div>
+
+										<div class="media-body">
+											<div class="media-title">
+												<a href="#">
+													<span class="font-weight-semibold">James Alexander</span>
+													<span class="text-muted float-right font-size-sm">04:58</span>
+												</a>
+											</div>
+
+											<span class="text-muted">who knows, maybe that would be the best thing for me...</span>
+										</div>
+									</li>
+
+									<li class="media">
+										<div class="mr-3 position-relative">
+											<img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+										</div>
+
+										<div class="media-body">
+											<div class="media-title">
+												<a href="#">
+													<span class="font-weight-semibold">Margo Baker</span>
+													<span class="text-muted float-right font-size-sm">12:16</span>
+												</a>
+											</div>
+
+											<span class="text-muted">That was something he was unable to do because...</span>
+										</div>
+									</li>
+
+									<li class="media">
+										<div class="mr-3">
+											<img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+										</div>
+										<div class="media-body">
+											<div class="media-title">
+												<a href="#">
+													<span class="font-weight-semibold">Jeremy Victorino</span>
+													<span class="text-muted float-right font-size-sm">22:48</span>
+												</a>
+											</div>
+
+											<span class="text-muted">But that would be extremely strained and suspicious...</span>
+										</div>
+									</li>
+
+									<li class="media">
+										<div class="mr-3">
+											<img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+										</div>
+										<div class="media-body">
+											<div class="media-title">
+												<a href="#">
+													<span class="font-weight-semibold">Beatrix Diaz</span>
+													<span class="text-muted float-right font-size-sm">Tue</span>
+												</a>
+											</div>
+
+											<span class="text-muted">What a strenuous career it is that I've chosen...</span>
+										</div>
+									</li>
+
+									<li class="media">
+										<div class="mr-3">
+											<img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+										</div>
+										<div class="media-body">
+											<div class="media-title">
+												<a href="#">
+													<span class="font-weight-semibold">Richard Vango</span>
+													<span class="text-muted float-right font-size-sm">Mon</span>
+												</a>
+											</div>
+											
+											<span class="text-muted">Other travelling salesmen live a life of luxury...</span>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+							<div class="dropdown-content-footer justify-content-center p-0">
+								<a href="#" class="bg-light text-grey w-100 py-2" data-popup="tooltip" title="Load more"><i class="icon-menu7 d-block top-0"></i></a>
+							</div>
+						</div>
+					</li>
+
+					<li class="nav-item dropdown dropdown-user">
+						<a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
+							<img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded-circle mr-2" height="34" alt="">
+							<span>admin SDH cabang jombang</span>
+						</a>
+
+						<div class="dropdown-menu dropdown-menu-right">
+							<a href="#" class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
+							<a href="#" class="dropdown-item"><i class="icon-coins"></i> My balance</a>
+							<a href="#" class="dropdown-item"><i class="icon-comment-discussion"></i> Messages <span class="badge badge-pill bg-blue ml-auto">58</span></a>
+							<div class="dropdown-divider"></div>
+							<a href="#" class="dropdown-item"><i class="icon-cog5"></i> Account settings</a>
+							<a href="#" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
-		<!-- /footer -->
+		<!-- /main navbar -->
 
-	</div>
-	<!-- /page content -->
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main sidebar -->
+			<div class="sidebar sidebar-dark sidebar-main sidebar-expand-md">
+
+                <!-- Sidebar mobile toggler -->
+                <div class="sidebar-mobile-toggler text-center">
+                    <a href="#" class="sidebar-mobile-main-toggle">
+                        <i class="icon-arrow-left8"></i>
+                    </a>
+                    Navigation
+                    <a href="#" class="sidebar-mobile-expand">
+                        <i class="icon-screen-full"></i>
+                        <i class="icon-screen-normal"></i>
+                    </a>
+                </div>
+                <!-- /sidebar mobile toggler -->
+            
+            
+                <!-- Sidebar content -->
+                <div class="sidebar-content">
+            
+                    <!-- User menu -->
+                    <div class="sidebar-user">
+                        <div class="card-body">
+                            <div class="media">
+                                <div class="mr-3">
+                                    <a href="#"><img src="../global_assets/images/placeholders/placeholder.jpg" width="38" height="38" class="rounded-circle" alt=""></a>
+                                </div>
+            
+                                <div class="media-body">
+                                    <div class="media-title font-weight-semibold">Admin SDH <br> cabang jombang</div>
+                                    <div class="font-size-xs opacity-50">
+                                        <i class="icon-pin font-size-sm"></i> &nbsp;Jombang, Jawa Timur
+                                    </div>
+                                </div>
+            
+                                <div class="ml-3 align-self-center">
+                                    <a href="#" class="text-white"><i class="icon-cog3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /user menu -->
+            
+            
+                    <!-- Main navigation -->
+                    <div class="card card-sidebar-mobile">
+                        <br>
+                        <br>
+                        <ul class="nav nav-sidebar" data-nav-type="accordion">
+            
+                            <!-- Main -->
+                            
+                            <li class="nav-item">
+                                <a href="../index.html" class='nav-link' >
+                                    <i class="icon-home4"></i>
+                                    <span>
+                                        Dashboard
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item nav-item-submenu nav-item-expanded nav-item-open">
+                                <a href="#" class="nav-link" class='nav-link'><i><img src="../assets/icons/icon-pengguna.png"></i> <span>Pengguna</span></a>
+            
+                                <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                    <li class="nav-item"><a href="users_list.html" class="nav-link active" >Daftar Pengguna</a></li>
+                                    <li class="nav-item"><a href="users_division.html" class="nav-link">Divisi</a></li>
+                                    <li class="nav-item"><a href="users_role_and_access.html" class="nav-link">Peran dan Akses</a></li>
+                                    <li class="nav-item"><a href="users_approval.html" class="nav-link">Pengaturan Approval</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../locations/locations_list.html" class="nav-link"><i><img src="../assets/icons/icon-lokasi.png"></i> <span>Lokasi</span></a>
+                            </li>
+                            <li class="nav-item nav-item-submenu">
+                                <a href="#" class="nav-link"><i class="icon-city"></i> <span>Fasilitas</span></a>
+            
+                                <ul class="nav nav-group-sub" data-submenu-title="Starter kit">
+                                    <li class="nav-item"><a href="../facilities/facilities_list.html" class="nav-link active">Daftar Barang</a></li>
+                                    <li class="nav-item"><a href="../facilities/facilities_profile_setting.html" class="nav-link">Pengaturan Profil</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li class="nav-item nav-item-submenu">
+                                <a href="#" class="nav-link"><i><img src="../assets/icons/icon-kontrak.png"></i> <span>Kontrak</span></a>
+            
+                                <ul class="nav nav-group-sub" data-submenu-title="Starter kit">
+                                    <li class="nav-item"><a href="../contracts/contracts_list.html" class="nav-link">Daftar Kontrak</a></li>
+                                    <li class="nav-item"><a href="../contracts/vendors_list.html" class="nav-link">Daftar Vendor</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li class="nav-item nav-item-submenu">
+                                <a href="#" class="nav-link"><i><img src="../assets/icons/icon-pekerjaan.png"></i> <span>Pekerjaan</span></a>
+            
+                                <ul class="nav nav-group-sub" data-submenu-title="Starter kit">
+                                    <li class="nav-item"><a href="../jobs/jobs_list.html" class="nav-link">Daftar Pekerjaan</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a href="reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Laporan</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link"><i><img src="../assets/icons/icon-analitik.png"></i> <span>Analitik</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link"><i><img src="../assets/icons/icon-sistem.png"></i> <span>Sistem</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /main navigation -->
+            
+                </div>
+                <!-- /sidebar content -->
+                
+            </div>
+			<!-- /main sidebar -->
+
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Page header -->
+				<div class="page-header page-header-light">
+					<div class="page-header-content header-elements-md-inline">
+						<div class="page-title d-flex">
+							<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Pengguna</h4>
+							<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+						</div>
+					</div>
+
+					<div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
+						<div class="d-flex">
+							<div class="breadcrumb">
+								<a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
+								<a href="index.html" class="breadcrumb-item">Pengguna</a>
+								<span class="breadcrumb-item active">Daftar Pengguna</span>
+							</div>
+
+							<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+						</div>
+					</div>
+				</div>
+				<!-- /page header -->
+
+
+				<!-- Content area -->
+				<div class="content">
+					
+					<div class="row justify-content-between">
+						
+					</div>
+					<!-- Main charts -->
+					
+						<div class="col-md-12">
+							<div class="row">
+								<div class="card w-100">
+									<div class="row py-3 px-5 mb-0">
+										<div class="col-md-10 d-flex ">
+											<div class="col-md-4">
+												<form action="#">
+													<div class="form-group row">
+														<label class=" col-form-label">Filter: &nbsp;</label>
+														<div>
+															<div class="input-group">
+																<input type="text" class="form-control" placeholder="Wilayah, Sekolah" style="border-right: none;">
+																<span class="input-group-append">
+																	<span class="input-group-text" style="border-left: none; background: none;">
+																		<a href="#" style="color: black;"><i class="icon-search4"></i></a>
+																	</span>
+																</span>
+															</div>
+														</div>
+													</div>
+												</form>
+											</div>
+											<div class="col-md-4">
+												<form action="#">
+													<div class="form-group row">
+														<label class=" col-form-label">Filter: &nbsp;</label>
+														<div>
+															<div class="input-group">
+																<input type="text" class="form-control" placeholder="Divisi, Peran" style="border-right: none;">
+																<span class="input-group-append">
+																	<span class="input-group-text" style="border-left: none; background: none;">
+																		<a href="#" style="color: black;"><i class="icon-search4"></i></a>
+																	</span>
+																</span>
+															</div>
+														</div>
+													</div>
+												</form>
+											</div>
+											<div class="col-md-4">
+												<form action="#">
+													<div class="form-group row">
+														<label class=" col-form-label">Status &nbsp;</label>
+														<div>
+														
+																<select name="status" class="form-control select">
+																	<option value="0">Tidak Aktif</option>
+																	<option value="1">Aktif</option>
+																</select>
+															
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
+										<div class="col-md-2">
+											<div class="row justify-content-end">
+												<a href="#" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#addUser"><i class="icon-plus3"></i> Tambahkan</a>
+											</div>
+										</div>
+		
+									</div>
+									
+									<div class="col-12">
+										<table class="table table-border-solid">
+											<thead>
+												<tr>
+													<th>Nama</th>
+													<th>Email</th>
+													<th>No. Hp</th>
+													<th>Peran</th>
+													<th>Status</th>
+													<th>Tindakan</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Aura</td>
+													<td>auramay@gmail.com</td>
+													<td>081334967111</td>
+													<td>Admin</td>
+													<td><span class="badge badge-danger px-2">Tertunda</span></td>
+													<td>
+														<a href="#" class="btn btn-md btn-primary">Edit</a>
+														<a href="users_detail.html" class="btn btn-md btn-light">Detail</a>
+													</td>
+												</tr>
+												<tr>
+													<td>Beth</td>
+													<td>auramay@gmail.com</td>
+													<td>081334967111</td>
+													<td>Keuangan</td>
+													<td><span class="badge badge-success px-2">Aktif</span></td>
+													<td>
+														<a href="#" class="btn btn-md btn-primary">Edit</a>
+														<a href="users_detail.html" class="btn btn-md btn-light">Detail</a>
+													</td>
+												</tr>
+												<tr>
+													<td>Delma</td>
+													<td>auramay@gmail.com</td>
+													<td>081334967111</td>
+													<td>Manager</td>
+													<td><span class="badge badge-primary px-2">Tidak Aktif</span></td>
+													<td>
+														<a href="#" class="btn btn-md btn-primary">Edit</a>
+														<a href="users_detail.html" class="btn btn-md btn-light">Detail</a>
+													</td>
+												</tr>
+												<tr>
+													<td>Lizze</td>
+													<td>auramay@gmail.com</td>
+													<td>081334967111</td>
+													<td>Admin</td>
+													<td><span class="badge badge-danger px-2">Tertunda</span></td>
+													<td>
+														<a href="#" class="btn btn-md btn-primary">Edit</a>
+														<a href="users_detail.html" class="btn btn-md btn-light">Detail</a>
+													</td>
+												</tr>
+												<tr>
+													<td>Marth</td>
+													<td>auramay@gmail.com</td>
+													<td>081334967111</td>
+													<td>Admin</td>
+													<td><span class="badge badge-primary px-2">Tidak Aktif</span></td>
+													<td>
+														<a href="#" class="btn btn-md btn-primary">Edit</a>
+														<a href="users_detail.html" class="btn btn-md btn-light">Detail</a>
+													</td>
+												</tr>
+												<tr>
+													<td>Aura</td>
+													<td>auramay@gmail.com</td>
+													<td>081334967111</td>
+													<td>Admin</td>
+													<td><span class="badge badge-danger px-2">Tertunda</span></td>
+													<td>
+														<a href="#" class="btn btn-md btn-primary">Edit</a>
+														<a href="users_detail.html" class="btn btn-md btn-light">Detail</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<!-- Modal -->
+							<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel"><b>Tambah Pengguna</b></h5>
+									</div>
+									<div class="modal-body">
+										<form action="#" class="form-group">
+											<div class="row mb-3">
+												<label for=""><b>Nama Pengguna</b></label>
+												<input class="form-control" type="text" placeholder="John Mark">
+											</div>
+											<div class="row mb-3">
+												<label for=""><b>Sandi</b></label>
+												<input class="form-control" type="text" placeholder="johnmark05">
+											</div>
+											<div class="row mb-3">
+												<label for=""><b>Email</b></label>
+												<input class="form-control" type="text" placeholder="johnmark@gmail.com">
+											</div>
+											<div class="row mb-3">
+												<label for=""><b>No. Hp</b></label>
+												<input class="form-control" type="text" placeholder="0812-3456-7890">
+											</div>
+											<div class="row mb-3">
+												<label for=""><b>Alamat</b></label>
+												<input class="form-control" type="text" placeholder="Jl. Jeruk No.50, Surabaya Timur">
+											</div>
+											<div class="row mb-3">
+												<div class="col-md-6">
+													<label for=""><b>Peran</b></label>
+													<select name="role" class="form-control">
+														<option value="admin">Admin</option>
+														<option value="pegawai">Pegawai</option>
+													</select>
+												</div>
+												<div class="col-md-6">
+													<label for=""><b>Divisi</b></label>
+													<select name="division" class="form-control">
+														<option value="akademi">Akademi</option>
+														<option value="non-akademi">Non Akademi</option>
+													</select>
+												</div>
+											</div>
+											<div class="row mb-3">
+												<div class="col-md-6">
+													<label for=""><b>Wilayah</b></label>
+													<input class="form-control" type="text" value="Jawa">
+												</div>
+												<div class="col-md-6 d-flex align-items-end">
+													<a href="#">+ Tambah Wilayah</a>
+												</div>
+											</div>
+											<div class="row mb-3">
+												<div class="col-md-6">
+													<div class="d-flex flex-wrap">
+														<div id="app" class="form-group">
+															<div class="form-check form-check-inline">
+																<input class="form-check-input" type="checkbox" @click='selectAll' v-model='allSelected' id="select_all">
+																<label class="form-check-label" for="select_all">
+																Pilih Semua
+																</label>
+															</div>
+															<div v-for="school in schools" class="form-check form-check-inline">
+																<input class="form-check-input input-target" type="checkbox" :id='school' :value='school' v-model='selected' @click='select'>
+																<label class="form-check-label label-target" :for='school'>
+																	{{school}}
+																</label>
+																
+															</div>
+															<br>
+															<br>
+															sekolah terpilih: {{selected}}
+														</div>
+													</div>
+
+
+													<!-- <div class="d-flex flex-wrap">
+														<div class="form-group">
+															<div class="form-check form-check-inline">
+																<input class="form-check-input" type="checkbox" value="#" id="select_all">
+																<label class="form-check-label" for="select_all">
+																Pilih Semua
+																</label>
+															</div>
+															<div class="form-check form-check-inline">
+																<input class="form-check-input" type="checkbox" value="" id="sdh_tangerang">
+																<label class="form-check-label" for="sdh_tangerang">
+																	SDH Tangerang
+																</label>
+															</div>
+															<div class="form-check form-check-inline">
+																<input class="form-check-input" type="checkbox" value="" id="sdh_kemang">
+																<label class="form-check-label" for="sdh_kemang">
+																	SDH Kemang
+																</label>
+															</div>
+															<div class="form-check form-check-inline">
+																<input class="form-check-input" type="checkbox" value="" id="sdh_kupang">
+																<label class="form-check-label" for="sdh_kupang">
+																	SDH Kupang
+																</label>
+															</div>
+														</div>
+													</div>
+												</div> -->
+												
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+									<button type="button" class="btn btn-link text-danger" data-dismiss="modal">Batalkan</button>
+									<button type="button" class="btn btn-primary">Tambahkan</button>
+									</div>
+								</div>
+								</div>
+							</div>
+						</div>
+					
+
+				</div>
+				<!-- /content area -->
+
+				
+
+			</div>
+			<!-- /main content -->
+
+			<!-- Footer -->
+			<div class="navbar navbar-expand-lg navbar-light">
+				<div class="text-center d-lg-none w-100">
+					<button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+						<i class="icon-unfold mr-2"></i>
+						Footer
+					</button>
+				</div>
+
+				<div class="navbar-collapse collapse" id="navbar-footer">
+					<span class="navbar-text">
+						<p class="mb-0">&copy; 2020 Sekolah Dian Harapan</p>
+					</span>
+				</div>
+			</div>
+			<!-- /footer -->
+
+		</div>
+		<!-- /page content -->
+	
 
 
 	<script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
