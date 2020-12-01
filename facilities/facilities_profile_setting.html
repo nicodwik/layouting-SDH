@@ -352,7 +352,7 @@
                         <div class="row">
                             <div class="card w-100">
                                 <div class="row py-3 px-5 mb-0 d-flex justify-content-between">
-                                    <div class="col-md-8 d-flex ">
+                                    <div class="col-md-8 d-flex">
                                         <div class="col-md-6">
                                             <form action="#">
                                                 <div class="form-group row">
@@ -391,7 +391,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="row justify-content-end">
-                                            <a href="./facilities_add_profile_setting.html" class="btn btn-lg btn-primary"><i class="icon-plus3"></i> Tambahkan Profile</a>
+                                            <a href="./facilities_add_profile_setting.html" class="btn btn-md btn-primary"><i class="icon-plus3"></i> Tambahkan Profile</a>
                                         </div>
                                     </div>
     
@@ -417,8 +417,17 @@
                                                     <td>{{profile.maintenanceProcess}}</td>
                                                     <td>{{profile.total}}</td>
                                                     <td>
-                                                        <a href="#" class="btn btn-md btn-primary">Edit</a>
-                                                        <a href="facilities_detail_profile_setting.html" class="btn btn-md btn-light">Detail</a>
+														<a href="facilities_detail_profile_setting.html" class="btn btn-md btn-light">Detail</a>
+														<div class="dropdown d-inline ml-2">
+															<a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
+															  <img src="../assets/images/3-dots.png" alt="">
+															</a>
+															<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+															  <a class="dropdown-item" href="#">Edit</a>
+															  <a class="dropdown-item" href="#">Delete</a>
+															 
+															</div>
+														</div>
                                                     </td>
                                                 </tr>
                                             </tbody>

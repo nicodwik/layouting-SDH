@@ -333,7 +333,7 @@
 				<div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
 					<div class="d-flex">
 						<div class="breadcrumb">
-                            <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
+                            <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Dashboard</a>
                             <span class="breadcrumb-item">Pengguna</span>
 							<span class="breadcrumb-item active">Pengaturan Approval</span>
 						</div>
@@ -375,7 +375,7 @@
 										</div>
 										<div class="col-md-2">
 											<div class="row justify-content-end">
-												<a href="#" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#addUser"><i class="icon-plus3"></i> Tambahkan</a>
+												<a href="#" class="btn btn-md btn-primary" data-toggle="modal" data-target="#addUser"><i class="icon-plus3"></i> Tambahkan</a>
 											</div>
 										</div>
 		
@@ -400,8 +400,17 @@
 														<td>{{approval.minimum}}</td>
 														<td>{{approval.maximum}}</td>
 														<td>
-															<a href="#" class="btn btn-md btn-primary">Edit</a>
 															<a href="#" class="btn btn-md btn-light">Detail</a>
+															<div class="dropdown d-inline ml-2">
+																<a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
+																  <img src="../assets/images/3-dots.png" alt="">
+																</a>
+																<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+																  <a class="dropdown-item" href="#">Edit</a>
+																  <a class="dropdown-item" href="#">Delete</a>
+																 
+																</div>
+															</div>
 														</td>
 													</tr>
 													
