@@ -138,7 +138,7 @@ Vue.component('navbar-component', {
             <li class="nav-item dropdown dropdown-user">
                 <a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
                     <img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded-circle mr-2" height="34" alt="">
-                    <span>Admin SDH cabang jombang</span>
+                    <span>admin SDH</span>
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right">

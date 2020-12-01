@@ -28,7 +28,7 @@ export default
 						</div>
 	
 						<div class="media-body">
-							<div class="media-title font-weight-semibold">Admin SDH <br> cabang jombang</div>
+							<div class="media-title font-weight-semibold">Admin SDH <br> </div>
 							<div class="font-size-xs opacity-50">
 								<i class="icon-pin font-size-sm"></i> &nbsp;Rungkut, SBY
 							</div>
