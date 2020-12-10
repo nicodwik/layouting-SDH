@@ -38,6 +38,9 @@
             padding: 5px;
             font-size: 10px;
         }
+        .textInfo p, #star {
+            margin-bottom: 5px;
+        }
 	</style>
 
 	<!-- Core JS files -->
@@ -289,7 +292,7 @@
                                 <ul class="nav nav-group-sub" data-submenu-title="Layouts">
                                     <li class="nav-item"><a href="../users/users_list.html" class="nav-link" >Daftar Pengguna</a></li>
                                     <li class="nav-item"><a href="../users/users_division.html" class="nav-link">Divisi</a></li>
-                                    <li class="nav-item"><a href="../users/users_role_and_access.html" class="nav-link">Peran dan Akses</a></li>
+                                    <li class="nav-item"><a href="../users/users_role_and_access_list.html" class="nav-link">Peran dan Akses</a></li>
                                     <li class="nav-item"><a href="../users/users_approval.html" class="nav-link">Pengaturan Approval</a></li>
                                     
                                 </ul>
@@ -343,7 +346,7 @@
 
 
             <!-- Main content -->
-            <div class="content-wrapper">
+            <div id="app" class="content-wrapper">
 
                 <!-- Page header -->
                 <div class="page-header page-header-light">
@@ -372,96 +375,207 @@
                 <!-- Content area -->
                 <div class="content">
                     <!-- Main charts -->
-                    <div id="app">
-
-                    
-                        <div class="col-lg-12">
-                            <div class="row">
-                                <div class="card w-100 pb-0">
-                                    <p class="py-2 px-3 mb-0 border-bottom"><b>Detail Pekerjaan</b></p>
-                                    <div class="col-4 px-4 py-4">
-                                        <p>Data Barang</p>
-                                        <h6 class="text-left">AC</h6>
-                                        <br>
-                                        <p>Deskripsi pengerjaan</p>
-                                        <h6 class="text-justify"><b>AC tidak dingin</b></h6>
-                                        <br>
-                                        <p>Tingkat Darurat</p>
-                                        <h6 class="text-left"><b>Sedang</b></h6>
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="card w-100 pb-0">
+                                <p class="py-2 px-3 mb-0 border-bottom"><b>Detail Pekerjaan</b></p>
+                                <div class="col-4 px-4 pt-4">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p>Judul Laporan</p>
+                                            <h6 class="text-left">AC Rusak</h6>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Jadwal Pekerjaan</p>
+                                            <h6 class="text-left">11 Oktober 2019 - 20 Oktober 2019</h6>
+                                        </div>
                                     </div>
-                                    
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p>Deskripsi pengerjaan</p>
+                                            <h6 class="text-justify"><b>AC tidak dingin</b></h6>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Anggaran Dana</p>
+                                            <h6 class="text-justify"><b>Rp. 5.000.000</b></h6>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p>Tingkat Darurat</p>
+                                            <h6 class="text-justify"><b>Sedang</b></h6>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Biaya Akhir</p>
+                                            <h6 class="text-justify"><b>Rp. 10.000.000</b></h6>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p>Vendor</p>
+                                            <h6 class="text-justify"><b>PT. Angkasa</b></h6>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card w-100 pb-0">
-                                    <p class="py-2 px-3 mb-0 border-bottom"><b>Proses Pengerjaan</b></p>
-                                    
-                                    <b-card visible no-body class="mb-0 w-100 border-bottom">
-                                        <b-button v-b-toggle.jobs1 variant='white' class="text-left py-2 border-0 btn-block" style="height: 50px;">
-                                            <span v-if='processCollapsed1' class="mr-2"><i class="icon-minus3"></i></span>    
-                                            <span v-else class="mr-2"><i class="icon-plus3"></i></span>    
-                                            <b>Mulai</b>
-                                        </b-button>
-                                        <b-collapse id="jobs1" visible v-model='processCollapsed1'>
-                                            <div class="card-body py-2">
-                                                <p>18 Januari 2019</p>
-                                            </div>
-                                        </b-collapse>
-                                    </b-card>
-                                    <b-card visible no-body class="mb-0 w-100 border-bottom">
-                                        <b-button v-b-toggle.jobs2 variant='white' class="text-left py-2 border-0 btn-block" style="height: 50px;">
-                                            <span v-if='processCollapsed2' class="mr-2"><i class="icon-minus3"></i></span>    
-                                            <span v-else class="mr-2"><i class="icon-plus3"></i></span>    
-                                            <b>Buka kunci kode QR</b>
-                                        </b-button>
-                                        <b-collapse id="jobs2" visible v-model='processCollapsed2'>
-                                            <div class="card-body py-2">
-                                                <p>20 Januari 2019</p>
-                                            </div>
-                                        </b-collapse>
-                                    </b-card>
-                                    <b-card visible no-body class="mb-0 w-100 border-bottom">
-                                        <b-button v-b-toggle.jobs3 variant='white' class="text-left py-2 border-0 btn-block" style="height: 50px;">
-                                            <span v-if='processCollapsed3' class="mr-2"><i class="icon-minus3"></i></span>    
-                                            <span v-else class="mr-2"><i class="icon-plus3"></i></span>    
-                                            <b>Foto</b>
-                                        </b-button>
-                                        <b-collapse id="jobs3" visible v-model='processCollapsed3'>
-                                            <div class="card-body py-2">
-                                                <p>Sebelum</p>
-                                                <div>
-                                                    <img src="../assets/images/mockup.svg" width="50px">
-                                                    <img src="../assets/images/mockup.svg" width="50px">
-                                                </div>
-                                                <p>Sesudah</p>
-                                                <div>
-                                                    <img src="../assets/images/mockup.svg" width="50px">
-                                                    <img src="../assets/images/mockup.svg" width="50px">
-                                                </div>
-                                            </div>
-                                        </b-collapse>
-                                    </b-card>
-                                    <b-card visible no-body class="mb-0 w-100 border-bottom">
-                                        <b-button v-b-toggle.jobs4 variant='white' class="text-left py-2 border-0 btn-block" style="height: 50px;">
-                                            <span v-if='processCollapsed4' class="mr-2"><i class="icon-minus3"></i></span>    
-                                            <span v-else class="mr-2"><i class="icon-plus3"></i></span>    
-                                            <b>Pemeliharaan AC</b>
-                                        </b-button>
-                                        <b-collapse id="jobs4" visible v-model='processCollapsed4'>
-                                            <div class="card-body py-2">
-                                                <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                            </div>
-                                        </b-collapse>
-                                    </b-card>
-                                    
+                                <div class="col-12 pb-3 px-3">
+                                    <a href="#verify" class="btn btn-primary btn-lg float-right" data-toggle="modal">Verifikasi</a>
                                 </div>
-
+                            </div>
+                            <div class="card w-100 pb-0">
+                                <p class="py-2 px-3 mb-0 border-bottom"><b>Proses Pengerjaan</b></p>
+                                
+                                <b-card visible no-body class="mb-0 w-100 border-bottom">
+                                    <b-button v-b-toggle.jobs1 variant='white' class="text-left py-2 border-0 btn-block" style="height: 50px;">
+                                        <span v-if='processCollapsed1' class="mr-2"><i class="icon-minus3"></i></span>    
+                                        <span v-else class="mr-2"><i class="icon-plus3"></i></span>    
+                                        <b>Mulai</b>
+                                    </b-button>
+                                    <b-collapse id="jobs1" visible v-model='processCollapsed1'>
+                                        <div class="card-body py-2">
+                                            <p>18 Januari 2019</p>
+                                        </div>
+                                    </b-collapse>
+                                </b-card>
+                                <b-card visible no-body class="mb-0 w-100 border-bottom">
+                                    <b-button v-b-toggle.jobs2 variant='white' class="text-left py-2 border-0 btn-block" style="height: 50px;">
+                                        <span v-if='processCollapsed2' class="mr-2"><i class="icon-minus3"></i></span>    
+                                        <span v-else class="mr-2"><i class="icon-plus3"></i></span>    
+                                        <b>Buka kunci kode QR</b>
+                                    </b-button>
+                                    <b-collapse id="jobs2" visible v-model='processCollapsed2'>
+                                        <div class="card-body py-2">
+                                            <p>20 Januari 2019</p>
+                                        </div>
+                                    </b-collapse>
+                                </b-card>
+                                <b-card visible no-body class="mb-0 w-100 border-bottom">
+                                    <b-button v-b-toggle.jobs3 variant='white' class="text-left py-2 border-0 btn-block" style="height: 50px;">
+                                        <span v-if='processCollapsed3' class="mr-2"><i class="icon-minus3"></i></span>    
+                                        <span v-else class="mr-2"><i class="icon-plus3"></i></span>    
+                                        <b>Foto</b>
+                                    </b-button>
+                                    <b-collapse id="jobs3" visible v-model='processCollapsed3'>
+                                        <div class="card-body py-2">
+                                            <p>Sebelum</p>
+                                            <div>
+                                                <img src="../assets/images/mockup.svg" width="50px">
+                                                <img src="../assets/images/mockup.svg" width="50px">
+                                            </div>
+                                            <p>Sesudah</p>
+                                            <div>
+                                                <img src="../assets/images/mockup.svg" width="50px">
+                                                <img src="../assets/images/mockup.svg" width="50px">
+                                            </div>
+                                        </div>
+                                    </b-collapse>
+                                </b-card>
+                                <b-card visible no-body class="mb-0 w-100 border-bottom">
+                                    <b-button v-b-toggle.jobs4 variant='white' class="text-left py-2 border-0 btn-block" style="height: 50px;">
+                                        <span v-if='processCollapsed4' class="mr-2"><i class="icon-minus3"></i></span>    
+                                        <span v-else class="mr-2"><i class="icon-plus3"></i></span>    
+                                        <b>Pemeliharaan AC</b>
+                                    </b-button>
+                                    <b-collapse id="jobs4" visible v-model='processCollapsed4'>
+                                        <div class="card-body py-2">
+                                            <b-form-checkbox>Cek Body AC</b-form-checkbox>
+                                            <b-form-checkbox>Cek Body AC</b-form-checkbox>
+                                            <b-form-checkbox>Cek Body AC</b-form-checkbox>
+                                        </div>
+                                    </b-collapse>
+                                </b-card>
                                 
                             </div>
+
+                            
                         </div>
-                    </div>  
+                    </div>
+                     
                 </div>
                 <!-- /content area -->
+
+                <!-- Modal -->
+                <div class="modal fade" id="verify" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title mb-3" id="exampleModalLabel"><b>Verifikasi Pekerjaan</b></h5>
+                            </div>
+                            <div class="modal-body">
+                                <form action="#" class="form-group">
+                                    <b>Nomer Laporan/Tiket</b>
+                                    <p>0293824</p>
+                                    <div class="mb-4">
+                                        <label for=""><b>Status Pekerjaan</b></label>
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" name="status" type="radio" id="total">
+                                                <label for="total" class="form-check-label">Selesai Total</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" name="status" type="radio" id="half">
+                                                <label for="half" class="form-check-label">Pergantian Sebagian</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" name="status" type="radio" id="damaged">
+                                                <label for="damaged" class="form-check-label">Rusak, Ganti Total</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <b>Vendor</b>
+                                    <p>PT Angkasa</p>
+                                    <br>
+                                    <b>Nama Kontak</b>
+                                    <p>Aura</p>
+                                    <br>
+                                    <p><b>Performa</b></p>
+                                    <p class="mb-0">Kerapihan</p>
+                                    <div class="d-inline" id="star">
+                                        <img src="../assets/images/star-on.svg">
+                                        <img src="../assets/images/star-on.svg">
+                                        <img src="../assets/images/star-on.svg">
+                                        <img src="../assets/images/star-off.svg">
+                                        <img src="../assets/images/star-off.svg">
+                                    </div>
+                                    <p class="mb-0">Ketepatan</p>
+                                    <div class="d-inline" id="star">
+                                        <img src="../assets/images/star-on.svg">
+                                        <img src="../assets/images/star-on.svg">
+                                        <img src="../assets/images/star-on.svg">
+                                        <img src="../assets/images/star-on.svg">
+                                        <img src="../assets/images/star-on.svg">
+                                    </div>
+                                    <p class="mb-0">Kecepatan</p>
+                                    <div class="d-inline" id="star">
+                                        <img src="../assets/images/star-on.svg">
+                                        <img src="../assets/images/star-on.svg">
+                                        <img src="../assets/images/star-on.svg">
+                                        <img src="../assets/images/star-on.svg">
+                                        <img src="../assets/images/star-off.svg">
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <label for=""><b>Keterangan</b></label>
+                                    <textarea name="keterangan" id="" cols="30" rows="5" class="form-control"></textarea>
+                                    <div class="form-check mt-2">
+                                        <input class="form-check-input" type="checkbox" id="defaultCheck1" v-model='terms'>
+                                        <label class="form-check-label" for="defaultCheck1">Saya yakin bahwa pekerjaan ini telah selesai dan terverifikasi</label>                                  </label>
+                                    </div>
+                                </form>
+                                <div class="col-12 px-0">
+                                    
+                                    
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-link text-danger" data-dismiss="modal">Batalkan</button>
+                                <button type="submit" :disabled='isDisabled' class="btn btn-primary">Tambahkan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- Footer -->
                 <div class="navbar navbar-expand-lg navbar-light">
@@ -482,6 +596,8 @@
                 
             </div>
             <!-- /main content -->
+
+            
         
 
         </div>
@@ -499,6 +615,12 @@
                 processCollapsed2: true,
                 processCollapsed3: true,
                 processCollapsed4: true,
+                terms: false
+            },
+            computed: {
+                isDisabled: function() {
+                    return !this.terms
+                }
             }
         })
     </script>

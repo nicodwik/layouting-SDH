@@ -275,7 +275,7 @@
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
 								<li class="nav-item"><a href="../users/users_list.html" class="nav-link active" >Daftar Pengguna</a></li>
 								<li class="nav-item"><a href="../users/users_division.html" class="nav-link">Divisi</a></li>
-								<li class="nav-item"><a href="../users/users_role_and_access.html" class="nav-link">Peran dan Akses</a></li>
+								<li class="nav-item"><a href="../users/users_role_and_access_list.html" class="nav-link">Peran dan Akses</a></li>
 								<li class="nav-item"><a href="../users/users_approval.html" class="nav-link">Pengaturan Approval</a></li>
 								
 							</ul>
@@ -309,8 +309,11 @@
 						</li>
 						
 						<li class="nav-item">
-							<a href="reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Laporan</span></a>
-						</li>
+                                <a href="../reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../delayed_reports/delayed_reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan-tertunda.png"></i> <span>Laporan Tertunda</span></a>
+                            </li>
 						<li class="nav-item">
 							<a href="#" class="nav-link"><i><img src="../assets/icons/icon-analitik.png"></i> <span>Analitik</span></a>
 						</li>
@@ -480,79 +483,125 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card">
-                                    <div class="row py-3 px-3 mb-0 d-flex justify-content-between">
+                                    <div class="py-3 px-3 mb-0 d-flex justify-content-between">
                                         <div class="col-md-10 d-flex">
-                                            
-                                                <form action="#">
-                                                    <div class="form-group row">
-                                                        <label class=" col-form-label">Filter: &nbsp;</label>
-                                                        <div>
-                                                            <div class="input-group">
-                                                                <input type="text" class="form-control" placeholder="Wilayah, Sekolah" style="border-right: none;">
-                                                                <span class="input-group-append">
-                                                                    <span class="input-group-text" style="border-left: none; background: none;">
-                                                                        <a href="#" style="color: black;"><i class="icon-search4"></i></a>
-                                                                    </span>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                                <form action="#" class="ml-5">
-                                                    <div class="form-group row">
-                                                        <label class=" col-form-label">Tingkat Darurat: &nbsp;</label>
-                                                        <div>
-                                                            <select name="status" class="form-control select">
-                                                                <option value="low">Rendah</option>
-                                                                <option value="medium">Sedang</option>
-                                                                <option value="high">Tinggi</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </form>
+											<form action="#">
+												<div class="form-group row">
+													<label class=" col-form-label">Filter: &nbsp;</label>
+													<div>
+														<div class="input-group">
+															<input type="text" class="form-control" placeholder="Lokasi" style="border-right: none;">
+															<span class="input-group-append">
+																<span class="input-group-text" style="border-left: none; background: none;">
+																	<a href="#" style="color: black;"><i class="icon-search4"></i></a>
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+											</form>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="row justify-content-end">
-                                                <a href="#" class="btn btn-lg btn-primary mr-3" data-toggle="modal" data-target="#addVendor"><i class="icon-plus3"></i> Pilih WO</a>
+                                                <a href="#" class="btn btn-lg btn-primary mr-3" data-toggle="modal" data-target="#addVendor"><i class="icon-plus3"></i>&nbsp; Tambahkan</a>
                                             </div>
                                         </div>
-        
-                                    </div>   
-                                    <table class="table table-border-solid">
-                                        <thead>
-                                            <tr class="text-center">
-                                                <th><b>Kode WO</b></th>
-                                                <th><b>Nama Barang</b></th>
-                                                <th><b>Tanggal Mulai</b></th>
-                                                <th><b>Tanggal Berakhir</b></th>
-                                                <th><b>Lokasi</b></th>
-                                                <th><b>Proses</b></th>
-                                                <th><b>Status</b></th>
-                                                <th><b>Tindakan</b></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="text-center" v-for='workOrder in workOrders'>
-                                                <td>{{workOrder.WOCode}}</td>
-                                                <td>{{workOrder.inventoryName}}</td>
-                                                <td>{{workOrder.startDate}}</td>
-                                                <td>{{workOrder.endDate}}</td>
-                                                <td>{{workOrder.location}}</td>
-                                                <td>{{workOrder.process}}</td>
-                                                <td><span class="badge badge-success py-2 px-2 fo"><p class="mb-0">{{workOrder.status}}</p></span></td>
-                                                <td>
-                                                    <a href="#" class="btn btn-primary btn-md">Edit</a>
-                                                    <a href="#" class="btn btn-light btn-md">Detail</a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+									</div>
+									<div class="nav nav-tabs px-3" id="nav-tab" role="tablist">
+										<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#jobs" role="tab" aria-controls="jobs" aria-selected="true">Pekerjaan</a>
+										<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#employee" role="tab" aria-controls="employee" aria-selected="false">Pegawai</a>
+									</div>
+									<div class="tab-content" id="nav-tabContent">
+										<div class="tab-pane fade show active" id="jobs" role="tabpanel" aria-labelledby="nav-home-tab">
+											<table class="table table-border-solid">
+												<thead>
+													<tr class="text-center">
+														<th><b>No. WO</b></th>
+														<th><b>Nama Barang</b></th>
+														<th><b>Tanggal Mulai</b></th>
+														<th><b>Tanggal Berakhir</b></th>
+														<th><b>Lokasi</b></th>
+														<th><b>Proses</b></th>
+														<th><b>Status</b></th>
+														<th><b>Tindakan</b></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr class="text-center" v-for='workOrder in workOrders'>
+														<td>{{workOrder.WOCode}}</td>
+														<td>{{workOrder.inventoryName}}</td>
+														<td>{{workOrder.startDate}}</td>
+														<td>{{workOrder.endDate}}</td>
+														<td>{{workOrder.location}}</td>
+														<td>{{workOrder.process}}</td>
+														<td><span class="badge badge-success py-2 px-2 fo"><p class="mb-0">{{workOrder.status}}</p></span></td>
+														<td>
+															
+															<a href="#" class="btn btn-light btn-md">Detail</a>
+															<div class="dropdown d-inline ml-2">
+																<a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
+																<img src="../assets/images/3-dots.png" alt="">
+																</a>
+																<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+																<a class="dropdown-item" href="#">Edit</a>
+																<a class="dropdown-item" href="#">Delete</a>
+																
+																</div>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="tab-pane fade" id="employee" role="tabpanel" aria-labelledby="nav-profile-tab">
+											<table class="table table-border-solid">
+												<thead>
+													<tr class="text-center">
+														<th><b>No. WO</b></th>
+														<th><b>Nama Barang</b></th>
+														<th><b>Tanggal Mulai</b></th>
+														<th><b>Tanggal Berakhir</b></th>
+														<th><b>Lokasi</b></th>
+														<th><b>Proses</b></th>
+														<th><b>Status</b></th>
+														<th><b>Tindakan</b></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr class="text-center" v-for='workOrder in workOrders'>
+														<td>{{workOrder.WOCode}}</td>
+														<td>{{workOrder.inventoryName}}</td>
+														<td>{{workOrder.startDate}}</td>
+														<td>{{workOrder.endDate}}</td>
+														<td>{{workOrder.location}}</td>
+														<td>{{workOrder.process}}</td>
+														<td><span class="badge badge-success py-2 px-2 fo"><p class="mb-0">{{workOrder.status}}</p></span></td>
+														<td>
+															
+															<a href="#" class="btn btn-light btn-md">Detail</a>
+															<div class="dropdown d-inline ml-2">
+																<a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
+																<img src="../assets/images/3-dots.png" alt="">
+																</a>
+																<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+																<a class="dropdown-item" href="#">Edit</a>
+																<a class="dropdown-item" href="#">Delete</a>
+																
+																</div>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									  </div>
+                                    
                                 </div>
                             </div>
                         </div>
 						<!-- Modal -->
 						<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog" role="document">
+							<div class="modal-dialog modal-dialog-centered" role="document">
 							  <div class="modal-content">
 								<div class="modal-header">
 								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Divisi</b></h5>

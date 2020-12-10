@@ -297,12 +297,12 @@
                             <li class="nav-item">
                                 <a href="../locations/locations_list.html" class="nav-link"><i><img src="../assets/icons/icon-lokasi.png"></i> <span>Lokasi</span></a>
                             </li>
-                            <li class="nav-item nav-item-submenu nav-item-expanded nav-item-open">
+                            <li class="nav-item nav-item-submenu ">
                                 <a href="#" class="nav-link"><i class="icon-city"></i> <span>Fasilitas</span></a>
             
                                 <ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-                                    <li class="nav-item"><a href="./facilities_list.html" class="nav-link">Daftar Barang</a></li>
-                                    <li class="nav-item"><a href="./facilities_profile_setting.html" class="nav-link active">Pengaturan Profil</a></li>
+                                    <li class="nav-item"><a href="../facilities/facilities_list.html" class="nav-link">Daftar Barang</a></li>
+                                    <li class="nav-item"><a href="../facilities/facilities_profile_setting.html" class="nav-link">Pengaturan Profil</a></li>
                                     
                                 </ul>
                             </li>
@@ -323,7 +323,10 @@
                             </li>
                             
                             <li class="nav-item">
-                                <a href="reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
+                                <a href="../reports/reports_list.html" class="nav-link active"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../delayed_reports/delayed_reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan-tertunda.png"></i> <span>Laporan Tertunda</span></a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link"><i><img src="../assets/icons/icon-analitik.png"></i> <span>Analitik</span></a>
@@ -349,7 +352,7 @@
                 <div class="page-header page-header-light">
                     <div class="page-header-content header-elements-md-inline">
                         <div class="page-title d-flex">
-                            <h4><a href="facilities_profile_setting.html" style="color: black;"><i class="icon-arrow-left52 mr-2"></i></a> <span class="font-weight-semibold">Detail Pengaturan Profil</h4>
+                            <h4><a href="reports_detail.html" style="color: black;"><i class="icon-arrow-left52 mr-2"></i></a> <span class="font-weight-semibold">Detail Pelaporan Barang</h4>
                             <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
                         </div>
                     </div>
@@ -358,10 +361,8 @@
                         <div class="d-flex">
                             <div class="breadcrumb">
                                 <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Dashboard</a>
-                                <span class="breadcrumb-item">Fasilitas</span>
-                                <span class="breadcrumb-item">Pengaturan Profil</span>
+                                <span class="breadcrumb-item">Tiket</span>
                             </div>
-
                             <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
                         </div>
                     </div>
@@ -380,166 +381,30 @@
                                 <div class="card w-100 pt-4 pb-0">
                                     <div class="row">
                                         <div class="col-4 px-4 py-3">
-                                            <p>Nama Profil</p>
-                                            <h6 class="text-left">AC Split</h6>
+                                            <p>Nama</p>
+                                            <h6 class="text-left"><b>AC</b></h6>
+                                            <br>
+                                            <p>Lokasi</p>
+                                            <h6 class="text-left"><b>SDH Jawa</b></h6>
+                                            <br>
+                                            <p>Prioritas</p>
+                                            <h6 class="text-left"><b>Tinggi</b></h6>
+                                            <br>
+                                            <p>Status</p>
+                                            <h6 class="text-left"><b>Disetujui</b></h6>
+                                            <br>
+                                            <p>Foto</p>
+                                            <img src="../assets/images/mockup.svg" width="75px">
+                                            <img src="../assets/images/mockup.svg" width="75px">
+                                            <br>
+                                            <br>
                                             <br>
                                             <p>Deskripsi</p>
-                                            <h6 class="text-justify"><b>Lorem ipsum dolor sit ametconsecteteur adi piscing elis sed diam nonummy.</b></h6>
+                                            <h6 class="text-left"><b>AC tidak dingin</b></h6>
                                         </div>
                                     </div>
-                                    <div class="row px-2">
-                                        <ul class="nav nav-tabs w-100 mx-0 mb-0" id="myTab" role="tablist">
-                                            <li class="nav-item ml-3">
-                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#maintenance" role="tab" aria-controls="home" aria-selected="true">Proses Pemeliharaan</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#work" role="tab" aria-controls="profile" aria-selected="false">Proses Pengerjaan</a>
-                                            </li>
-                                        </ul>
-                                        
-                                    </div>
-                                    
-                                    <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active w-100" id="maintenance" role="tabpanel" aria-labelledby="home-tab">
-                                            <b-card visible no-body class="mb-0 border-0">
-                                                <b-button v-b-toggle.maintenance1 variant='white' class="text-left py-2 border-bottom" style="height: 50px;">
-                                                    <span v-if='processCollapsed1' class="mr-2"><i class="icon-minus3"></i></span>    
-                                                    <span v-else class="mr-2"><i class="icon-plus3"></i></span>    
-                                                    <b>Proses 1</b>
-                                                </b-button>
-                                                <b-collapse id="maintenance1" v-model='processCollapsed1'>
-                                                    <div class="card-body">
-                                                        <p><b>Cek Temperatur</b></p>
-                                                        <br>
-                                                        <p><b>Foto Sebelum</b></p>
-                                                        <img src="../assets/images/mockup.svg" width="75px">
-                                                        <br>
-                                                        <p><b>Foto Setelah</b></p>
-                                                        <img src="../assets/images/mockup.svg" class="mb-3" width="75px">
-                                                        
-                                                        <p><b>Cek Fisik</b></p>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                    </div>
-                                                </b-collapse>
-                                            </b-card>
-                                            <b-card no-body class="mb-0 border-0">
-                                                <b-button v-b-toggle.maintenance2 variant='white' class="text-left py-2 border-bottom" style="height: 50px;">
-                                                    <span v-if='processCollapsed2' class="mr-2"><i class="icon-minus3"></i></span>    
-                                                    <span v-else class="mr-2"><i class="icon-plus3"></i></span>    
-                                                    <b>Proses 2</b>
-                                                </b-button>
-                                                <b-collapse id="maintenance2" v-model='processCollapsed2'>
-                                                    <div class="card-body">
-                                                        <p><b>Cek Temperatur</b></p>
-                                                        <br>
-                                                        <p><b>Foto Sebelum</b></p>
-                                                        <img src="../assets/images/mockup.svg" width="75px">
-                                                        <br>
-                                                        <p><b>Foto Setelah</b></p>
-                                                        <img src="../assets/images/mockup.svg" class="mb-3" width="75px">
-                                                        
-                                                        <p><b>Cek Fisik</b></p>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                    </div>
-                                                </b-collapse>
-                                            </b-card>
-                                            <b-card no-body class="mb-0 border-0">
-                                                <b-button v-b-toggle.maintenance3 variant='white' class="text-left py-2 border-bottom" style="height: 50px;">
-                                                    <span v-if='processCollapsed3' class="mr-2"><i class="icon-minus3"></i></span>    
-                                                    <span v-else class="mr-2"><i class="icon-plus3"></i></span>
-                                                    <b>Proses 3</b>
-                                                </b-button>
-                                                <b-collapse id="maintenance3" v-model='processCollapsed3'>
-                                                    <div class="card-body">
-                                                        <p><b>Cek Temperatur</b></p>
-                                                        <br>
-                                                        <p><b>Foto Sebelum</b></p>
-                                                        <img src="../assets/images/mockup.svg" width="75px">
-                                                        <br>
-                                                        <p><b>Foto Setelah</b></p>
-                                                        <img src="../assets/images/mockup.svg" class="mb-3" width="75px">
-                                                        
-                                                        <p><b>Cek Fisik</b></p>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                    </div>
-                                                </b-collapse>
-                                            </b-card>
-                                        </div>
-                                        <div class="tab-pane fade" id="work" role="tabpanel" aria-labelledby="profile-tab">
-                                            <b-card no-body class="mb-0 border-0">
-                                                <b-button v-b-toggle.work1 variant='white' class="text-left py-2 border-bottom" style="height: 50px;">
-                                                        <b>Proses A </b>
-                                                </b-button>
-                                                <b-collapse id="work1">
-                                                    <div class="card-body">
-                                                        <p><b>Cek Temperatur</b></p>
-                                                        <br>
-                                                        <p><b>Foto Sebelum</b></p>
-                                                        <img src="../assets/images/mockup.svg" width="75px">
-                                                        <br>
-                                                        <p><b>Foto Setelah</b></p>
-                                                        <img src="../assets/images/mockup.svg" class="mb-3" width="75px">
-                                                        
-                                                        <p><b>Cek Fisik</b></p>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                    </div>
-                                                </b-collapse>
-                                            </b-card>
-                                            <b-card no-body class="mb-0 border-0">
-                                                <b-button v-b-toggle.work2 variant='white' class="text-left py-2 border-bottom" style="height: 50px;">
-                                                        <b>Proses B </b>
-                                                </b-button>
-                                                <b-collapse id="work2">
-                                                    <div class="card-body">
-                                                        <p><b>Cek Temperatur</b></p>
-                                                        <br>
-                                                        <p><b>Foto Sebelum</b></p>
-                                                        <img src="../assets/images/mockup.svg" width="75px">
-                                                        <br>
-                                                        <p><b>Foto Setelah</b></p>
-                                                        <img src="../assets/images/mockup.svg" class="mb-3" width="75px">
-                                                        
-                                                        <p><b>Cek Fisik</b></p>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                    </div>
-                                                </b-collapse>
-                                            </b-card>
-                                            <b-card no-body class="mb-0 border-0">
-                                                <b-button v-b-toggle.work3 variant='white' class="text-left py-2 border-bottom" style="height: 50px;">
-                                                        <b>Proses C</b>
-                                                </b-button>
-                                                <b-collapse id="work3">
-                                                    <div class="card-body">
-                                                        <p><b>Cek Temperatur</b></p>
-                                                        <br>
-                                                        <p><b>Foto Sebelum</b></p>
-                                                        <img src="../assets/images/mockup.svg" width="75px">
-                                                        <br>
-                                                        <p><b>Foto Setelah</b></p>
-                                                        <img src="../assets/images/mockup.svg" class="mb-3" width="75px">
-                                                        
-                                                        <p><b>Cek Fisik</b></p>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                        <b-form-checkbox>Cek Body AC</b-form-checkbox>
-                                                    </div>
-                                                </b-collapse>
-                                            </b-card>
-                                        </div>
-                                        
-                                    </div>  
                                     <div class="row justify-content-end p-4 pb-0">
-                                        <button class="btn btn-md btn-primary" type="button">Edit</button>
+                                        <button class="btn btn-md btn-primary" type="button" data-toggle="modal" data-target="#addWorkOrder">Ajukan WO</button>
                                     </div>
                                 </div>
                             </div>
@@ -547,6 +412,51 @@
                     </div>  
                 </div>
                 <!-- /content area -->
+
+                <!-- Modal Add Work Order -->
+                <div class="modal fade" id="addWorkOrder" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel"><b>Ajukan WO</b></h5>
+                        </div>
+                        <div class="modal-body">
+                            <p>Nama Barang</p>
+                            <p><b>AC</b></p>
+                            <br>
+                            <p>Lokasi</p>
+                            <p><b>SDH Jawa</b></p>
+                            <br>
+                            <p>Pelapor</p>
+                            <p><b>Abdi</b></p>
+                            <br>
+                            <p>Tanggal Laporan</p>
+                            <p><b>20 Agustus 2019</b></p>
+                            <br>
+                            <p>Prioritas</p>
+                            <p><b>Tinggi</b></p>
+                            <br>
+                            <form action="#" class="form-group px-2">
+                                <div class="row mb-3">
+                                    <label for=""><b>Estimasi Dana</b></label>
+                                    <input class="form-control" type="number" placeholder="Rp 10.000.000">
+                                </div>
+                                <div class="row mb-3">
+                                    <label for=""><b>Tanggal Pengerjaan</b></label>
+                                    <input type="date" class="form-control">
+                                </div>
+                                
+                                
+                            </form>
+                            <button class="btn btn-link text-danger p-0">Tidak Valid</button>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-link text-danger" data-dismiss="modal">Batalkan</button>
+                          <button type="submit" class="btn btn-primary">Tambahkan</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
                 
                 <!-- Footer -->
                 <div class="navbar navbar-expand-lg navbar-light">

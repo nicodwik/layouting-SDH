@@ -227,7 +227,7 @@ Vue.component('sidebar-component', {
                     <ul class="nav nav-group-sub" data-submenu-title="Layouts">
                         <li class="nav-item"><a href="users/users_list.html" class="nav-link" @click="selected = users-list" :class="{active:selected == users-list}">Daftar Pengguna</a></li>
                         <li class="nav-item"><a href="users_division.html" class="nav-link">Divisi</a></li>
-                        <li class="nav-item"><a href="users_role_and_access.html" class="nav-link">Peran dan Akses</a></li>
+                        <li class="nav-item"><a href="users_role_and_access_list.html" class="nav-link">Peran dan Akses</a></li>
                         
                     </ul>
                 </li>
@@ -261,7 +261,7 @@ Vue.component('sidebar-component', {
                 </li>
                 
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Laporan</span></a>
+                    <a href="#" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link"><i><img src="../assets/icons/icon-analitik.png"></i> <span>Analitik</span></a>

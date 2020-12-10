@@ -272,7 +272,7 @@
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
 								<li class="nav-item"><a href="../users/users_list.html" class="nav-link active" >Daftar Pengguna</a></li>
 								<li class="nav-item"><a href="../users/users_division.html" class="nav-link">Divisi</a></li>
-								<li class="nav-item"><a href="../users/users_role_and_access.html" class="nav-link">Peran dan Akses</a></li>
+								<li class="nav-item"><a href="../users/users_role_and_access_list.html" class="nav-link">Peran dan Akses</a></li>
 								<li class="nav-item"><a href="../users/users_approval.html" class="nav-link">Pengaturan Approval</a></li>
 								
 							</ul>
@@ -306,8 +306,11 @@
 						</li>
 						
 						<li class="nav-item">
-							<a href="reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Laporan</span></a>
-						</li>
+                                <a href="../reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../delayed_reports/delayed_reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan-tertunda.png"></i> <span>Laporan Tertunda</span></a>
+                            </li>
 						<li class="nav-item">
 							<a href="#" class="nav-link"><i><img src="../assets/icons/icon-analitik.png"></i> <span>Analitik</span></a>
 						</li>
@@ -487,8 +490,17 @@
                                                                 <td>{{workOrder.process}}</td>
                                                                 <td><span class="badge badge-success py-2 px-2 fo"><p class="mb-0">{{workOrder.status}}</p></span></td>
                                                                 <td>
-                                                                    <a href="#" class="btn btn-primary btn-md">Edit</a>
-                                                                    <a href="#" class="btn btn-light btn-md">Detail</a>
+																	<a href="#" class="btn btn-light btn-md">Detail</a>
+																	<div class="dropdown d-inline ml-2">
+																		<a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
+																		  <img src="../assets/images/3-dots.png" alt="">
+																		</a>
+																		<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+																		  <a class="dropdown-item" href="#">Edit</a>
+																		  <a class="dropdown-item" href="#">Delete</a>
+																		 
+																		</div>
+																	</div>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -500,7 +512,7 @@
                         </div>
 						<!-- Modal -->
 						<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog" role="document">
+							<div class="modal-dialog modal-dialog-centered" role="document">
 							  <div class="modal-content">
 								<div class="modal-header">
 								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Divisi</b></h5>

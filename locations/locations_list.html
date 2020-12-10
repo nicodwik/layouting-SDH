@@ -264,7 +264,7 @@
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
 								<li class="nav-item"><a href="../users/users_list.html" class="nav-link active" >Daftar Pengguna</a></li>
 								<li class="nav-item"><a href="../users/users_division.html" class="nav-link">Divisi</a></li>
-								<li class="nav-item"><a href="../users/users_role_and_access.html" class="nav-link">Peran dan Akses</a></li>
+								<li class="nav-item"><a href="../users/users_role_and_access_list.html" class="nav-link">Peran dan Akses</a></li>
 								<li class="nav-item"><a href="../users/users_approval.html" class="nav-link">Pengaturan Approval</a></li>
 								
 							</ul>
@@ -299,8 +299,11 @@
 						</li>
 						
 						<li class="nav-item">
-							<a href="reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
-						</li>
+                                <a href="../reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../delayed_reports/delayed_reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan-tertunda.png"></i> <span>Laporan Tertunda</span></a>
+                            </li>
 						<li class="nav-item">
 							<a href="#" class="nav-link"><i><img src="../assets/icons/icon-analitik.png"></i> <span>Analitik</span></a>
 						</li>
@@ -380,7 +383,7 @@
 										</div>
 		
 									</div>
-									<div class="col-12">
+									<div class="col-12 px-0">
 										
 											<table class="table table-border-solid">
 												<thead>
@@ -391,7 +394,7 @@
 														<th>TIndakan</th>
 													</tr>
 												</thead>
-												<tbody>
+												<tbody v-if='filteredRows.length > 0'>
 													<tr v-for='(location, index) in filteredRows' :key="`location-${index}`">
 														<td v-html='location.region'></td>
 														<td>{{location.school}}</td>
@@ -399,6 +402,11 @@
 														<td>
 															<a href="locations_detail.html" class="btn btn-md btn-light">Detail</a>
 														</td>
+													</tr>
+												</tbody>
+												<tbody v-else>
+													<tr>
+														<td colspan="4" class="text-danger text-center">Tidak ada data</td>
 													</tr>
 												</tbody>
 											</table>
@@ -409,7 +417,7 @@
 						</div>
 						<!-- Modal -->
 						<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog" role="document">
+							<div class="modal-dialog modal-dialog-centered" role="document">
 							  <div class="modal-content">
 								<div class="modal-header">
 								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Divisi</b></h5>

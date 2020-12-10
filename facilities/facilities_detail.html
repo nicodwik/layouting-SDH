@@ -206,7 +206,7 @@
 	<!-- Page content -->
 	<div class="page-content">
 
-		<!-- Main sidebar -->
+		 <!-- Main sidebar -->
 		<div class="sidebar sidebar-dark sidebar-main sidebar-expand-md">
 
 			<!-- Sidebar mobile toggler -->
@@ -221,11 +221,11 @@
 				</a>
 			</div>
 			<!-- /sidebar mobile toggler -->
-		
-		
+
+
 			<!-- Sidebar content -->
 			<div class="sidebar-content">
-		
+
 				<!-- User menu -->
 				<div class="sidebar-user">
 					<div class="card-body">
@@ -233,14 +233,14 @@
 							<div class="mr-3">
 								<a href="#"><img src="../global_assets/images/placeholders/placeholder.jpg" width="38" height="38" class="rounded-circle" alt=""></a>
 							</div>
-		
+
 							<div class="media-body">
 								<div class="media-title font-weight-semibold">Admin SDH <br> </div>
 								<div class="font-size-xs opacity-50">
-									<i class="icon-pin font-size-sm"></i> &nbsp;Rungkut, SBY
+									<i class="icon-pin font-size-sm"></i> &nbsp;Jombang, Jawa Timur
 								</div>
 							</div>
-		
+
 							<div class="ml-3 align-self-center">
 								<a href="#" class="text-white"><i class="icon-cog3"></i></a>
 							</div>
@@ -248,18 +248,18 @@
 					</div>
 				</div>
 				<!-- /user menu -->
-		
-		
+
+
 				<!-- Main navigation -->
 				<div class="card card-sidebar-mobile">
 					<br>
 					<br>
 					<ul class="nav nav-sidebar" data-nav-type="accordion">
-		
+
 						<!-- Main -->
 						
 						<li class="nav-item">
-							<a href="index.html" class="nav-link">
+							<a href="index.html" class='nav-link' >
 								<i class="icon-home4"></i>
 								<span>
 									Dashboard
@@ -267,57 +267,61 @@
 							</a>
 						</li>
 						<li class="nav-item nav-item-submenu">
-							<a href="#" class="nav-link"><i class="icon-users"></i> <span>Detail Barang</span></a>
-		
+							<a href="#" class="nav-link" class='nav-link'><i><img src="../assets/icons/icon-pengguna.png"></i> <span>Pengguna</span></a>
+
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="users_list.html" class="nav-link">Daftar Pengguna</a></li>
-								<li class="nav-item"><a href="users_division.html" class="nav-link">Divisi</a></li>
-								<li class="nav-item"><a href="users_role_and_access.html" class="nav-link">Peran dan Akses</a></li>
+								<li class="nav-item"><a href="../users/users_list.html" class="nav-link" @click="selected = users-list" :class="{active:selected == users-list}">Daftar Pengguna</a></li>
+								<li class="nav-item"><a href="../users/users_division.html" class="nav-link">Divisi</a></li>
+								<li class="nav-item"><a href="../users/users_role_and_access_list.html" class="nav-link">Peran dan Akses</a></li>
+								<li class="nav-item"><a href="../users/users_approval.html" class="nav-link">Pengaturan Approval</a></li>
 								
 							</ul>
 						</li>
 						<li class="nav-item">
-							<a href="../locations/locations_list.html" class="nav-link"><i class="icon-location4"></i> <span>Lokasi</span></a>
+							<a href="../locations/locations_list.html" class="nav-link"><i><img src="../assets/icons/icon-lokasi.png"></i> <span>Lokasi</span></a>
 						</li>
 						<li class="nav-item nav-item-submenu nav-item-expanded nav-item-open">
-							<a href="#" class="nav-link active"><i class="icon-city"></i> <span>Fasilitas</span></a>
-		
+							<a href="#" class="nav-link"><i class="icon-city"></i> <span>Fasilitas</span></a>
+
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-								<li class="nav-item"><a href="./facilities_list.html" class="nav-link active">Daftar Barang</a></li>
-								<li class="nav-item"><a href="./facilities_profile_setting.html" class="nav-link">Pengaturan Profil</a></li>
+								<li class="nav-item"><a href="facilities_list.html" class="nav-link active">Daftar Barang</a></li>
+								<li class="nav-item"><a href="facilities_profile_setting.html" class="nav-link">Pengaturan Profil</a></li>
 								
 							</ul>
 						</li>
 						<li class="nav-item nav-item-submenu">
-							<a href="#" class="nav-link"><i class="icon-file-text2"></i> <span>Kontrak</span></a>
-		
+							<a href="#" class="nav-link"><i><img src="../assets/icons/icon-kontrak.png"></i> <span>Kontrak</span></a>
+
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-								<li class="nav-item"><a href="../seed/layout_nav_horizontal.html" class="nav-link">Daftar Kontrak</a></li>
-								<li class="nav-item"><a href="../seed/sidebar_none.html" class="nav-link">Daftar Vendor</a></li>
+								<li class="nav-item"><a href="../contracts/contracts_list.html" class="nav-link">Daftar Kontrak</a></li>
+								<li class="nav-item"><a href="../contracts/vendors_list.html" class="nav-link">Daftar Vendor</a></li>
 								
 							</ul>
 						</li>
 						<li class="nav-item nav-item-submenu">
-							<a href="#" class="nav-link"><i class="icon-briefcase"></i> <span>Pekerjaan</span></a>
-		
+							<a href="#" class="nav-link"><i><img src="../assets/icons/icon-pekerjaan.png"></i> <span>Pekerjaan</span></a>
+
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-								<li class="nav-item"><a href="../seed/layout_nav_horizontal.html" class="nav-link">Daftar Pekerjaan</a></li>
+								<li class="nav-item"><a href="../jobs/jobs_list.html" class="nav-link">Daftar Pekerjaan</a></li>
 							</ul>
 						</li>
 						
 						<li class="nav-item">
-							<a href="#" class="nav-link"><i class="icon-clipboard2"></i> <span>Laporan</span></a>
+                                <a href="../reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
+                            </li>
+						<li class="nav-item">
+							<a href="../delayed_reports/delayed_reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan-tertunda.png"></i> <span>Laporan Tertunda</span></a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link"><i class="icon-stats-growth"></i> <span>Analitik</span></a>
+							<a href="#" class="nav-link"><i><img src="../assets/icons/icon-analitik.png"></i> <span>Analitik</span></a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link"><i class="icon-gear"></i> <span>Sistem</span></a>
+							<a href="#" class="nav-link"><i><img src="../assets/icons/icon-sistem.png"></i> <span>Sistem</span></a>
 						</li>
 					</ul>
 				</div>
 				<!-- /main navigation -->
-		
+
 			</div>
 			<!-- /sidebar content -->
 			
@@ -537,7 +541,11 @@
 										</b-card>
 
 										<b-card visible no-body class="mb-3 border-bottom">
-											<b-button block v-b-toggle.accordion-4 variant='light' class="text-left py-2"><strong>Jadwal Pemeliharaan</strong></b-button>
+											
+											<b-button block v-b-toggle.accordion-4 variant='light' class="text-left py-2 d-flex justify-content-between">
+												<strong class="mt-2">Jadwal Pemeliharaan</strong>
+												<a href="#" data-toggle="modal" data-target="#addMaintenance" class="btn btn-primary btn-md "><i class="icon-plus2"></i> Tambahkan Jadwal</a>
+											</b-button>
 												<b-collapse id="accordion-4" visible>
 												<table class="table table-border-solid">
 													<thead>
@@ -571,21 +579,31 @@
                             
                         </div>
 						<!-- Modal -->
-						<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog" role="document">
+						<div class="modal fade" id="addMaintenance" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered" role="document">
 							  <div class="modal-content">
 								<div class="modal-header">
-								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Divisi</b></h5>
+								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Jadwal</b></h5>
 								</div>
 								<div class="modal-body">
-									<form action="#" class="form-group">
+									<form action="#" class="form-group mx-2">
 										<div class="row mb-3">
-											<label for=""><b>Nama Divisi</b></label>
-											<input class="form-control" type="text" placeholder="Non Akademi">
+											<label for=""><b>Vendor</b></label>
+											<select name="vendor" id="" class="form-control">
+												<option value="1">PT. Sejahtera Utama</option>
+											</select>
 										</div>
 										<div class="row mb-3">
-											<label for=""><b>Deskripsi</b></label>
-											<textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
+											<label for=""><b>Tanggal Mulai</b></label>
+											<input type="date" class="form-control">
+										</div>
+										<div class="row mb-3">
+											<label for=""><b>Tanggal Berakhir</b></label>
+											<input type="date" class="form-control">
+										</div>
+										<div class="row mb-3">
+											<label for=""><b>Anggaran Biaya</b></label>
+											<input type="text" class="form-control" placeholder="Rp 1.000.000">
 										</div>
 									</form>
 								</div>

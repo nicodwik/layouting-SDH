@@ -11,10 +11,21 @@
 	<link href="../../../../global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/bootstrap_limitless.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.19.0/bootstrap-vue.min.css"/>
 	<link href="../assets/css/layout.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/components.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/colors.min.css" rel="stylesheet" type="text/css">
 	<!-- /global stylesheets -->
+	
+	<style>
+		.budgetInfo td {
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+        .textInfo p, #star {
+            margin-bottom: 5px;
+        }
+	</style>
 
 	<!-- Core JS files -->
 	<script src="../../../../global_assets/js/main/jquery.min.js"></script>
@@ -262,7 +273,7 @@
 							<a href="#" class="nav-link" class='nav-link'><i><img src="../assets/icons/icon-pengguna.png"></i> <span>Pengguna</span></a>
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="../users/users_list.html" class="nav-link" >Daftar Pengguna</a></li>
+								<li class="nav-item"><a href="../users/users_list.html" class="nav-link active" >Daftar Pengguna</a></li>
 								<li class="nav-item"><a href="../users/users_division.html" class="nav-link">Divisi</a></li>
 								<li class="nav-item"><a href="../users/users_role_and_access_list.html" class="nav-link">Peran dan Akses</a></li>
 								<li class="nav-item"><a href="../users/users_approval.html" class="nav-link">Pengaturan Approval</a></li>
@@ -272,12 +283,12 @@
 						<li class="nav-item">
 							<a href="../locations/locations_list.html" class="nav-link"><i><img src="../assets/icons/icon-lokasi.png"></i> <span>Lokasi</span></a>
 						</li>
-						<li class="nav-item nav-item-submenu nav-item-expanded nav-item-open">
+						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link"><i class="icon-city"></i> <span>Fasilitas</span></a>
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-								<li class="nav-item"><a href="./facilities_list.html" class="nav-link">Daftar Barang</a></li>
-								<li class="nav-item"><a href="./facilities_profile_setting.html" class="nav-link active">Pengaturan Profil</a></li>
+								<li class="nav-item"><a href="../facilities/facilities_list.html" class="nav-link">Daftar Barang</a></li>
+								<li class="nav-item"><a href="../facilities/facilities_profile_setting.html" class="nav-link">Pengaturan Profil</a></li>
 								
 							</ul>
 						</li>
@@ -286,7 +297,7 @@
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
 								<li class="nav-item"><a href="../contracts/contracts_list.html" class="nav-link">Daftar Kontrak</a></li>
-								<li class="nav-item"><a href="../contracts/vendors_list.html" class="nav-link">Daftar Vendor</a></li>
+								<li class="nav-item"><a href="../contracts/vendors_list.html" class="nav-link active">Daftar Vendor</a></li>
 							</ul>
 						</li>
 						<li class="nav-item nav-item-submenu">
@@ -298,11 +309,11 @@
 						</li>
 						
 						<li class="nav-item">
-                                <a href="../reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../delayed_reports/delayed_reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan-tertunda.png"></i> <span>Laporan Tertunda</span></a>
-                            </li>
+							<a href="../reports/reports_list.html" class="nav-link active"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
+						</li>
+						<li class="nav-item">
+							<a href="../delayed_reports/delayed_reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan-tertunda.png"></i> <span>Laporan Tertunda</span></a>
+						</li>
 						<li class="nav-item">
 							<a href="#" class="nav-link"><i><img src="../assets/icons/icon-analitik.png"></i> <span>Analitik</span></a>
 						</li>
@@ -327,7 +338,7 @@
 			<div class="page-header page-header-light">
 				<div class="page-header-content header-elements-md-inline">
 					<div class="page-title d-flex">
-						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Pengaturan Profil</h4>
+						<h4><a href="reports_list.html" style="color: black;"><i class="icon-arrow-left52 mr-2"></i></a> <span class="font-weight-semibold">Detail Tiket</h4>
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 					</div>
 				</div>
@@ -336,8 +347,7 @@
 					<div class="d-flex">
 						<div class="breadcrumb">
                             <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Dashboard</a>
-                            <span class="breadcrumb-item">Fasilitas</span>
-                            <span class="breadcrumb-item">Pengaturan Profil</span>
+                            <span class="breadcrumb-item">Detail Tiket</span>
 						</div>
 
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
@@ -350,87 +360,76 @@
 			<!-- Content area -->
 			<div class="content">
 				<!-- Main charts -->
-				
-					<div class="col-md-12">
-                        <div class="row">
-                            <div class="card w-100">
-                                <div class="row py-3 px-5 mb-0 d-flex justify-content-between">
-                                    <div class="col-md-8 d-flex">
-                                        <div class="col-md-6">
-                                            <form action="#">
-                                                <div class="form-group row">
-                                                    <label class=" col-form-label">Filter: &nbsp;</label>
-                                                    <div>
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Wilayah, Sekolah" style="border-right: none;">
-                                                            <span class="input-group-append">
-                                                                <span class="input-group-text" style="border-left: none; background: none;">
-                                                                    <a href="#" style="color: black;"><i class="icon-search4"></i></a>
-                                                                </span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <form action="#">
-                                                <div class="form-group row">
-                                                    <label class=" col-form-label">Filter: &nbsp;</label>
-                                                    <div>
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Kondisi" style="border-right: none;">
-                                                            <span class="input-group-append">
-                                                                <span class="input-group-text" style="border-left: none; background: none;">
-                                                                    <a href="#" style="color: black;"><i class="icon-search4"></i></a>
-                                                                </span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="row justify-content-end">
-                                            <a href="./facilities_add_profile_setting.html" class="btn btn-md btn-primary"><i class="icon-plus3"></i> Tambahkan Profile</a>
+				<div id="app">
+					<div class="col-md-12">    
+                        <div class="card">
+                            <div class="row py-3 px-3 justify-content-between">
+                                <div class="col-md-4">
+                                    <div class="row mb-3">
+                                        <div class="col-12">
+                                            <p class="mb-0">Judul Laporan</p>
+                                            <h5><b>AC Rusak</b></h5>
                                         </div>
                                     </div>
-    
+                                    <div class="row mb-3">
+                                        <div class="col-12">
+                                            <p class="mb-0">Lokasi</p>
+                                            <h5><b>SDH Jawa</b></h5>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-12">
+                                            <p class="mb-0">Deskripsi</p>
+                                            <h5><b>Ruangan Panas</b></h5>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-12">
+                                            <p class="mb-0">Pelapor</p>
+                                            <h5><b>Abdi</b></h5>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-12">
+                                            <p class="mb-0">Tanggal Laporan</p>
+                                            <h5><b>20 Oktober 2019</b></h5>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-12">
-                                    <div id="app">
+                            </div>
+                        </div>
+                            
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="tab-pane fade show active" id="jobs" role="tabpanel" aria-labelledby="nav-home-tab">
                                         <table class="table table-border-solid">
                                             <thead>
-                                                <tr>
-                                                    <th>Nama Profile</th>
-                                                    <th>Description</th>
-                                                    <th>Proses Pengejaan</th>
-                                                    <th>Proses Pemeliharaan</th>
-                                                    <th>Jumlah Barang</th>
-                                                    <th>Tindakan</th>
+                                                <tr class="text-left">
+                                                    <th><b>Nama Barang</b></th>
+                                                    <th><b>Lokasi</b></th>
+                                                    <th><b>Prioritas</b></th>
+                                                    <th><b>Status</b></th>
+                                                    <th><b>Tindakan</b></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr v-for='profile in profiles'>
-                                                    <td>{{profile.name}}</td>
-                                                    <td>{{profile.description}}</td>
-                                                    <td>{{profile.workProcess}}</td>
-                                                    <td>{{profile.maintenanceProcess}}</td>
-                                                    <td>{{profile.total}}</td>
+                                                <tr class="text-left" v-for='ticket in tickets'>
+                                                    <td>{{ticket.inventoryName}}</td>
+                                                    <td>{{ticket.location}}</td>
+                                                    <td>{{ticket.priority}}</td>
+                                                    <td><span :class='ticket.badge' class="badge py-2 px-2"><p class="mb-0">{{ticket.status}}</p></span></td>
                                                     <td>
-														<a href="facilities_detail_profile_setting.html" class="btn btn-md btn-light">Detail</a>
-														<div class="dropdown d-inline ml-2">
-															<a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
-															  <img src="../assets/images/3-dots.png" alt="">
-															</a>
-															<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-															  <a class="dropdown-item" href="#">Edit</a>
-															  <a class="dropdown-item" href="#">Delete</a>
-															 
-															</div>
-														</div>
+                                                        <a href="reports_detail_tickets.html" class="btn btn-light btn-md">Detail</a>
+                                                        <div class="dropdown d-inline ml-2">
+                                                            <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
+                                                            <img src="../assets/images/3-dots.png" alt="">
+                                                            </a>
+                                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <a class="dropdown-item" href="#">Edit</a>
+                                                            <a class="dropdown-item" href="#">Delete</a>
+                                                            </div>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -439,33 +438,11 @@
                                 </div>
                             </div>
                         </div>
-						<!-- Modal -->
-						<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog modal-dialog-centered" role="document">
-							  <div class="modal-content">
-								<div class="modal-header">
-								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Divisi</b></h5>
-								</div>
-								<div class="modal-body">
-									<form action="#" class="form-group">
-										<div class="row mb-3">
-											<label for=""><b>Nama Divisi</b></label>
-											<input class="form-control" type="text" placeholder="Non Akademi">
-										</div>
-										<div class="row mb-3">
-											<label for=""><b>Deskripsi</b></label>
-											<textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
-										</div>
-									</form>
-								</div>
-								<div class="modal-footer">
-								  <button type="button" class="btn btn-link text-danger" data-dismiss="modal">Batalkan</button>
-								  <button type="button" class="btn btn-primary">Tambahkan</button>
-								</div>
-							  </div>
-							</div>
-						  </div>
+						
                     </div>
+
+
+                </div>
                     
 			</div>
             <!-- /content area -->
@@ -493,55 +470,44 @@
 
 	</div>
 	<!-- /page content -->
-    <script src="https://unpkg.com/vue"></script>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.19.0/bootstrap-vue.min.js"></script>
     <script>
         new Vue({
             el: '#app',
             data: {
-                profiles: [
-                    {
-                        name: 'Kulkas 2 pintu',
-                        description: 'non akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 300
+                tickets: [
+					{
+                        inventoryName: 'AC',
+                        location: 'SDH Jawa',
+                        priority: 'Tinggi',
+                        status: 'Disetujui',
+						badge: 'badge-success'
                     },
-                    {
-                        name: 'AC Split',
-                        description: 'akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 1400
+					{
+                        inventoryName: 'Proyektor',
+                        location: 'SDH Kemang',
+                        priority: 'Sedang',
+                        status: 'Menunggu Persetujuan',
+						badge: 'badge-danger'
                     },
-                    {
-                        name: 'Kulkas 2 pintu',
-                        description: 'akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 300
+					{
+                        inventoryName: 'Radiator',
+                        location: 'SDH Kemang',
+                        priority: 'Rendah',
+                        status: 'Menunggu Pengecekan',
+						badge: 'badge-warning'
                     },
-                    {
-                        name: 'AC Split',
-                        description: 'non akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 1400
+					{
+                        inventoryName: 'AC split',
+                        location: 'SDH Kemang',
+                        priority: 'Sedang',
+                        status: 'Selesai',
+						badge: 'badge-primary'
                     },
-                    {
-                        name: 'Kulkas 2 pintu',
-                        description: 'akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 300
-                    },{
-                        name: 'AC Split',
-                        description: 'non akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 1400
-                    }
-                ]
-            }
+				]
+            },
+            
         })
     </script>
 	<script type="module">

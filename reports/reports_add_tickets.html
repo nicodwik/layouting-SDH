@@ -14,6 +14,8 @@
 	<link href="../assets/css/layout.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/components.min.css" rel="stylesheet" type="text/css">
 	<link href="../assets/css/colors.min.css" rel="stylesheet" type="text/css">
+	<link href="https://cdn.jsdelivr.net/npm/vuesax/dist/vuesax.css" rel="stylesheet">
+	
 	<!-- /global stylesheets -->
 
 	<!-- Core JS files -->
@@ -33,7 +35,7 @@
 	<script src="../assets/js/app.js"></script>
 	<script src="../../../../global_assets/js/demo_pages/dashboard.js"></script>
 	<!-- /theme JS files -->
-
+	
 </head>
 
 <body>
@@ -272,12 +274,12 @@
 						<li class="nav-item">
 							<a href="../locations/locations_list.html" class="nav-link"><i><img src="../assets/icons/icon-lokasi.png"></i> <span>Lokasi</span></a>
 						</li>
-						<li class="nav-item nav-item-submenu nav-item-expanded nav-item-open">
+						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link"><i class="icon-city"></i> <span>Fasilitas</span></a>
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-								<li class="nav-item"><a href="./facilities_list.html" class="nav-link">Daftar Barang</a></li>
-								<li class="nav-item"><a href="./facilities_profile_setting.html" class="nav-link active">Pengaturan Profil</a></li>
+								<li class="nav-item"><a href="../facilities/facilities_list.html" class="nav-link active">Daftar Barang</a></li>
+								<li class="nav-item"><a href="../facilities/facilities_profile_setting.html" class="nav-link">Pengaturan Profil</a></li>
 								
 							</ul>
 						</li>
@@ -296,13 +298,12 @@
 								<li class="nav-item"><a href="../jobs/jobs_list.html" class="nav-link">Daftar Pekerjaan</a></li>
 							</ul>
 						</li>
-						
 						<li class="nav-item">
-                                <a href="../reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../delayed_reports/delayed_reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan-tertunda.png"></i> <span>Laporan Tertunda</span></a>
-                            </li>
+							<a href="../reports/reports_list.html" class="nav-link active"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
+						</li>
+						<li class="nav-item">
+							<a href="../delayed_reports/delayed_reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan-tertunda.png"></i> <span>Laporan Tertunda</span></a>
+						</li>
 						<li class="nav-item">
 							<a href="#" class="nav-link"><i><img src="../assets/icons/icon-analitik.png"></i> <span>Analitik</span></a>
 						</li>
@@ -327,8 +328,7 @@
 			<div class="page-header page-header-light">
 				<div class="page-header-content header-elements-md-inline">
 					<div class="page-title d-flex">
-						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Pengaturan Profil</h4>
-						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+						<h4><a href="reports_list.html" style="color: black;"><i class="icon-arrow-left52 mr-2"></i></a> <span class="font-weight-semibold">Tambah Tiket</h4>
 					</div>
 				</div>
 
@@ -336,10 +336,8 @@
 					<div class="d-flex">
 						<div class="breadcrumb">
                             <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Dashboard</a>
-                            <span class="breadcrumb-item">Fasilitas</span>
-                            <span class="breadcrumb-item">Pengaturan Profil</span>
+							<span class="breadcrumb-item active">Tiket</span>
 						</div>
-
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 					</div>
 				</div>
@@ -348,206 +346,216 @@
 
 
 			<!-- Content area -->
-			<div class="content">
+			<div class="content" id="app">
+                <div class="row justify-content-between">
+                    
+                </div>
 				<!-- Main charts -->
 				
-					<div class="col-md-12">
-                        <div class="row">
-                            <div class="card w-100">
-                                <div class="row py-3 px-5 mb-0 d-flex justify-content-between">
-                                    <div class="col-md-8 d-flex">
-                                        <div class="col-md-6">
-                                            <form action="#">
-                                                <div class="form-group row">
-                                                    <label class=" col-form-label">Filter: &nbsp;</label>
-                                                    <div>
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Wilayah, Sekolah" style="border-right: none;">
-                                                            <span class="input-group-append">
-                                                                <span class="input-group-text" style="border-left: none; background: none;">
-                                                                    <a href="#" style="color: black;"><i class="icon-search4"></i></a>
-                                                                </span>
-                                                            </span>
+					<div>
+						<div class="col-md-12">
+							<div class="row">
+								<div class="card w-100">
+                                    <form action="#" method="post" class="form-group">
+                                        <div class="col-md-12 py-4 px-3">
+                                            <div class=" mb-3">
+                                                <label for=""><b>Judul Laporan</b></label>
+                                                <input type="text" class="form-control" style="size: 100%;">
+                                            </div>
+                                            <div class=" mb-3">
+                                                <p><b>Pelapor</b></p>
+                                                <p>Admin</p>
+                                            </div>
+                                            <div class=" mb-3">                                      
+                                                <label for=""><b>Deskripsi</b></label>
+                                                <textarea name="description" id="" cols="30" rows="5" class="form-control w-100"></textarea>
+                                            </div>
+                                            <div class="mb-3 px-0">                                      
+                                                <label for=""><b>Prioritas</b></label>
+                                                <div class="form-check">
+                                                    <input type="radio" name="priority" class="form-check-input" id="high">
+                                                    <label for="high" class="form-check-label">Tinggi</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="radio" name="priority" class="form-check-input" id="middle">
+                                                    <label for="middle" class="form-check-label">Sedang</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="radio" name="priority" class="form-check-input" id="low">
+                                                    <label for="low" class="form-check-label">Rendah</label>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3 form-group">
+                                                <div class="col-4">
+                                                    <label for="select"><b>Barang</b></label>
+                                                    <div v-if='selectedFacilities.length > 0'>
+                                                        <div v-for='(facility, id) in selectedFacilities' :key="`facility-${id}`" class="card px-2 py-2 mb-2" >
+                                                            <div class="d-flex justify-content-between">
+                                                                {{facility}}
+                                                                <button @click='remove(id)' type="button" class="btn text-danger btn-link p-0">
+                                                                <i class="icon-minus-circle2"></i>
+                                                                </button>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <form action="#">
-                                                <div class="form-group row">
-                                                    <label class=" col-form-label">Filter: &nbsp;</label>
-                                                    <div>
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Kondisi" style="border-right: none;">
-                                                            <span class="input-group-append">
-                                                                <span class="input-group-text" style="border-left: none; background: none;">
-                                                                    <a href="#" style="color: black;"><i class="icon-search4"></i></a>
-                                                                </span>
-                                                            </span>
-                                                        </div>
+                                                    <div v-else class="text-danger py-2">
+                                                        Tidak ada barang dipilih
+                                                    </div>                 
+                                                   
+                                                    <div class="d-flex justify-content-between">
+                                                        <button data-target="#addTicket" data-toggle="modal" type="button" class="btn btn-link p-0"><i class="icon-plus3"></i>&nbsp; Tambah Barang</button>
+                                                        <p class="pt-2">barang terpilih: <b>{{selectedFacilities.length}}</b></p>
                                                     </div>
                                                 </div>
-                                            </form>
+                                            </div>
+                                            
                                         </div>
-                                        
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="row justify-content-end">
-                                            <a href="./facilities_add_profile_setting.html" class="btn btn-md btn-primary"><i class="icon-plus3"></i> Tambahkan Profile</a>
+                                        <div class="row m-3">
+                                            <div class="col-md-12 d-flex justify-content-end">
+                                                <button type="button" class="btn btn-link text-danger btn-lg px-4">Batalkan</button>
+                                                <button type="submit" class="btn btn-primary btn-lg px-4">Tambahkan</button>
+                                            </div>
                                         </div>
-                                    </div>
-    
-                                </div>
-                                <div class="col-12">
-                                    <div id="app">
-                                        <table class="table table-border-solid">
-                                            <thead>
-                                                <tr>
-                                                    <th>Nama Profile</th>
-                                                    <th>Description</th>
-                                                    <th>Proses Pengejaan</th>
-                                                    <th>Proses Pemeliharaan</th>
-                                                    <th>Jumlah Barang</th>
-                                                    <th>Tindakan</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr v-for='profile in profiles'>
-                                                    <td>{{profile.name}}</td>
-                                                    <td>{{profile.description}}</td>
-                                                    <td>{{profile.workProcess}}</td>
-                                                    <td>{{profile.maintenanceProcess}}</td>
-                                                    <td>{{profile.total}}</td>
-                                                    <td>
-														<a href="facilities_detail_profile_setting.html" class="btn btn-md btn-light">Detail</a>
-														<div class="dropdown d-inline ml-2">
-															<a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
-															  <img src="../assets/images/3-dots.png" alt="">
-															</a>
-															<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-															  <a class="dropdown-item" href="#">Edit</a>
-															  <a class="dropdown-item" href="#">Delete</a>
-															 
-															</div>
-														</div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-						<!-- Modal -->
-						<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog modal-dialog-centered" role="document">
-							  <div class="modal-content">
-								<div class="modal-header">
-								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Divisi</b></h5>
+                                    </form>
 								</div>
-								<div class="modal-body">
-									<form action="#" class="form-group">
-										<div class="row mb-3">
-											<label for=""><b>Nama Divisi</b></label>
-											<input class="form-control" type="text" placeholder="Non Akademi">
-										</div>
-										<div class="row mb-3">
-											<label for=""><b>Deskripsi</b></label>
-											<textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
-										</div>
-									</form>
-								</div>
-								<div class="modal-footer">
-								  <button type="button" class="btn btn-link text-danger" data-dismiss="modal">Batalkan</button>
-								  <button type="button" class="btn btn-primary">Tambahkan</button>
-								</div>
-							  </div>
 							</div>
-						  </div>
+						</div>
+					</div>
+					
+				<!-- Modal Add Ticket -->
+                <div class="modal fade" id="addTicket" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Barang</b></h5>
+                        </div>
+                        <div class="modal-body">
+                           
+                            <form action="#" class="form-group">
+                                <div class="mb-3">
+                                    <label for=""><b>Lokasi</b></label>
+                                    <input class="form-control" type="text" placeholder="SDH Jawa">
+                                </div>
+                                <div class="mb-3">
+                                    <label for=""><b>Gedung</b></label>
+                                    <input class="form-control" type="text">
+                                </div>
+                                <div class="mb-3">
+                                    <label for=""><b>Lantai</b></label>
+                                    <input class="form-control" type="text">
+                                </div>
+                                <div class="mb-3">
+                                    <label for=""><b>Ruang</b></label>
+                                    <input class="form-control" type="text">
+                                </div>
+                                <div class="mb-3">
+									<label for=""><b>Barang</b></label>
+                                    <select v-model='newInput' name="" class="form-control" id="select">
+										<option v-for='availableFacility in allFacilities' :value="availableFacility.name">{{availableFacility.name}}</option>
+									</select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for=""><b>Foto Laporan</b></label>
+                                    <input type="file" name="" id="">
+                                </div>
+                                <div class="mb-3">
+									<label for=""><b>Deskripsi</b></label>
+									<textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                                </div>
+                                <div class="mb-3">
+									<label for=""><b>Prioritas</b></label>
+									<br>
+									<div class="d-flex justify-content-start">
+										<div class="form-check">
+											<input type="radio" name="priority" class="form-check-input" id="high2">
+											<label for="high2" class="form-check-label">Tinggi</label>	
+										</div>
+										<div class="form-check ml-4">
+											<input type="radio" name="priority" class="form-check-input" id="middle2">
+											<label for="middle2" class="form-check-label">Sedang</label>	
+										</div>
+										<div class="form-check ml-4">
+											<input type="radio" name="priority" class="form-check-input" id="low2">
+											<label for="low2" class="form-check-label">Rendah</label>	
+										</div>
+									</div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-link text-danger" data-dismiss="modal">Batalkan</button>
+                          <button @click='submit' class="btn btn-primary">Tambahkan</button>
+                        </div>
+                      </div>
                     </div>
-                    
+                </div>
 			</div>
             <!-- /content area -->
             
             <!-- Footer -->
-            <div class="navbar navbar-expand-lg navbar-light">
-                <div class="text-center d-lg-none w-100">
-                    <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
-                        <i class="icon-unfold mr-2"></i>
-                        Footer
-                    </button>
-                </div>
-    
-                <div class="navbar-collapse collapse" id="navbar-footer">
-                    <span class="navbar-text">
-                        <p class="mb-0">&copy; 2020 Sekolah Dian Harapan</p>
-                    </span>
-                </div>
-            </div>
-            <!-- /footer -->
-            
-		</div>
-        <!-- /main content -->
+		<div class="navbar navbar-expand-lg navbar-light">
+			<div class="text-center d-lg-none w-100">
+				<button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+					<i class="icon-unfold mr-2"></i>
+					Footer
+				</button>
+			</div>
 
+			<div class="navbar-collapse collapse" id="navbar-footer">
+				<span class="navbar-text">
+					<p class="mb-0">&copy; 2020 Sekolah Dian Harapan</p>
+				</span>
+			</div>
+		</div>
+		<!-- /footer -->
+
+		</div>
+		<!-- /main content -->
+
+		
 
 	</div>
 	<!-- /page content -->
-    <script src="https://unpkg.com/vue"></script>
-    <script>
-        new Vue({
-            el: '#app',
-            data: {
-                profiles: [
+
+	<script src="https://unpkg.com/vue"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-filestyle/2.1.0/bootstrap-filestyle.min.js"></script>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+                newInput: '',
+                selectedFacilities: ['AC Dalam - AC12339302', 'Proyektor - PR19384950', 'Radiator - RD49506930'],
+                allFacilities: [
                     {
-                        name: 'Kulkas 2 pintu',
-                        description: 'non akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 300
+                        name: 'Papan Putih - PP64534634'
                     },
                     {
-                        name: 'AC Split',
-                        description: 'akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 1400
+                        name: 'Komputer Server - KS23874234'
                     },
                     {
-                        name: 'Kulkas 2 pintu',
-                        description: 'akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 300
-                    },
-                    {
-                        name: 'AC Split',
-                        description: 'non akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 1400
-                    },
-                    {
-                        name: 'Kulkas 2 pintu',
-                        description: 'akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 300
-                    },{
-                        name: 'AC Split',
-                        description: 'non akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 1400
+                        name: 'Pengeras Suara - PS2341235'
                     }
                 ]
-            }
-        })
-    </script>
-	<script type="module">
-		import {Sidebar} from '../components/sidebar.js'
-		new Vue({
-			el: '#sidebar'
+            },
+            methods: {
+                submit: function() {
+                    if(this.newInput.length > 0) {
+                        this.selectedFacilities.push(this.newInput)
+						$('#addTicket').modal('hide')
+                        return this.newInput = ''
+                    }
+                    alert('pilih barang terlebih dahulu')
+                    
+                },
+                remove: function(id) {
+                    this.selectedFacilities.splice(id, 1)
+                }
+            }                
+		})
+
+		$(':file').filestyle({
+			text: 'Tambahkan Foto',
+			btnClass: 'btn-warning'
 		})
 	</script>
 </body>

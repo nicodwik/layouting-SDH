@@ -264,7 +264,7 @@
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
 								<li class="nav-item"><a href="../users/users_list.html" class="nav-link active" >Daftar Pengguna</a></li>
 								<li class="nav-item"><a href="../users/users_division.html" class="nav-link">Divisi</a></li>
-								<li class="nav-item"><a href="../users/users_role_and_access.html" class="nav-link">Peran dan Akses</a></li>
+								<li class="nav-item"><a href="../users/users_role_and_access_list.html" class="nav-link">Peran dan Akses</a></li>
 								<li class="nav-item"><a href="../users/users_approval.html" class="nav-link">Pengaturan Approval</a></li>
 								
 							</ul>
@@ -285,8 +285,8 @@
 							<a href="#" class="nav-link"><i><img src="../assets/icons/icon-kontrak.png"></i> <span>Kontrak</span></a>
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-								<li class="nav-item"><a href="contracts_list.html" class="nav-link">Daftar Kontrak</a></li>
-								<li class="nav-item"><a href="vendors_list.html" class="nav-link">Daftar Vendor</a></li>
+								<li class="nav-item"><a href="../contracts/contracts_list.html" class="nav-link">Daftar Kontrak</a></li>
+								<li class="nav-item"><a href="../contracts/vendors_list.html" class="nav-link">Daftar Vendor</a></li>
 							</ul>
 						</li>
 						<li class="nav-item nav-item-submenu">
@@ -298,7 +298,10 @@
 						</li>
 						
 						<li class="nav-item">
-							<a href="reports_list.html" class="nav-link active"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
+							<a href="../reports/reports_list.html" class="nav-link active"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
+						</li>
+						<li class="nav-item">
+							<a href="../delayed_reports/delayed_reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan-tertunda.png"></i> <span>Laporan Tertunda</span></a>
 						</li>
 						<li class="nav-item">
 							<a href="#" class="nav-link"><i><img src="../assets/icons/icon-analitik.png"></i> <span>Analitik</span></a>
@@ -373,7 +376,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="row justify-content-end">
-                                            <a href="#" class="btn btn-md btn-primary mr-3" data-toggle="modal" data-target="#addTicket"><i class="icon-plus3"></i> Tambahkan</a>
+                                            <a href="reports_add_tickets.html" class="btn btn-md btn-primary mr-3"><i class="icon-plus3"></i>&nbsp; Tambahkan</a>
                                         </div>
                                     </div>
     
@@ -399,16 +402,14 @@
                                                     <td>{{report.reportDate}}</td>
                                                     <td>{{report.level}}</td>
                                                     <td>
-                                                        
 														<a href="#" class="btn btn-md btn-primary" data-toggle="modal" data-target="#proposeTicket">Ajukan Laporan</a>
-														<a href="#" class="btn btn-md btn-light">Detail</a>
+														<a href="reports_detail.html" class="btn btn-md btn-light">Detail</a>
 														<div class="dropdown d-inline ml-2">
 															<a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
 															  <img src="../assets/images/3-dots.png" alt="">
 															</a>
 															<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 															  <a class="dropdown-item text-danger" href="#">Tidak Valid</a>
-															 
 															</div>
 														</div>
                                                     </td>
@@ -423,61 +424,10 @@
                                 
                             </div>
                         </div>
-						<!-- Modal Add Ticket -->
-						<div class="modal fade" id="addTicket" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog" role="document">
-							  <div class="modal-content">
-								<div class="modal-header">
-								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Tiket</b></h5>
-								</div>
-								<div class="modal-body">
-									<form action="#" class="form-group">
-										<div class="row mb-3">
-											<label for=""><b>Lokasi</b></label>
-											<input class="form-control" type="text" placeholder="SDH Kemang">
-										</div>
-										<div class="row mb-3">
-											<label for=""><b>Pelapor</b></label>
-											<input type="text" class="form-control" placeholder="Ridwan">
-										</div>
-										<div class="row mb-3">
-											<label for=""><b>Property / Aset</b></label>
-											<input type="text" class="form-control" placeholder="AC">
-                                        </div>
-										<div class="row mb-3">
-                                            <label for=""><b>Tingkat Darurat</b></label>
-                                            <select name="level" id="" class="form-control">
-                                                <option value="high">Tinggi</option>
-                                                <option value="medium">Sedang</option>
-                                                <option value="low">Rendah</option>
-                                            </select>
-                                        </div>
-										<div class="row mb-2">
-                                            <label for=""><b>Foto laporan</b></label>
-											<div class="input-group mb-3">
-                                                <div class="custom-file">
-                                                    <input type="file" style="color: burlywood;" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                                                    <label class="custom-file-label" for="inputGroupFile01" data-browse='Pilih Data' data-style='background-color: blue;'></label>
-                                                </div>
-                                              </div>
-                                        </div>
-										<div class="row mb-3">
-                                            <label for=""><b>Deskripsi</b></label>
-                                            <textarea name="description" id="" cols="30" rows="10" class="form-control"></textarea>
-                                        </div>
-
-									</form>
-								</div>
-								<div class="modal-footer">
-								  <button type="button" class="btn btn-link text-danger" data-dismiss="modal">Batalkan</button>
-								  <button type="submit" class="btn btn-primary">Tambahkan</button>
-								</div>
-							  </div>
-							</div>
-						</div>
+						
 						<!-- Modal Propose Ticket-->
 						<div class="modal fade" id="proposeTicket" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog" role="document">
+							<div class="modal-dialog modal-dialog-centered" role="document">
 							  <div class="modal-content">
 								<div class="modal-header">
 								  <h5 class="modal-title mb-4" id="exampleModalLabel"><b>Ajukan Tiket</b></h5>

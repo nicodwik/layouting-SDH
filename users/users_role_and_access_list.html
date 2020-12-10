@@ -33,7 +33,11 @@
 	<script src="../assets/js/app.js"></script>
 	<script src="../../../../global_assets/js/demo_pages/dashboard.js"></script>
 	<!-- /theme JS files -->
-
+	<style>
+		table th {
+			width: 43%;
+		}
+	</style>
 </head>
 
 <body>
@@ -247,9 +251,7 @@
 					<br>
 					<br>
 					<ul class="nav nav-sidebar" data-nav-type="accordion">
-		
 						<!-- Main -->
-						
 						<li class="nav-item">
 							<a href="../index.html" class='nav-link' >
 								<i class="icon-home4"></i>
@@ -258,26 +260,26 @@
 								</span>
 							</a>
 						</li>
-						<li class="nav-item nav-item-submenu">
+						<li class="nav-item nav-item-submenu nav-item-expanded nav-item-open">
 							<a href="#" class="nav-link" class='nav-link'><i><img src="../assets/icons/icon-pengguna.png"></i> <span>Pengguna</span></a>
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="../users/users_list.html" class="nav-link" >Daftar Pengguna</a></li>
-								<li class="nav-item"><a href="../users/users_division.html" class="nav-link">Divisi</a></li>
-								<li class="nav-item"><a href="../users/users_role_and_access_list.html" class="nav-link">Peran dan Akses</a></li>
-								<li class="nav-item"><a href="../users/users_approval.html" class="nav-link">Pengaturan Approval</a></li>
+								<li class="nav-item"><a href="users_list.html" class="nav-link" >Daftar Pengguna</a></li>
+								<li class="nav-item"><a href="users_division.html" class="nav-link ">Divisi</a></li>
+								<li class="nav-item"><a href="users_role_and_access_list.html" class="nav-link active">Peran dan Akses</a></li>
+								<li class="nav-item"><a href="users_approval.html" class="nav-link">Pengaturan Approval</a></li>
 								
 							</ul>
 						</li>
 						<li class="nav-item">
 							<a href="../locations/locations_list.html" class="nav-link"><i><img src="../assets/icons/icon-lokasi.png"></i> <span>Lokasi</span></a>
 						</li>
-						<li class="nav-item nav-item-submenu nav-item-expanded nav-item-open">
+						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link"><i class="icon-city"></i> <span>Fasilitas</span></a>
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-								<li class="nav-item"><a href="./facilities_list.html" class="nav-link">Daftar Barang</a></li>
-								<li class="nav-item"><a href="./facilities_profile_setting.html" class="nav-link active">Pengaturan Profil</a></li>
+								<li class="nav-item"><a href="../facilities/facilities_list.html" class="nav-link active">Daftar Barang</a></li>
+								<li class="nav-item"><a href="../facilities/facilities_profile_setting.html" class="nav-link">Pengaturan Profil</a></li>
 								
 							</ul>
 						</li>
@@ -287,6 +289,7 @@
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
 								<li class="nav-item"><a href="../contracts/contracts_list.html" class="nav-link">Daftar Kontrak</a></li>
 								<li class="nav-item"><a href="../contracts/vendors_list.html" class="nav-link">Daftar Vendor</a></li>
+								
 							</ul>
 						</li>
 						<li class="nav-item nav-item-submenu">
@@ -327,8 +330,7 @@
 			<div class="page-header page-header-light">
 				<div class="page-header-content header-elements-md-inline">
 					<div class="page-title d-flex">
-						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Pengaturan Profil</h4>
-						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+						<h4><a href="../index.html" style="color: black;"><i class="icon-arrow-left52 mr-2"></i></a> <span class="font-weight-semibold">Pengguna</h4>
 					</div>
 				</div>
 
@@ -336,8 +338,8 @@
 					<div class="d-flex">
 						<div class="breadcrumb">
                             <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Dashboard</a>
-                            <span class="breadcrumb-item">Fasilitas</span>
-                            <span class="breadcrumb-item">Pengaturan Profil</span>
+                            <span class="breadcrumb-item">Pengguna</span>
+							<span class="breadcrumb-item active">Peran dan Akses</span>
 						</div>
 
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
@@ -348,21 +350,20 @@
 
 
 			<!-- Content area -->
-			<div class="content">
+			<div id="app" class="content">
 				<!-- Main charts -->
 				
 					<div class="col-md-12">
                         <div class="row">
                             <div class="card w-100">
-                                <div class="row py-3 px-5 mb-0 d-flex justify-content-between">
-                                    <div class="col-md-8 d-flex">
-                                        <div class="col-md-6">
+                                <div class=" py-3 px-2 mb-0 d-flex justify-content-between">
+                                    <div class="col-md-10 d-flex ">
+                                        <div class="col-md-5">
                                             <form action="#">
                                                 <div class="form-group row">
-                                                    <label class=" col-form-label">Filter: &nbsp;</label>
                                                     <div>
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Wilayah, Sekolah" style="border-right: none;">
+                                                            <input type="text" class="form-control" placeholder="Pencarian" style="border-right: none;">
                                                             <span class="input-group-append">
                                                                 <span class="input-group-text" style="border-left: none; background: none;">
                                                                     <a href="#" style="color: black;"><i class="icon-search4"></i></a>
@@ -373,98 +374,51 @@
                                                 </div>
                                             </form>
                                         </div>
-                                        <div class="col-md-6">
-                                            <form action="#">
-                                                <div class="form-group row">
-                                                    <label class=" col-form-label">Filter: &nbsp;</label>
-                                                    <div>
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Kondisi" style="border-right: none;">
-                                                            <span class="input-group-append">
-                                                                <span class="input-group-text" style="border-left: none; background: none;">
-                                                                    <a href="#" style="color: black;"><i class="icon-search4"></i></a>
-                                                                </span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <div class="row justify-content-end">
-                                            <a href="./facilities_add_profile_setting.html" class="btn btn-md btn-primary"><i class="icon-plus3"></i> Tambahkan Profile</a>
+                                            <a href="users_role_and_access.html" class="btn btn-md btn-primary mr-3"><i class="icon-plus3"></i> Tambahkan</a>
                                         </div>
                                     </div>
     
                                 </div>
-                                <div class="col-12">
-                                    <div id="app">
-                                        <table class="table table-border-solid">
-                                            <thead>
-                                                <tr>
-                                                    <th>Nama Profile</th>
-                                                    <th>Description</th>
-                                                    <th>Proses Pengejaan</th>
-                                                    <th>Proses Pemeliharaan</th>
-                                                    <th>Jumlah Barang</th>
-                                                    <th>Tindakan</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr v-for='profile in profiles'>
-                                                    <td>{{profile.name}}</td>
-                                                    <td>{{profile.description}}</td>
-                                                    <td>{{profile.workProcess}}</td>
-                                                    <td>{{profile.maintenanceProcess}}</td>
-                                                    <td>{{profile.total}}</td>
-                                                    <td>
-														<a href="facilities_detail_profile_setting.html" class="btn btn-md btn-light">Detail</a>
-														<div class="dropdown d-inline ml-2">
-															<a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
-															  <img src="../assets/images/3-dots.png" alt="">
-															</a>
-															<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-															  <a class="dropdown-item" href="#">Edit</a>
-															  <a class="dropdown-item" href="#">Delete</a>
-															 
+								<div class="row justify-content-around">
+									<div class="col-12">
+										<div class="table-responsive">
+											<table class="table table-border-solid">
+												<thead>
+													<tr>
+														<th>Nama Peran</th>
+														<th>Deskripsi</th>
+														<th>Tindakan</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr v-for='role in roles'>
+														<td>{{role.name}}</td>
+														<td>{{role.description}}</td>
+														<td>
+															<a href="#" class="btn btn-md btn-light">Detail</a>
+															<div class="dropdown d-inline ml-2">
+																<a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
+																  <img src="../assets/images/3-dots.png" alt="">
+																</a>
+																<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+																  <a class="dropdown-item" href="#">Edit</a>
+																  <a class="dropdown-item" href="#">Delete</a>
+																 
+																</div>
 															</div>
-														</div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										
+									</div>
+								</div>
                             </div>
                         </div>
-						<!-- Modal -->
-						<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog modal-dialog-centered" role="document">
-							  <div class="modal-content">
-								<div class="modal-header">
-								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Divisi</b></h5>
-								</div>
-								<div class="modal-body">
-									<form action="#" class="form-group">
-										<div class="row mb-3">
-											<label for=""><b>Nama Divisi</b></label>
-											<input class="form-control" type="text" placeholder="Non Akademi">
-										</div>
-										<div class="row mb-3">
-											<label for=""><b>Deskripsi</b></label>
-											<textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
-										</div>
-									</form>
-								</div>
-								<div class="modal-footer">
-								  <button type="button" class="btn btn-link text-danger" data-dismiss="modal">Batalkan</button>
-								  <button type="button" class="btn btn-primary">Tambahkan</button>
-								</div>
-							  </div>
-							</div>
-						  </div>
                     </div>
                     
 			</div>
@@ -493,61 +447,22 @@
 
 	</div>
 	<!-- /page content -->
-    <script src="https://unpkg.com/vue"></script>
-    <script>
-        new Vue({
+	<script src="https://unpkg.com/vue"></script>
+	<script>
+		new Vue({
             el: '#app',
             data: {
-                profiles: [
+                roles: [
                     {
-                        name: 'Kulkas 2 pintu',
-                        description: 'non akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 300
+                        name: 'Finance',
+                        description: 'ini adalah contoh deskripsi Finance, berisi akses utk...'
                     },
                     {
-                        name: 'AC Split',
-                        description: 'akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 1400
+                        name: 'GA',
+                        description: 'ini adalah contoh deskripsi GA, berisi akses utk...'
                     },
-                    {
-                        name: 'Kulkas 2 pintu',
-                        description: 'akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 300
-                    },
-                    {
-                        name: 'AC Split',
-                        description: 'non akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 1400
-                    },
-                    {
-                        name: 'Kulkas 2 pintu',
-                        description: 'akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 300
-                    },{
-                        name: 'AC Split',
-                        description: 'non akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 1400
-                    }
                 ]
             }
-        })
-    </script>
-	<script type="module">
-		import {Sidebar} from '../components/sidebar.js'
-		new Vue({
-			el: '#sidebar'
 		})
 	</script>
 </body>

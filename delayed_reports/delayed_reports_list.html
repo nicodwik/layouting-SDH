@@ -262,7 +262,7 @@
 							<a href="#" class="nav-link" class='nav-link'><i><img src="../assets/icons/icon-pengguna.png"></i> <span>Pengguna</span></a>
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="../users/users_list.html" class="nav-link" >Daftar Pengguna</a></li>
+								<li class="nav-item"><a href="../users/users_list.html" class="nav-link active" >Daftar Pengguna</a></li>
 								<li class="nav-item"><a href="../users/users_division.html" class="nav-link">Divisi</a></li>
 								<li class="nav-item"><a href="../users/users_role_and_access_list.html" class="nav-link">Peran dan Akses</a></li>
 								<li class="nav-item"><a href="../users/users_approval.html" class="nav-link">Pengaturan Approval</a></li>
@@ -272,16 +272,16 @@
 						<li class="nav-item">
 							<a href="../locations/locations_list.html" class="nav-link"><i><img src="../assets/icons/icon-lokasi.png"></i> <span>Lokasi</span></a>
 						</li>
-						<li class="nav-item nav-item-submenu nav-item-expanded nav-item-open">
+						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link"><i class="icon-city"></i> <span>Fasilitas</span></a>
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-								<li class="nav-item"><a href="./facilities_list.html" class="nav-link">Daftar Barang</a></li>
-								<li class="nav-item"><a href="./facilities_profile_setting.html" class="nav-link active">Pengaturan Profil</a></li>
+								<li class="nav-item"><a href="../facilities/facilities_list.html" class="nav-link">Daftar Barang</a></li>
+								<li class="nav-item"><a href="../facilities/facilities_profile_setting.html" class="nav-link">Pengaturan Profil</a></li>
 								
 							</ul>
 						</li>
-						<li class="nav-item nav-item-submenu">
+						<li class="nav-item nav-item-submenu ">
 							<a href="#" class="nav-link"><i><img src="../assets/icons/icon-kontrak.png"></i> <span>Kontrak</span></a>
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
@@ -301,7 +301,7 @@
                                 <a href="../reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
                             </li>
                             <li class="nav-item">
-                                <a href="../delayed_reports/delayed_reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan-tertunda.png"></i> <span>Laporan Tertunda</span></a>
+                                <a href="../delayed_reports/delayed_reports_list.html" class="nav-link active"><i><img src="../assets/icons/icon-laporan-tertunda.png"></i> <span>Laporan Tertunda</span></a>
                             </li>
 						<li class="nav-item">
 							<a href="#" class="nav-link"><i><img src="../assets/icons/icon-analitik.png"></i> <span>Analitik</span></a>
@@ -327,7 +327,7 @@
 			<div class="page-header page-header-light">
 				<div class="page-header-content header-elements-md-inline">
 					<div class="page-title d-flex">
-						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Pengaturan Profil</h4>
+						<h4><a href="../index.html" style="color: black;"><i class="icon-arrow-left52 mr-2"></i></a> <span class="font-weight-semibold">WO Tertunda</h4>
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 					</div>
 				</div>
@@ -336,8 +336,7 @@
 					<div class="d-flex">
 						<div class="breadcrumb">
                             <a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Dashboard</a>
-                            <span class="breadcrumb-item">Fasilitas</span>
-                            <span class="breadcrumb-item">Pengaturan Profil</span>
+                            <span class="breadcrumb-item">Laporan Tertunda</span>
 						</div>
 
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
@@ -355,7 +354,7 @@
                         <div class="row">
                             <div class="card w-100">
                                 <div class="row py-3 px-5 mb-0 d-flex justify-content-between">
-                                    <div class="col-md-8 d-flex">
+                                    <div class="col-md-8 d-flex ">
                                         <div class="col-md-6">
                                             <form action="#">
                                                 <div class="form-group row">
@@ -373,54 +372,39 @@
                                                 </div>
                                             </form>
                                         </div>
-                                        <div class="col-md-6">
-                                            <form action="#">
-                                                <div class="form-group row">
-                                                    <label class=" col-form-label">Filter: &nbsp;</label>
-                                                    <div>
-                                                        <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Kondisi" style="border-right: none;">
-                                                            <span class="input-group-append">
-                                                                <span class="input-group-text" style="border-left: none; background: none;">
-                                                                    <a href="#" style="color: black;"><i class="icon-search4"></i></a>
-                                                                </span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        
                                     </div>
                                     <div class="col-md-4">
                                         <div class="row justify-content-end">
-                                            <a href="./facilities_add_profile_setting.html" class="btn btn-md btn-primary"><i class="icon-plus3"></i> Tambahkan Profile</a>
+                                            <a href="#" class="btn btn-md btn-primary mr-3" data-toggle="modal" data-target="#addVendor"><i class="icon-plus3"></i>&nbsp; Tambahkan</a>
                                         </div>
                                     </div>
     
                                 </div>
-                                <div class="col-12">
+                                <div class="col-12 px-0">
                                     <div id="app">
                                         <table class="table table-border-solid">
                                             <thead>
                                                 <tr>
-                                                    <th>Nama Profile</th>
-                                                    <th>Description</th>
-                                                    <th>Proses Pengejaan</th>
-                                                    <th>Proses Pemeliharaan</th>
-                                                    <th>Jumlah Barang</th>
+                                                    <th>Nama Barang</th>
+                                                    <th>Lokasi</th>
+                                                    <th>Pelapor</th>
+                                                    <th>Tanggal Laporan</th>
+                                                    <th>Anggaran</th>
+                                                    <th>Persetujuan</th>
                                                     <th>Tindakan</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr v-for='profile in profiles'>
-                                                    <td>{{profile.name}}</td>
-                                                    <td>{{profile.description}}</td>
-                                                    <td>{{profile.workProcess}}</td>
-                                                    <td>{{profile.maintenanceProcess}}</td>
-                                                    <td>{{profile.total}}</td>
-                                                    <td>
-														<a href="facilities_detail_profile_setting.html" class="btn btn-md btn-light">Detail</a>
+                                                <tr v-for='workOrder in workOrders'>
+                                                    <td>{{workOrder.name}}</td>
+                                                    <td>{{workOrder.location}}</td>
+                                                    <td>{{workOrder.reporter}}</td>
+                                                    <td>{{workOrder.reportDate}}</td>
+                                                    <td>{{workOrder.budget}}</td>
+                                                    <td>{{workOrder.agreement}}</td>
+                                                    <td class="px-0">
+														<a href="#agree" data-toggle="modal" class="btn btn-md btn-primary">Setujui</a>
+														<a href="delayed_reports_detail.html" class="btn btn-md btn-light">Detail</a>
 														<div class="dropdown d-inline ml-2">
 															<a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
 															  <img src="../assets/images/3-dots.png" alt="">
@@ -440,31 +424,45 @@
                             </div>
                         </div>
 						<!-- Modal -->
-						<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog modal-dialog-centered" role="document">
-							  <div class="modal-content">
-								<div class="modal-header">
-								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Divisi</b></h5>
-								</div>
-								<div class="modal-body">
-									<form action="#" class="form-group">
-										<div class="row mb-3">
-											<label for=""><b>Nama Divisi</b></label>
-											<input class="form-control" type="text" placeholder="Non Akademi">
-										</div>
-										<div class="row mb-3">
-											<label for=""><b>Deskripsi</b></label>
-											<textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
-										</div>
-									</form>
-								</div>
-								<div class="modal-footer">
-								  <button type="button" class="btn btn-link text-danger" data-dismiss="modal">Batalkan</button>
-								  <button type="button" class="btn btn-primary">Tambahkan</button>
-								</div>
-							  </div>
-							</div>
-						  </div>
+                        <div class="modal fade" id="agree" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title mb-5" id="exampleModalLabel"><b>Ajukan WO</b></h5>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Nama Barang</p>
+                                    <p><b>AC</b></p>
+                                    <br>
+                                    <p>Lokasi</p>
+                                    <p><b>SDH Jawa</b></p>
+                                    <br>
+                                    <p>Pelapor</p>
+                                    <p><b>Abdi</b></p>
+                                    <br>
+                                    <p>Tanggal Laporan</p>
+                                    <p><b>20 Agustus 2019</b></p>
+                                    <br>
+                                    <p>Anggaran</p>
+                                    <p><b>Rp. 1.000.000</b></p>
+                                    <br>
+                                    <p>Tanggal Pengerjaan</p>
+                                    <p><b>20 Agustus 2019 - 29 Agustus 2019</b></p>
+                                    <br>
+                                    <p>Disetejui Oleh</p>
+                                    <p class="mb-0"><b>Rahman (GA) 20 Oktober 2019</b></p>
+                                    <p class="text-danger mb-0">Untuk disetujui oleh Anda</p>
+                                    <p class="text-secondary">Untuk disetujui oleh role FM Manager</p>
+                                    <br>
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-link text-danger" data-dismiss="modal">Batalkan</button>
+                                  <button type="submit" class="btn btn-primary">Tambahkan</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
                     </div>
                     
 			</div>
@@ -494,61 +492,63 @@
 	</div>
 	<!-- /page content -->
     <script src="https://unpkg.com/vue"></script>
-    <script>
-        new Vue({
-            el: '#app',
-            data: {
-                profiles: [
-                    {
-                        name: 'Kulkas 2 pintu',
-                        description: 'non akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 300
-                    },
-                    {
-                        name: 'AC Split',
-                        description: 'akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 1400
-                    },
-                    {
-                        name: 'Kulkas 2 pintu',
-                        description: 'akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 300
-                    },
-                    {
-                        name: 'AC Split',
-                        description: 'non akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 1400
-                    },
-                    {
-                        name: 'Kulkas 2 pintu',
-                        description: 'akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 300
-                    },{
-                        name: 'AC Split',
-                        description: 'non akademik',
-                        workProcess: 3,
-                        maintenanceProcess: 3,
-                        total: 1400
-                    }
-                ]
-            }
-        })
-    </script>
-	<script type="module">
-		import {Sidebar} from '../components/sidebar.js'
+	<script>
 		new Vue({
-			el: '#sidebar'
+			el: '#app',
+			data: {
+				workOrders: [
+                    {
+                        name: 'AC',
+                        location: 'SDH Jawa',
+                        reporter: 'Abdi',
+                        reportDate: '20 Agustus 2019',
+                        budget: 'Rp. 1.000.000',
+                        agreement: '1/3'
+                    },
+                    {
+                        name: 'AC',
+                        location: 'SDH Kemang',
+                        reporter: 'John',
+                        reportDate: '20 Agustus 2019',
+                        budget: 'Rp. 10.000.000',
+                        agreement: '1/3'
+                    },
+                    {
+                        name: 'Kursi',
+                        location: 'SDH Kupang',
+                        reporter: 'Ahmad',
+                        reportDate: '20 Agustus 2019',
+                        budget: 'Rp. 1.000.000',
+                        agreement: '1/2'
+                    },
+                    {
+                        name: 'AC',
+                        location: 'SDH Jodipan',
+                        reporter: 'John',
+                        reportDate: '20 Agustus 2019',
+                        budget: 'Rp. 10.000.000',
+                        agreement: '1/3'
+                    },
+                    {
+                        name: 'Kursi',
+                        location: 'SDH Kemang',
+                        reporter: 'Baim',
+                        reportDate: '20 Agustus 2019',
+                        budget: 'Rp. 1.000.000',
+                        agreement: '1/2'
+                    },
+                    {
+                        name: 'AC',
+                        location: 'SDH Kupang',
+                        reporter: 'Ahmad',
+                        reportDate: '20 Agustus 2019',
+                        budget: 'Rp. 10.000.000',
+                        agreement: '1/2'
+                    },
+				]
+			}
 		})
 	</script>
+     
 </body>
 </html>

@@ -262,10 +262,10 @@
 							<a href="#" class="nav-link" class='nav-link'><i><img src="../assets/icons/icon-pengguna.png"></i> <span>Pengguna</span></a>
 		
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="users_list.html" class="nav-link active" >Daftar Pengguna</a></li>
+								<li class="nav-item"><a href="users_list.html" class="nav-link">Daftar Pengguna</a></li>
 								<li class="nav-item"><a href="users_division.html" class="nav-link">Divisi</a></li>
-								<li class="nav-item"><a href="users_role_and_access.html" class="nav-link">Peran dan Akses</a></li>
-								<li class="nav-item"><a href="users_approval.html" class="nav-link">Pengaturan Approval</a></li>
+								<li class="nav-item"><a href="users_role_and_access_list.html" class="nav-link">Peran dan Akses</a></li>
+								<li class="nav-item"><a href="users_approval.html" class="nav-link active">Pengaturan Approval</a></li>
 								
 							</ul>
 						</li>
@@ -299,8 +299,11 @@
 						</li>
 						
 						<li class="nav-item">
-							<a href="../reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
-						</li>
+                                <a href="../reports/reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan.png"></i> <span>Tiket</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../delayed_reports/delayed_reports_list.html" class="nav-link"><i><img src="../assets/icons/icon-laporan-tertunda.png"></i> <span>Laporan Tertunda</span></a>
+                            </li>
 						<li class="nav-item">
 							<a href="#" class="nav-link"><i><img src="../assets/icons/icon-analitik.png"></i> <span>Analitik</span></a>
 						</li>
@@ -353,7 +356,7 @@
 						<div id="app">
 							<div class="row">
 								<div class="card w-100">
-									<div class="row py-3 px-5 mb-0 d-flex justify-content-between">
+									<div class="py-3 px-2 mb-0 d-flex justify-content-between">
 										<div class="col-md-10 d-flex ">
 											<div class="col-md-4">
 												<form action="#">
@@ -375,7 +378,7 @@
 										</div>
 										<div class="col-md-2">
 											<div class="row justify-content-end">
-												<a href="#" class="btn btn-md btn-primary" data-toggle="modal" data-target="#addUser"><i class="icon-plus3"></i> Tambahkan</a>
+												<a href="#" class="btn btn-md btn-primary mr-4" data-toggle="modal" data-target="#addUser"><i class="icon-plus3"></i> Tambahkan</a>
 											</div>
 										</div>
 		
@@ -429,7 +432,7 @@
 						</div>
 						<!-- Modal -->
 						<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog" role="document">
+							<div class="modal-dialog modal-dialog-centered" role="document">
 							  <div class="modal-content">
 								<div class="modal-header">
 								  <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Divisi</b></h5>
